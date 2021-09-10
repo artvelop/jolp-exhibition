@@ -1,0 +1,1 @@
+export { FirstCard } from './FirstCard';
