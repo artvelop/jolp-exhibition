@@ -1,10 +1,19 @@
 import React from 'react';
-import { FirstCard, LayoutContainer } from 'components/Home';
+import { Intro, LayoutContainer, ShowCard } from 'components/Home';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <LayoutContainer>
-      <FirstCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <Intro />
+      <Intro />
+      <Intro />
+      <Intro />
     </LayoutContainer>
   );
 };

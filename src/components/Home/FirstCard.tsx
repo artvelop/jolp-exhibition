@@ -39,7 +39,9 @@ export const FirstCard = () => {
             borderBottomLeftRadius: 4,
             borderBottomRightRadius: 4,
           }}>
-          <motion.p whileHover={{ scale: 1.5 }}>생성</motion.p>
+          <motion.p style={{ color: '#fff' }} whileHover={{ scale: 1.5 }}>
+            생성
+          </motion.p>
         </motion.div>
       </Bottom>
     </Wrapper>
