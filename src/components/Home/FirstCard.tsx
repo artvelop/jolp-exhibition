@@ -20,7 +20,7 @@ export const FirstCard = () => {
             width: 100,
             height: 100,
             borderRadius: 4,
-            backgroundColor: '#fff',
+            backgroundColor: '#000',
           }}
         />
       </Content>
@@ -30,7 +30,7 @@ export const FirstCard = () => {
           whileTap={{ scale: 1.5 }}
           style={{
             height: '100%',
-            backgroundColor: '#fff',
+            backgroundColor: '#000',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -53,6 +53,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 250px;
   height: 400px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Content = styled.div`
