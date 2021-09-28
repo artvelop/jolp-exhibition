@@ -9,7 +9,7 @@ function Root() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/kojaem" component={Kojaem} />
+          <Route path="/kojaem/" component={Kojaem} />
         </Switch>
       </BrowserRouter>
     </>
