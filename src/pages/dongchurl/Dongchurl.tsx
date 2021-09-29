@@ -1,7 +1,16 @@
 import React from 'react';
+import { LayoutContainer, ShowCard } from './components';
 
 const Dongchurl = () => {
-  return <div>HELLO</div>;
+  return (
+    <LayoutContainer>
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+      <ShowCard />
+    </LayoutContainer>
+  );
 };
 
 export default Dongchurl;
