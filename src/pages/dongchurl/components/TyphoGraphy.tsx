@@ -19,7 +19,7 @@ type TyphoGraphyProps = {
 };
 
 type StyledTyphoGraphyProps = {
-  type: '48' | '24' | '22' | '20' | '18' | '14' | '12' | '10' | '8';
+  type: '96' | '32' | '22' | '20' | '18' | '14' | '12' | '10' | '8';
   color?: string;
   textAlign?: 'left' | 'center' | 'right';
   fontWeight?: string;
@@ -37,9 +37,9 @@ export const TyphoGraphy: React.FC<TyphoGraphyProps> = ({
   const changeTypeFontSize = useMemo(() => {
     switch (type) {
       case 'Title':
-        return '48';
+        return '96';
       case 'h1':
-        return '24';
+        return '32';
       case 'h2':
         return '22';
       case 'h3':
@@ -72,6 +72,7 @@ export const TyphoGraphy: React.FC<TyphoGraphyProps> = ({
 };
 
 const TyphoGraphyText = styled.div<StyledTyphoGraphyProps>`
+  font-family: 'RIDI-BATANG';
   font-size: ${(props) => props.type}px;
   color: ${(props) => props.color};
   text-align: ${(props) => props.textAlign};

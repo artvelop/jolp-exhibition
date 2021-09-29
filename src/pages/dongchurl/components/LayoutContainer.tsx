@@ -4,9 +4,9 @@ import React from 'react';
 export const LayoutContainer: React.FC = ({ children }) => {
   return (
     <RootWrapper>
-      <BackgroundVideo muted autoPlay loop>
+      {/* <BackgroundVideo muted autoPlay loop>
         <source src="/filmbg.mp4" type="video/mp4" />
-      </BackgroundVideo>
+      </BackgroundVideo> */}
       <ContentWrapper>{children}</ContentWrapper>
     </RootWrapper>
   );
