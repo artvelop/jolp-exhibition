@@ -86,7 +86,7 @@ li {
 .gallery {
   background: linear-gradient(250deg, #6c7981, #aa94e6);
   padding: 40px;
-  min-height: 700px;
+  min-height: 900px;
   position: relative;
   margin: 0;
 }

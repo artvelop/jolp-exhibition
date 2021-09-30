@@ -1,14 +1,7 @@
 import "../style.css";
 import { NavLink } from "react-router-dom";
-import { AnimateSharedLayout, motion } from "framer-motion";
-
-const colors: string[] = [
-  "#5aaddd",
-  "#434946",
-  "#3b5e3d",
-  "#f05f5f",
-  "#c08bc7",
-];
+import { motion } from "framer-motion";
+import { ReactNode } from 'react';
 
 
 const spring: {
@@ -24,12 +17,6 @@ const spring: {
 };
 
 
-type childrenProps = {
-  menuItems:string[];
-  selectedLink: string;
-  linkClick: (link:string) => void;
-}
-
 type menuListProps = {
   color: string;
   isSelected: boolean;
@@ -37,24 +24,43 @@ type menuListProps = {
   menuItem: string;
 };
 
-const LayoutContainer = (props:childrenProps) => {
+
+
+const menuItems: string[] = ["HOME", "MUSINSA", "COVERNAT", "KIRSH", "LMC"];
+
+const colors: string[] = [
+  "#5aaddd",
+  "#434946",
+  "#3b5e3d",
+  "#f05f5f",
+  "#c08bc7",
+];
+
+type Props = {
+  LinkName: string
+  color: string
+  selected: string
+  setSelected: (link:string) => void
+  children?: ReactNode
+}
+
+const LayoutContainer = (props:Props) => {
   return (
     <>
       <div className="layoutContainer">
-        <AnimateSharedLayout>
           <ul className="layoutContainerMenu">
-            {props.menuItems.map((menuItem, index) => (
+            {menuItems.map((menuItem, index) => (
               <MenuList
                 key={menuItem}
                 color={colors[index]}
-                isSelected={props.selectedLink === menuItem}
-                onClick={() => props.linkClick(menuItem)}
+                isSelected={props.selected === menuItem}
+                onClick={() => props.setSelected(menuItem)}
                 menuItem={menuItem}
               />
             ))}
           </ul>
-        </AnimateSharedLayout>
       </div>
+      {props.children}
     </>
   );
 };

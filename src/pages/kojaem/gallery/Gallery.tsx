@@ -1,10 +1,10 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import MUSINSA from "../imgs/Musinsa.jpg"
 import COVERNAT from "../imgs/Covernat.jpg"
 import KIRSH from "../imgs/Kirsh.jpg"
 import LMC from "../imgs/LMC.jpg"
+import LayoutContainer from '../LayoutContainer/LayoutContainer';
 
 
 const images = [
@@ -48,7 +48,7 @@ const imageVariants = { // 마우스 올리면 이미지가 크게 보이게 확
 type Props = {
     name: string,
     index: number,
-    linkClick: (link: string) => void
+    setSelected: (link: string) => void
 }
 
 const Thumbnail = (props:Props) => {
@@ -62,7 +62,7 @@ const Thumbnail = (props:Props) => {
             transition={transition}
             >
              <Link to={`/kojaem/${link[props.index]}`}
-             onClick={() => {props.linkClick(link[props.index])}}>
+             onClick={() => {props.setSelected(link[props.index])}}>
                <motion.img
                src={props.name}
                alt="brand"
@@ -77,12 +77,18 @@ const Thumbnail = (props:Props) => {
 }
 
 type GalleryProps = {
-    linkClick: (link: string) => void
+    selected: string
+    setSelected: (link: string) => void
 }
 
 const Gallery = (props:GalleryProps) => {
     return(
-        <>
+        <LayoutContainer
+            LinkName="HOME"
+            color="#5aaddd"
+            selected={props.selected}
+            setSelected={props.setSelected}
+            >
             <h1>KoJaem</h1>
             <div className="gallery">
                 <motion.div
@@ -93,11 +99,11 @@ const Gallery = (props:GalleryProps) => {
                 variants={{ exit: {transition: { staggerChildren: 0.5 }}}}
                 >
                     {images.map((name:string, index:number) => (
-                        <Thumbnail key={name} name={name} index={index} linkClick={props.linkClick}/>
+                        <Thumbnail key={name} name={name} index={index} setSelected={props.setSelected}/>
                     ))}
                 </motion.div>
             </div>
-        </>
+        </LayoutContainer>
     );
 };
 
