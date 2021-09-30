@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from 'pages/Home';
-import Kojaem from 'pages/kojaem/components/LayoutContainer/LayoutContainer';
+import Kojaem from 'pages/kojaem/KojaemRouter';
 
 function Root() {
   return (

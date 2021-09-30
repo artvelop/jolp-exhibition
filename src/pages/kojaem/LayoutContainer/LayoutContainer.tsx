@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import "../../style.css";
-import { Route, Switch, NavLink } from "react-router-dom";
-import Musinsa from "../musinsa/Musinsa";
-import Covernat from "../covernat/Covernat";
-import Kirsh from "../kirsh/Kirsh";
-import Lmc from "../lmc/Lmc";
+import "../style.css";
+import { NavLink } from "react-router-dom";
 import { AnimateSharedLayout, motion } from "framer-motion";
-import Gallery from "../gallery/Gallery";
 
 const colors: string[] = [
   "#5aaddd",
@@ -16,7 +10,6 @@ const colors: string[] = [
   "#c08bc7",
 ];
 
-const menuItems: string[] = ["HOME", "MUSINSA", "COVERNAT", "KIRSH", "LMC"];
 
 const spring: {
   type: string;
@@ -30,47 +23,46 @@ const spring: {
   mass: 1, // 무게조절
 };
 
-const LayoutContainer = () => {
-  const [selected, setSelected] = useState("HOME");
-  return (
-    <>
-      <div className="layoutContainer">
-        <AnimateSharedLayout>
-          <ul className="layoutContainerMenu">
-            {menuItems.map((menuItem, index) => (
-              <MenuList
-                key={menuItem}
-                color={colors[index]}
-                isSelected={selected === menuItem}
-                onClick={() => setSelected(menuItem)}
-                menuItem={menuItem}
-              />
-            ))}
-          </ul>
-        </AnimateSharedLayout>
-      </div>
-      <Switch>
-        <Route exact path="/kojaem/home">
-          <Gallery linkClick={(link: string) => setSelected(link)}></Gallery>
-        </Route>
-        <Route exact path="/kojaem/musinsa" component={Musinsa} />
-        <Route exact path="/kojaem/covernat" component={Covernat} />
-        <Route exact path="/kojaem/kirsh" component={Kirsh} />
-        <Route exact path="/kojaem/lmc" component={Lmc} />
-        <Route path="/kojaem">Not Found</Route>
-      </Switch>
-    </>
-  );
-};
 
-type Props = {
+type childrenProps = {
+  menuItems:string[];
+  selectedLink: string;
+  linkClick: (link:string) => void;
+}
+
+type menuListProps = {
   color: string;
   isSelected: boolean;
   onClick: () => void;
   menuItem: string;
 };
 
-function MenuList(props: Props) {
+const LayoutContainer = (props:childrenProps) => {
+  return (
+    <>
+      <div className="layoutContainer">
+        <AnimateSharedLayout>
+          <ul className="layoutContainerMenu">
+            {props.menuItems.map((menuItem, index) => (
+              <MenuList
+                key={menuItem}
+                color={colors[index]}
+                isSelected={props.selectedLink === menuItem}
+                onClick={() => props.linkClick(menuItem)}
+                menuItem={menuItem}
+              />
+            ))}
+          </ul>
+        </AnimateSharedLayout>
+      </div>
+    </>
+  );
+};
+
+
+
+
+function MenuList(props: menuListProps) {
   return (
     <>
       <li

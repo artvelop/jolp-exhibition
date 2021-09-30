@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MUSINSA from "../../imgs/Musinsa.jpg"
-import COVERNAT from "../../imgs/Covernat.jpg"
-import KIRSH from "../../imgs/Kirsh.jpg"
-import LMC from "../../imgs/LMC.jpg"
+import MUSINSA from "../imgs/Musinsa.jpg"
+import COVERNAT from "../imgs/Covernat.jpg"
+import KIRSH from "../imgs/Kirsh.jpg"
+import LMC from "../imgs/LMC.jpg"
 
 
 const images = [
