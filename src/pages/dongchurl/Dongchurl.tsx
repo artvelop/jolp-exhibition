@@ -1,21 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { LayoutContainer, MainCard, TyphoGraphy } from './components';
+import { Intro, LayoutContainer, MainCard, TyphoGraphy } from './components';
 
 const Dongchurl = () => {
   return (
     <LayoutContainer>
-      <TitleWrapper>
-        <TyphoGraphy type="Title" color="#000">
-          브라우저 렌더링
-        </TyphoGraphy>
-      </TitleWrapper>
-      <MainCardWrapper>
-        <MainCard title="Dom트리 생성" />
-        <MainCard title="Css트리 생성" />
-        <MainCard title="RenderTree 생성" />
-        <MainCard title="Reflow" />
-      </MainCardWrapper>
+      <Intro />
     </LayoutContainer>
   );
 };
