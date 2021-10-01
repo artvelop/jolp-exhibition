@@ -3,20 +3,26 @@ import { motion } from "framer-motion";
 import LayoutContainer from '../LayoutContainer/LayoutContainer';
 
 
-const images = [
+const images:string[] = [
     "MUSINSA.jpg",
     "COVERNAT.jpg",
     "KIRSH.jpg",
     "LMC.jpg"
 ];
 
-const link = [
-    "MUSINSA",
-    "COVERNAT",
-    "KIRSH",
-    "LMC"
-]
+const imagesName:string[] = [];
 
+images.map((image:string, i:number) => (
+    imagesName[i]=image.replace(/.jpg|.jpeg|.png|.gif/gi,'')
+    // replace 로 image 문자에서 이미지 확장자 제거
+));
+
+
+const link:string[] = [];
+
+imagesName.map((imageName:string, i:number) => (
+    link[i]=`/kojaem/${imageName}`
+));
 
 const transition = { duration: 0.5 }; // 전체적인 transition 크기 조절
 
@@ -43,7 +49,7 @@ const imageVariants = { // 마우스 올리면 이미지가 크게 보이게 확
 
 type Props = {
     name: string,
-    index: number,
+    i: number,
     setSelected: (link: string) => void
 }
 
@@ -57,8 +63,8 @@ const Thumbnail = (props:Props) => {
             variants={frameVariants}
             transition={transition}
             >
-             <Link to={`/kojaem/${link[props.index]}`}
-             onClick={() => {props.setSelected(link[props.index])}}>
+             <Link to={link[props.i]}
+             onClick={() => {props.setSelected(imagesName[props.i])}}>
                <motion.img
                src={`/KoJaem/img/${props.name}`}
                alt="brand"
@@ -94,8 +100,8 @@ const Gallery = (props:GalleryProps) => {
                 exit="exit" // 애니메이션이 끝날때
                 variants={{ exit: {transition: { staggerChildren: 0.5 }}}}
                 >
-                    {images.map((name:string, index:number) => (
-                        <Thumbnail key={name} name={name} index={index} setSelected={props.setSelected}/>
+                    {images.map((name:string, i:number) => (
+                        <Thumbnail key={name} name={name} i={i} setSelected={props.setSelected}/>
                     ))}
                 </motion.div>
             </div>
