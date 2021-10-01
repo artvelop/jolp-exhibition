@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
 import Musinsa from "./musinsa/Musinsa";
 import Covernat from "./covernat/Covernat";
 import Kirsh from "./kirsh/Kirsh";
 import Lmc from "./lmc/Lmc";
 import Gallery from "./gallery/Gallery";
 import { Route, Switch } from "react-router-dom";
-import { AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const KojaemRouter = () => {
   const [selected, setSelected] = useState("HOME");
 
   return (
-      <Router>
+    <Route
+        render={({ location }) => (
       <AnimateSharedLayout>
-      <Switch>
+          <AnimatePresence exitBeforeEnter initial={false}>
+      <Switch location={location} key={location.pathname}>
         <Route exact path="/kojaem/home"
           render={() => <Gallery selected={selected} setSelected={setSelected}/>}
           >
@@ -33,9 +34,10 @@ const KojaemRouter = () => {
         />
         <Route path="/kojaem">Not Found</Route>
       </Switch>
+      </AnimatePresence>
       </AnimateSharedLayout>
-
-      </Router>
+        )}
+        />
       
   );
 

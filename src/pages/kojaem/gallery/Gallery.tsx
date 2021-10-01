@@ -98,8 +98,9 @@ const Gallery = (props:GalleryProps) => {
                 initial="initial"
                 animate="enter"
                 exit="exit" // 애니메이션이 끝날때
-                variants={{ exit: {transition: { staggerChildren: 0.5 }}}}
-                >
+                variants={{ exit: {transition: { staggerChildren: 0.1 }},
+                            enter: {transition: { staggerChildren: 0.1, staggerDirection: -1}}}}>
+                                {/* staggerDirection: -1 애니메이션 방향을 반대로 함. */}
                     {images.map((name:string, i:number) => (
                         <Thumbnail key={name} name={name} i={i} setSelected={props.setSelected}/>
                     ))}
