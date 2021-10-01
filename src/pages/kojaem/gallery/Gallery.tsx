@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MUSINSA from "../imgs/Musinsa.jpg"
-import COVERNAT from "../imgs/Covernat.jpg"
-import KIRSH from "../imgs/Kirsh.jpg"
-import LMC from "../imgs/LMC.jpg"
 import LayoutContainer from '../LayoutContainer/LayoutContainer';
 
 
 const images = [
-    MUSINSA,
-    COVERNAT,
-    KIRSH,
-    LMC
+    "MUSINSA.jpg",
+    "COVERNAT.jpg",
+    "KIRSH.jpg",
+    "LMC.jpg"
 ];
 
 const link = [
@@ -64,7 +60,7 @@ const Thumbnail = (props:Props) => {
              <Link to={`/kojaem/${link[props.index]}`}
              onClick={() => {props.setSelected(link[props.index])}}>
                <motion.img
-               src={props.name}
+               src={`/KoJaem/img/${props.name}`}
                alt="brand"
                variants={imageVariants}
                transition={transition}
