@@ -11,12 +11,12 @@ const images:string[] = [
 ];
 
 
-type GalleryProps = {
+type Props = {
     selected: string
     setSelected: (link: string) => void
 }
 
-const Gallery = ({selected, setSelected}:GalleryProps) => {
+const Gallery = ({selected, setSelected}:Props) => {
     
     const getImageName = (image:string) => (image.replace(/.jpg|.jpeg|.png|.gif/gi,''))
 
@@ -35,8 +35,8 @@ const Gallery = ({selected, setSelected}:GalleryProps) => {
                 variants={{ exit: {transition: { staggerChildren: 0.1 }},
                             enter: {transition: { staggerChildren: 0.1, staggerDirection: -1}}}}>
                                 {/* staggerDirection: -1 애니메이션 방향을 반대로 함. */}
-                    {images.map((name:string, i:number) => (
-                        <Thumbnail key={name} name={name} index={i} imageName={getImageName(name)}
+                    {images.map((name:string) => (
+                        <Thumbnail key={name} name={name} imageName={getImageName(name)}
                         setSelected={setSelected}/>
                     ))}
                 </motion.div>

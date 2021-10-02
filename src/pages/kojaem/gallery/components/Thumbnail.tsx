@@ -30,12 +30,11 @@ const imageVariants = { // 마우스 올리면 이미지가 크게 보이게 확
 
 type thumbnailType = {
     name: string,
-    index: number,
     imageName: string,
     setSelected: (link: string) => void
 }
 
-export const Thumbnail = ({name, index, imageName, setSelected}:thumbnailType) => {
+export const Thumbnail = ({name, imageName, setSelected}:thumbnailType) => {
     return (
         <>
         <motion.div className="thumbnail" variants={thumbnailVariants}>

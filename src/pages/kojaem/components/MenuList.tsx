@@ -16,14 +16,14 @@ const spring: {
   };
   
   
-  type menuListProps = {
+  type Props = {
     color: string;
     isSelected: boolean;
     onClick: () => void;
     menuItem: string;
   };
   
-export const MenuList = ({color, isSelected, onClick, menuItem}: menuListProps) => {
+export const MenuList = ({color, isSelected, onClick, menuItem}: Props) => {
     return (
       <>
         <li
