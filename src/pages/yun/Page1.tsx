@@ -1,5 +1,8 @@
 import React from 'react';
+import { LayoutContainer } from './components/index';
 
-export const Page1 = () => {
-  return <div></div>;
+const Page1 = () => {
+  return <LayoutContainer></LayoutContainer>;
 };
+
+export default Page1;
