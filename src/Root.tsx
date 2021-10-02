@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from 'pages/Home';
 import Dongchurl from 'pages/dongchurl/Dongchurl';
-import Yun from 'pages/yun/Page1';
+import Yun from 'pages/yun/Main';
 function Root() {
   return (
     <BrowserRouter>

@@ -3,7 +3,7 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
-const Page1 = () => {
+export const Page1: React.FC = () => {
   return (
     <LayoutContainer>
       <BackgroundImg>
@@ -27,8 +27,6 @@ const Page1 = () => {
     </LayoutContainer>
   );
 };
-
-export default Page1;
 
 const BackgroundImg = styled(motion.div)`
   background: url('/yun/img/background.jpg');
