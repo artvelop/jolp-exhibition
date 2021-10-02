@@ -3,7 +3,8 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
-export const Page1: React.FC = () => {
+type Props = { NextPageHandle: () => void };
+export const Page1: React.FC<Props> = ({ NextPageHandle }) => {
   return (
     <LayoutContainer>
       <BackgroundImg>
@@ -18,6 +19,7 @@ export const Page1: React.FC = () => {
               ease: 'linear',
               repeat: Infinity,
             }}
+            onClick={NextPageHandle}
           >
             Touch To Start
           </Start>
