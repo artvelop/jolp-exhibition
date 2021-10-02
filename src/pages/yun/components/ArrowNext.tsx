@@ -1,5 +1,5 @@
 import React from 'react';
-import { GrFormNext } from 'react-icons/gr';
+import { MdNavigateNext } from 'react-icons/md';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
@@ -7,8 +7,17 @@ type ArrowLeftProps = { NextPageHandle: (e: any) => void };
 
 export const ArrowNext: React.FC<ArrowLeftProps> = ({ NextPageHandle }) => {
   return (
-    <Wrapper>
-      <GrFormNext style={ButtonStyle} onClick={NextPageHandle} />
+    <Wrapper
+      animate={{
+        opacity: [1, 0, 1],
+      }}
+      transition={{
+        duration: 1,
+        ease: 'linear',
+        repeat: Infinity,
+      }}
+    >
+      <MdNavigateNext style={ButtonStyle} color="white" onClick={NextPageHandle} />
     </Wrapper>
   );
 };
@@ -21,4 +30,4 @@ const Wrapper = styled(motion.div)`
   bottom: 10px;
 `;
 
-const ButtonStyle = { fontSize: '70px', cursor: 'pointer', transform: ' rotate(90deg)', color: '#FFFFFF' };
+const ButtonStyle = { fontSize: '70px', cursor: 'pointer', transform: ' rotate(90deg)', color: 'white' };
