@@ -28,13 +28,13 @@ const imageVariants = { // 마우스 올리면 이미지가 크게 보이게 확
 
 
 
-type thumbnailType = {
+type Props = {
     name: string,
     imageName: string,
     setSelected: (link: string) => void
 }
 
-export const Thumbnail = ({name, imageName, setSelected}:thumbnailType) => {
+export const Thumbnail = ({name, imageName, setSelected}:Props) => {
     return (
         <>
         <motion.div className="thumbnail" variants={thumbnailVariants}>
