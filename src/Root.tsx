@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from 'pages/Home';
 import Dongchurl from 'pages/dongchurl/Dongchurl';
 import Yun from 'pages/yun/Main';
-import KojaemRouter from 'pages/kojaem/KojaemRouter';
+import Kojaem from 'pages/kojaem/KojaemRouter';
 
 function Root() {
   return (
@@ -12,7 +12,7 @@ function Root() {
         <Route exact path="/" component={Home} />
         <Route path="/dongchurl" component={Dongchurl} />
         <Route path="/yun" component={Yun} />
-        <Route path="/kojaem/" component={KojaemRouter} />
+        <Route path="/kojaem/" component={Kojaem} />
       </Switch>
     </BrowserRouter>
   );

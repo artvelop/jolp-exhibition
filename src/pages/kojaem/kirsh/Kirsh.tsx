@@ -1,5 +1,5 @@
 import React from 'react';
-import LayoutContainer from '../components/LayoutContainer';
+import { LayoutContainer } from '../components/LayoutContainer';
 
 type Props = {
   selected: string;

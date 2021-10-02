@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import styled from '@emotion/styled';
 
 const transition = { duration: 0.5 }; // 전체적인 transition 크기 조절
 
@@ -24,10 +25,6 @@ const imageVariants = { // 마우스 올리면 이미지가 크게 보이게 확
 // frameVariants 와 imageVariants 를 같이 써서 마우스를 올리면
 // 사용자에게 전체 사진의 크기는 작아지면서, 확대되는 느낌을 줄 수 있음.
 
-
-
-
-
 type Props = {
     name: string,
     imageName: string,
@@ -36,25 +33,42 @@ type Props = {
 
 export const Thumbnail = ({name, imageName, setSelected}:Props) => {
     return (
-        <>
-        <motion.div className="thumbnail" variants={thumbnailVariants}>
-            <motion.div
-            className="frame"
+        <Wrapper variants={thumbnailVariants}>
+            <Frame  
             whileHover="hover"
             variants={frameVariants}
             transition={transition}
             >
              <Link to={`/kojaem/${imageName}`}
              onClick={() => {setSelected(imageName)}}>
-               <motion.img
+               <ThumbnailImage
                src={`/KoJaem/img/${name}`}
                alt="brand"
                variants={imageVariants}
                transition={transition}
               />
           </Link>
-         </motion.div>
-        </motion.div>
-        </>
+         </Frame>
+        </Wrapper>
     );
 }
+
+const Wrapper = styled(motion.div)`
+  flex: 1 0 33%;
+  margin: 10px; /* 간격 */
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  max-width: 800px;
+  min-width: 400px;
+`;
+
+const Frame = styled(motion.div)`
+  overflow: hidden; /* frame 크기보다 사진크기가 더 클경우, 잘린부분은 숨김처리 */
+`;
+
+const ThumbnailImage = styled(motion.img)`
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+`;

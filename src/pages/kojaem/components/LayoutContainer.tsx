@@ -1,7 +1,6 @@
-import "../style.css";
 import { ReactNode } from 'react';
 import { MenuList } from "./MenuList";
-
+import styled from '@emotion/styled';
 
 
 const menuItems: string[] = ['HOME', 'MUSINSA', 'COVERNAT', 'KIRSH', 'LMC'];
@@ -20,11 +19,11 @@ type Props = {
   children?: ReactNode
 }
 
-const LayoutContainer = ({ selected, setSelected, children}:Props) => {
+export const LayoutContainer = ({ selected, setSelected, children}:Props) => {
   return (
-    <>
-      <div className="layoutContainer">
-          <ul className="layoutContainerMenu">
+    <RootWrapper>
+      <LayoutWrapper>
+          <LayoutMenu>
             {menuItems.map((menuItem, index) => (
               <MenuList
                 key={menuItem}
@@ -34,15 +33,26 @@ const LayoutContainer = ({ selected, setSelected, children}:Props) => {
                 menuItem={menuItem}
               />
             ))}
-          </ul>
-      </div>
+          </LayoutMenu>
+      </LayoutWrapper>
       {children}
-    </>
+    </RootWrapper>
   );
 };
 
 
+const RootWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
 
+const LayoutWrapper = styled.div`
+  position: relative;
+  background-color: #0f0f0f;
+  padding: 4px;
+`;
 
-
-export default LayoutContainer;
+const LayoutMenu = styled.ul`
+  display: flex;
+  justify-content: space-around;
+`;
