@@ -1,18 +1,16 @@
 import React from 'react';
-import LayoutContainer from '../LayoutContainer/LayoutContainer';
+import LayoutContainer from '../components/LayoutContainer';
 
 type Props = {
   selected: string;
   setSelected: (link:string) => void;
 }
 
-const Covernat = (props:Props) => {
+const Covernat = ({selected, setSelected}:Props) => {
   return (
   <LayoutContainer
-    LinkName="COVERNAT"
-    color="#3b5e3d"
-    selected={props.selected}
-    setSelected={props.setSelected}
+    selected={selected}
+    setSelected={setSelected}
   >
     <div>커버낫</div>
     <div>커버낫2</div>

@@ -1,18 +1,16 @@
 import React from 'react';
-import LayoutContainer from '../LayoutContainer/LayoutContainer';
+import LayoutContainer from '../components/LayoutContainer';
 
 type Props = {
   selected: string;
   setSelected: (link:string) => void;
 }
 
-const Lmc = (props:Props) => {
+const Lmc = ({selected, setSelected}:Props) => {
   return (
   <LayoutContainer
-    LinkName="LMC"
-    color="#c08bc7"
-    selected={props.selected}
-    setSelected={props.setSelected}
+    selected={selected}
+    setSelected={setSelected}
   >
     <div>엘엠씨</div>
     <div>엘엠씨2</div>

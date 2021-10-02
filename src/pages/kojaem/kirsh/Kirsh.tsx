@@ -1,18 +1,16 @@
 import React from 'react';
-import LayoutContainer from '../LayoutContainer/LayoutContainer';
+import LayoutContainer from '../components/LayoutContainer';
 
 type Props = {
   selected: string;
   setSelected: (link:string) => void;
 }
 
-const Kirsh = (props:Props) => {
+const Kirsh = ({selected, setSelected}:Props) => {
   return(
   <LayoutContainer
-    LinkName="KIRSH"
-    color="#f05f5f"
-    selected={props.selected}
-    setSelected={props.setSelected}
+    selected={selected}
+    setSelected={setSelected}
   >
     <div>키르시</div>
     <div>키르시2
