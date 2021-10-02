@@ -82,6 +82,8 @@ export const Intro = () => {
 
 const Wrapper = styled.div`
   max-width: 100vw;
+  min-width: 90vw;
+  min-height: 92vh;
   height: 100vh;
   padding: 40px;
   display: flex;
