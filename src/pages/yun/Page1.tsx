@@ -1,29 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
-type Props = { NextPageHandle: () => void };
-export const Page1: React.FC<Props> = ({ NextPageHandle }) => {
+type Props = { handlePage: () => void };
+export const Page1: React.FC<Props> = ({ handlePage }) => {
+  const [curState, setCurState] = useState(0);
+
+  function timeout(delay: number) {
+    return new Promise((res) => setTimeout(res, delay));
+  }
+
+  const NextPage = async () => {
+    setCurState(1);
+    await timeout(3000);
+    handlePage();
+  };
   return (
     <LayoutContainer>
-      <BackgroundImg>
+      <BackgroundImg
+        animate={{
+          opacity: curState === 0 ? 1 : 0,
+          translateX: curState === 0 ? 0 : -100,
+        }}
+        transition={{
+          duration: curState === 0 ? 1 : 2,
+          ease: 'easeOut',
+        }}
+      >
         <Wrapper>
-          <TitleImg></TitleImg>
-          <Start
+          <TitleImg
             animate={{
-              opacity: [1, 0, 1],
+              opacity: curState === 0 ? 1 : 0,
+              translateX: curState === 0 ? 0 : 100,
             }}
             transition={{
-              duration: 3,
-              ease: 'linear',
-              repeat: Infinity,
+              duration: 1,
+              ease: 'easeOut',
             }}
-            onClick={NextPageHandle}
+            onClick={NextPage}
+          />
+          <Start
+            animate={{
+              opacity: curState === 0 ? [1, 0, 1] : 0,
+              translateX: curState === 0 ? 0 : 100,
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+              repeat: curState === 0 ? Infinity : undefined,
+            }}
+            onClick={NextPage}
           >
-            Touch To Start
+            Click To Start
           </Start>
-          <Exit>Exit</Exit>
+          <Exit
+            animate={{
+              opacity: curState === 0 ? 1 : 0,
+              translateX: curState === 0 ? 0 : 100,
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+            }}
+            onClick={NextPage}
+          >
+            Exit
+          </Exit>
         </Wrapper>
       </BackgroundImg>
     </LayoutContainer>
