@@ -3,20 +3,22 @@ import { MdNavigateNext } from 'react-icons/md';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-type Props = { NextPage: () => void; Color: string };
-export const ArrowNext: React.FC<Props> = ({ NextPage, Color }) => {
+type Props = { NextPage: () => void; Color: string; Display: number };
+export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
   return (
     <Wrapper
       animate={{
         opacity: [0, 1, 0],
+        display: Display === 1 ? 'flex' : 'none',
       }}
       transition={{
         duration: 1,
         ease: 'linear',
         repeat: Infinity,
-        delay: 4,
+        delay: 0,
       }}
-      onClick={NextPage}
+      // onClick={NextPage}
+      onTap={NextPage}
     >
       <MdNavigateNext style={ButtonStyle} color={Color} />
     </Wrapper>

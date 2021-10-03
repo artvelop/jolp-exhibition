@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
@@ -60,7 +60,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
         >
           잭 다니엘 Old No.7
         </RightTitle>
-        <ArrowNext NextPage={NextPage} Color={'White'} />
+        <ArrowNext NextPage={NextPage} Color={'White'} Display={1} />
       </Background>
     </LayoutContainer>
   );

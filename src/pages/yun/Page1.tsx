@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 
 type Props = { handlePage: () => void };
 export const Page1: React.FC<Props> = ({ handlePage }) => {
+  const [PageLock, setPageLock] = useState(0);
   const [curState, setCurState] = useState(0);
 
   function timeout(delay: number) {
@@ -12,9 +13,12 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
   }
 
   const NextPage = async () => {
-    setCurState(1);
-    await timeout(3000);
-    handlePage();
+    if (PageLock === 0) {
+      setPageLock(1);
+      setCurState(1);
+      await timeout(2000);
+      handlePage();
+    }
   };
   return (
     <LayoutContainer>
@@ -24,7 +28,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           translateX: curState === 0 ? 0 : -100,
         }}
         transition={{
-          duration: curState === 0 ? 1 : 2,
+          duration: curState === 0 ? 1 : 1,
           ease: 'easeOut',
         }}
       >
@@ -32,7 +36,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           <TitleImg
             animate={{
               opacity: curState === 0 ? 1 : 0,
-              translateX: curState === 0 ? 0 : 100,
+              x: curState === 0 ? 0 : '200px',
             }}
             transition={{
               duration: 1,
@@ -43,7 +47,8 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           <Start
             animate={{
               opacity: curState === 0 ? [1, 0, 1] : 0,
-              translateX: curState === 0 ? 0 : 100,
+              x: curState === 0 ? 0 : '200px',
+              cursor: PageLock == 1 ? 'default' : 'pointer',
             }}
             transition={{
               duration: 1,
@@ -57,7 +62,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           <Exit
             animate={{
               opacity: curState === 0 ? 1 : 0,
-              translateX: curState === 0 ? 0 : 100,
+              x: curState === 0 ? 0 : '200px',
             }}
             transition={{
               duration: 1,
