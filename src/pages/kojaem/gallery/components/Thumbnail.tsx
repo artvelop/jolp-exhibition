@@ -42,7 +42,7 @@ export const Thumbnail = ({name, imageName, setSelected}:Props) => {
              <Link to={`/kojaem/${imageName}`}
              onClick={() => {setSelected(imageName)}}>
                <ThumbnailImage
-               src={`/KoJaem/img/${name}`}
+               src={`/koJaem/img/${name}`}
                alt="brand"
                variants={imageVariants}
                transition={transition}

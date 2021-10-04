@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutContainer } from '../components/LayoutContainer';
-
+import { Loading } from "./components/Loading";
 type Props = {
   selected: string;
   setSelected: (link:string) => void;
@@ -12,9 +12,9 @@ const Covernat = ({selected, setSelected}:Props) => {
     selected={selected}
     setSelected={setSelected}
   >
-    <div>커버낫</div>
-    <div>커버낫2</div>
-    <div>커버낫3</div>
+    <Loading />
+
+    
   </LayoutContainer>
   );
 };
