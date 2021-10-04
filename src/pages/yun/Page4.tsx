@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 
 type Props = { handlePage: () => void };
-export const Page3: React.FC<Props> = ({ handlePage }) => {
+export const Page4: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
 
@@ -41,11 +41,11 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
         }}
       >
         <MapWrapper
-          animate={{ scale: [100, 1] }}
+          animate={{ scale: [30, 1] }}
           transition={{
-            duration: 1.5,
+            duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 0.5 : 0,
+            delay: curState === 0 ? 1 : 0,
           }}
         />
         <TitleWrapper
@@ -53,7 +53,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
           transition={{
             duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 2.5 : 0,
+            delay: curState === 0 ? 2 : 0,
           }}
         >
           <MainTitle>세계 160개국 수출</MainTitle>
@@ -115,7 +115,6 @@ const SubTitle1 = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
 `;
 
 const SubTitle2 = styled(motion.div)`

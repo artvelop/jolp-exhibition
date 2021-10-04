@@ -16,7 +16,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
     if (PageLock === 0) {
       setPageLock(1);
       setCurState(1);
-      await timeout(2000);
+      await timeout(1000);
       handlePage();
     }
   };

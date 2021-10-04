@@ -16,7 +16,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
     setNextButton(0);
     setCurState((curState) => curState + 1);
 
-    if (curState === 0) setTimeout(() => setNextButton(1), 3000);
+    if (curState === 0) setTimeout(() => setNextButton(1), 4000);
   };
   useEffect(() => {
     const wait2 = async () => {
@@ -29,7 +29,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
   useEffect(() => {
     const wait = async () => {
       if (curState === 2) {
-        await timeout(3000);
+        await timeout(1000);
         handlePage();
       }
     };
@@ -87,7 +87,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
             opacity: curState === 0 ? [0, 1] : curState === 2 ? 0 : 1,
             scale: curState === 0 ? [1, 1.1] : 1,
             top: curState === 1 ? '100px' : curState === 2 ? '100px' : '50%',
-            left: curState === 1 ? '50px' : curState === 2 ? '-200px' : '50%',
+            left: curState === 1 ? '50px' : curState === 2 ? '50px' : '50%',
             translateX: '-50%',
             translateY: '-50%',
 
@@ -148,7 +148,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                   transition={{
                     duration: 0.5,
                     ease: 'easeOut',
-                    delay: curState === 1 ? 1.5 : 0,
+                    delay: curState === 1 ? 2.3 : 0,
                   }}
                 />
                 <DownBar
@@ -159,7 +159,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                   transition={{
                     duration: 0.5,
                     ease: 'easeOut',
-                    delay: curState === 1 ? 1.5 : 0,
+                    delay: curState === 1 ? 2.3 : 0,
                   }}
                 />
               </LineWrapper>
@@ -290,7 +290,7 @@ const StartNumber = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0; */
+  opacity: 0;
   font-weight: bold;
 `;
 const EndNumber = styled(motion.div)`
@@ -299,7 +299,7 @@ const EndNumber = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0; */
+  opacity: 0;
   font-weight: bold;
   margin-right: 50px;
 `;
@@ -315,16 +315,21 @@ const Bar = styled(motion.hr)`
   align-items: center;
   width: 0%;
   border: 3px solid black;
+
+  opacity: 0;
+  background-color: black;
 `;
 const UpBar = styled(motion.hr)`
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
+  width: 0px;
   right: 0;
   border: 3px solid black;
+  background-color: black;
   transform: translate(16%, -180%) rotate(45deg);
+  opacity: 0;
 `;
 const DownBar = styled(motion.hr)`
   position: absolute;
@@ -335,9 +340,12 @@ const DownBar = styled(motion.hr)`
   right: 0;
   border: 3px solid black;
 
+  opacity: 0;
+  background-color: black;
   transform: translate(16%, 180%) rotate(-45deg);
 `;
 
+////////////////// second Title ////////////////////////
 const Wrapper = styled(motion.div)`
   position: absolute;
   display: flex;

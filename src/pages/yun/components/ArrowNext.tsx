@@ -8,7 +8,7 @@ export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
   return (
     <Wrapper
       animate={{
-        opacity: [0, 1, 0],
+        opacity: Display === 1 ? [0, 1, 0] : 0,
         display: Display === 1 ? 'flex' : 'none',
       }}
       transition={{
