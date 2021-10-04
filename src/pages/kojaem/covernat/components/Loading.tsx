@@ -1,14 +1,33 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { motion } from "framer-motion";
 
+// type Props = {
+//     setLoading: (loading:boolean) => void;
+// }
 
-export const Loading = () => (
+export const Loading = () => {
+    // const loading = useRef<HTMLSpanElement>(null);
+    // const height = loading.current?.clientHeight;
+
+    return (
     <LoadingWrapper>
-        <Colored />
-        <LoadingImage src="/koJaem/img/covernat/Covernat_logo.png" />
+        <Colored 
+            initial={{ height: 0 }}
+            animate={{ height: 60 }}
+            exit={{ opacity: 0 }}
+            // ref={loading}
+        />
 
+
+        <LoadingImage
+            src="/koJaem/img/covernat/Covernat_logo.png" 
+        />
     </LoadingWrapper>
-);
+
+    );
+
+};
 
 const LoadingWrapper = styled.div`
     position: relative;
@@ -19,12 +38,12 @@ const LoadingWrapper = styled.div`
     background-color:#d7d7d5;
 `;
 
-const Colored = styled.span`
+const Colored = styled(motion.span)`
     position: absolute;
     width: 240px;
     height: 0px;
-    bottom: 50%;
-    transition: height 1000ms linear;
+    bottom: 54%;
+    transition: height 2000ms linear;
     background-color: #37664d;
     :hover {
         //height: 100px; // 100px까지 애니메이션. hover 말고 그냥.
@@ -32,7 +51,7 @@ const Colored = styled.span`
 }
 `;
 
-const LoadingImage = styled.img`
+const LoadingImage = styled(motion.img)`
     position: absolute;
     bottom: 50%;
     left: 50%;
