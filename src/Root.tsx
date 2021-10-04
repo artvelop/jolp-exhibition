@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "pages/Home";
 import Dongchurl from "pages/dongchurl/Dongchurl";
-import Sanghun from "pages/sanghun/Sanghun";
+import Menu from "pages/sanghun/Menu";
 
 function Root() {
   return (
@@ -10,7 +10,7 @@ function Root() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/dongchurl" component={Dongchurl} />
-        <Route path="/sanghun" component={Sanghun} />
+        <Route path="/sanghunMenu" component={Menu} />
       </Switch>
     </BrowserRouter>
   );

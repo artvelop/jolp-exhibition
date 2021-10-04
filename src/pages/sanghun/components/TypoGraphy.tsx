@@ -60,7 +60,7 @@ export const TypoGraphy: React.FC<TypoGraphyProps> = ({
   return (
     <TypoGraphyText
       type={changeTypeFontSize}
-      color={color || "#fff"}
+      color={color || "black"}
       textAlign={textAlign || "left"}
       fontWeight={fontWeight || "normal"}
       fontHeight={fontHeight || "normal"}
