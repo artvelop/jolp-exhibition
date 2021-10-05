@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Layout, TypoGraphy, Footer } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
 import { randomWisdom } from "./dummy/wiseSaying";
+import "animate.css";
 
 const Menu: React.FC = () => {
   function onClick(): void {
@@ -35,14 +36,23 @@ const Menu: React.FC = () => {
       </Container>
 
       <Content>
-        <TypoGraphy type="Title" color="white" fontWeight="bold">
-          Books are the spring of wisdom.
-        </TypoGraphy>
+        <TitleAnimation>
+          <TypoGraphy type="Title" color="white" fontWeight="bold">
+            Books are the spring of wisdom.
+          </TypoGraphy>
+        </TitleAnimation>
         <Gap />
-        <TypoGraphy type="h3" color="gray" fontWeight="bold" textAlign="center">
-          책은 지혜의 원천이다.
-        </TypoGraphy>
-        <Gap />
+        <TitleAnimation>
+          <TypoGraphy
+            type="h3"
+            color="gray"
+            fontWeight="bold"
+            textAlign="center"
+          >
+            책은 지혜의 원천이다.
+          </TypoGraphy>
+          <Gap />
+        </TitleAnimation>
       </Content>
     </Layout>
   );
@@ -79,14 +89,10 @@ const Content = styled.div`
   width: 1400px;
   height: 300px;
   margin: 40px auto;
-  /* -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  border-radius: 20px; */
+`;
+const TitleAnimation = styled.span`
+  animation: flipInX;
+  /* animation: flipInY; */
+  animation-duration: 3s;
 `;
 export default Menu;
