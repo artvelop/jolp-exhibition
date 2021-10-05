@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
+import backImg from "../img/mikolaj-DCzpr09cTXY-unsplash.jpg";
+// import backImg from "../img/olga-tutunaru-JMATuFkXeHU-unsplash.jpg";
+// import backImg from "../img/cool-background.png";
+// import backImg from "../img/trianglify-lowres.png";
+// import backImg from "../img/janko-ferlic-sfL_QOnmy00-unsplash.jpg";
+// import backImg from "../img/thilak-mohan-C0eMifpRfQE-unsplash.jpg";
 
 export const Layout: React.FC = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
@@ -10,5 +16,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: auto; */
-  /* background-image: url("https://w.namu.la/s/0046a3917bac039ec6e100f9af018d00b4934d8fb93581a0731c9d9fbf71cfcc36b2f726c80e09e601cff7f830fea34ce5c8e5171f824c3752d1b4cec6624529fe3d6d27d620b975c2dc737ba3498ac817efb5f18db2bcb3a764617d02ad9980"); */
+  height: 100vh;
+  background-image: url(${backImg});
+  background-size: cover;
 `;

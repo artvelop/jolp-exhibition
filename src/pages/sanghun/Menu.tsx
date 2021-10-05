@@ -35,7 +35,7 @@ const Menu: React.FC = () => {
       </Container>
 
       <Content>
-        <TypoGraphy type="Title" fontWeight="bold">
+        <TypoGraphy type="Title" color="white" fontWeight="bold">
           Books are the spring of wisdom.
         </TypoGraphy>
         <Gap />
@@ -64,7 +64,7 @@ const Box = styled.div`
   }
 `;
 const Img = styled.img`
-  width: 100%;
+  width: 70%;
   cursor: pointer;
 `;
 const Gap = styled.div`
@@ -77,8 +77,8 @@ const Content = styled.div`
   align-items: center;
   user-select: none;
   width: 1400px;
-  height: 400px;
-  margin: 20px auto;
+  height: 300px;
+  margin: 40px auto;
   /* -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
     -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
     12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
