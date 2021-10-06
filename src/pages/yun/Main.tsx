@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Page1, Page2, Page3, Page4 } from './index';
+import { Page1, Page2, Page3, Page4, Page5 } from './index';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 export default function Main() {
@@ -18,6 +18,7 @@ export default function Main() {
       {pageNumber === 2 && <Page2 handlePage={handlePage} />}
       {pageNumber === 3 && <Page3 handlePage={handlePage} />}
       {pageNumber === 4 && <Page4 handlePage={handlePage} />}
+      {pageNumber === 5 && <Page5 handlePage={handlePage} />}
     </Section>
   );
 }
