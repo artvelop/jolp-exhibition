@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import React, { useState } from 'react';
 import { LayoutContainer } from '../components/LayoutContainer';
 import { Loading } from "./components/Loading";
@@ -7,15 +8,22 @@ type Props = {
 }
 
 const Covernat = ({selected, setSelected}:Props) => {
-  // const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   return (
   <LayoutContainer
     selected={selected}
     setSelected={setSelected}
   >
-    {/* {loading ? "" : <Loading setLoading={setLoading} />} */}
-    {/* <Loading setLoading={setLoading} /> */}
-    <Loading />
+    {isLoading ?
+    <CovernatWrapper>
+      로딩구현까지 완료!
+    </CovernatWrapper> 
+
+      : <Loading setIsLoading={setIsLoading} />}
+
+    
+    
+
     
 
     
@@ -24,3 +32,9 @@ const Covernat = ({selected, setSelected}:Props) => {
 };
 
 export default Covernat;
+
+const CovernatWrapper = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-color:#d7d7d5;
+`;

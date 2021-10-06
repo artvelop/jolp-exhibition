@@ -1,14 +1,30 @@
 import styled from '@emotion/styled';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from "framer-motion";
 
-// type Props = {
-//     setLoading: (loading:boolean) => void;
-// }
 
-export const Loading = () => {
-    // const loading = useRef<HTMLSpanElement>(null);
+type Props = {
+    setIsLoading: (loading:boolean) => void;
+}
+
+export const Loading = ({setIsLoading}:Props) => {
+    const loadingRef = useRef<HTMLSpanElement>(null);
+    const imageRef = useRef<HTMLImageElement>(null);
     // const height = loading.current?.clientHeight;
+    useEffect(() => {
+        const tick = setTimeout(() => {
+            loadingRef.current!.style.opacity = '0';
+            imageRef.current!.style.opacity = '0';
+        }, 3000)
+        return () => clearTimeout(tick);
+    },[])
+
+    useEffect(() => {
+        const tick = setTimeout(() => {
+            setIsLoading(true);
+        }, 4000)
+        return () => clearTimeout(tick);
+    },[])
 
     return (
     <LoadingWrapper>
@@ -16,12 +32,13 @@ export const Loading = () => {
             initial={{ height: 0 }}
             animate={{ height: 60 }}
             exit={{ opacity: 0 }}
-            // ref={loading}
+            ref={loadingRef}
         />
 
 
         <LoadingImage
-            src="/koJaem/img/covernat/Covernat_logo.png" 
+            src="/koJaem/img/covernat/Covernat_logo.png"
+            ref={imageRef}
         />
     </LoadingWrapper>
 
@@ -43,11 +60,8 @@ const Colored = styled(motion.span)`
     width: 240px;
     height: 0px;
     bottom: 54%;
-    transition: height 2000ms linear;
+    transition: height 2000ms, opacity 300ms linear;
     background-color: #37664d;
-    :hover {
-        //height: 100px; // 100px까지 애니메이션. hover 말고 그냥.
-    }
 }
 `;
 
@@ -56,5 +70,6 @@ const LoadingImage = styled(motion.img)`
     bottom: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: opacity 1500ms linear;
 `;
 
