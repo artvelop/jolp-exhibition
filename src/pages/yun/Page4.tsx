@@ -15,7 +15,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
 
   useEffect(() => {
     const wait2 = async () => {
-      await timeout(3000);
+      await timeout(4000);
       setNextButton(1);
     };
     wait2();
@@ -40,29 +40,135 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
-        <MapWrapper
-          animate={{ scale: [30, 1] }}
+        <ImgSection>
+          <JackImg
+            animate={{
+              opacity: curState === 0 ? [0, 1] : 1,
+              y: '-160px',
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+              delay: curState === 0 ? 1 : 0,
+            }}
+          />
+          <BarWrapper>
+            <WidthBar
+              animate={{
+                opacity: curState === 0 ? [0, 1] : 0,
+                width: '180px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 2 : 0,
+              }}
+            />
+            <HeightBar
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                height: '80px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            />
+            <ImgText
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                marginTop: '20px',
+                marginBottom: '20px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            >
+              맥아, 밀
+            </ImgText>
+
+            <MiddleWidthBar
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                width: '50px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            />
+            <MiddleHeightBar
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                height: '180px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            />
+            <ImgText
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                marginTop: '20px',
+                marginBottom: '20px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            >
+              옥수수
+            </ImgText>
+            <HeightBar
+              animate={{
+                display: 'flex',
+                opacity: curState === 0 ? [0, 1] : 0,
+                height: '80px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 3 : 0,
+              }}
+            />
+            <WidthBar
+              animate={{
+                opacity: curState === 0 ? [0, 1] : 0,
+                width: '180px',
+              }}
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+                delay: curState === 0 ? 2 : 0,
+              }}
+            />
+          </BarWrapper>
+        </ImgSection>
+        <TitleSection
+          animate={{ opacity: curState === 0 ? [0, 1] : 0, y: '-50px ' }}
           transition={{
             duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 1 : 0,
-          }}
-        />
-        <TitleWrapper
-          animate={{ display: 'flex', opacity: curState === 0 ? [0, 1] : 0, y: '-50px ' }}
-          transition={{
-            duration: 1,
-            ease: 'easeOut',
-            delay: curState === 0 ? 2 : 0,
+            delay: curState === 0 ? 4 : 0,
           }}
         >
-          <MainTitle>세계 160개국 수출</MainTitle>
-          <SubTitle1>연간 생산량 1년에 2억병</SubTitle1>
+          <Title>자신있는 완벽한 비율</Title>
+          <SubTitle>옥수수 51% 맥아, 밀...</SubTitle>
+        </TitleSection>
 
-          <SubTitle2>매출 약 4조 6천억</SubTitle2>
-        </TitleWrapper>
-
-        <ArrowNext NextPage={NextPage} Color={'white'} Display={nextButton} />
+        <ArrowNext NextPage={NextPage} Color={'black'} Display={nextButton} />
       </Background>
     </LayoutContainer>
   );
@@ -70,56 +176,99 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
 
 const Background = styled(motion.div)`
   position: relative;
-
   width: 100vw;
   height: 100vh;
-  background-color: rgba(15, 176, 211, 1);
+  background-color: rgba(253, 224, 223, 1);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+`;
+const ImgSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+`;
+
+const JackImg = styled(motion.div)`
+  background: url('/yun/img/jack.png');
+  object-fit: cover;
+  width: 315px;
+  height: 870px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  opacity: 0;
+`;
+const BarWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+`;
+const WidthBar = styled(motion.hr)`
+  width: 0px;
+  border: 2px solid black;
+  opacity: 0;
+  background-color: black;
+  margin: 0;
+`;
+const HeightBar = styled(motion.hr)`
+  display: none;
+  margin: 0;
+  width: 1px;
+  height: 0;
+  border: 1px solid black;
+  opacity: 0;
+  background-color: black;
+  margin-right: 50px;
+`;
+const MiddleWidthBar = styled(motion.hr)`
+  display: none;
+  position: absolute;
+  margin: 0;
+  width: 0px;
+  border: 1px solid black;
+  opacity: 0;
+  background-color: black;
+  margin-right: 25px;
+  transform: rotate(0deg);
+`;
+const MiddleHeightBar = styled(motion.hr)`
+  display: none;
+  margin: 0;
+  width: 1px;
+  height: 0px;
+  border: 1px solid black;
+  opacity: 0;
+  background-color: black;
+  margin-right: 50px;
+`;
+
+const ImgText = styled(motion.div)`
+  display: none;
+  font-size: 40px;
+  font-weight: bold;
+
+  opacity: 0;
+`;
+///////////// title //////////////
+const TitleSection = styled(motion.div)`
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 50%;
+
   opacity: 0;
 `;
 
-const MapWrapper = styled(motion.div)`
-  background: url('/yun/img/map.png');
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-  width: 800px;
-  height: 480px;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
-
-const TitleWrapper = styled(motion.div)`
-  color: white;
-  margin-top: 50px;
-
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const MainTitle = styled(motion.div)`
+const Title = styled(motion.div)`
   font-size: 50px;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
 `;
-const SubTitle1 = styled(motion.div)`
+const SubTitle = styled(motion.div)`
+  margin-top: 30px;
   font-size: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SubTitle2 = styled(motion.div)`
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
