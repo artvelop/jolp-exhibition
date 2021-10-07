@@ -46,6 +46,7 @@ export const MenuList = ({color, isSelected, onClick, menuItem}: Props) => {
   }
 
 const MenuItem = styled.li`
+  list-style: none;
   width: 100px;
   height: 30px;
   text-align: center;
