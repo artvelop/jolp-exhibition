@@ -15,7 +15,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
 
   useEffect(() => {
     const wait2 = async () => {
-      await timeout(3000);
+      await timeout(3500);
       setNextButton(1);
     };
     wait2();
@@ -59,7 +59,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
           <MainTitle>세계 160개국 수출</MainTitle>
           <SubTitle1>연간 생산량 1년에 2억병</SubTitle1>
 
-          <SubTitle2>매출 약 4조 6천억</SubTitle2>
+          <SubTitle2>매출 약 4조 6천억원</SubTitle2>
         </TitleWrapper>
 
         <ArrowNext NextPage={NextPage} Color={'white'} Display={nextButton} />

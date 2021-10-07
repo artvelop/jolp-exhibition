@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdNavigateNext } from 'react-icons/md';
+import { BiDrink } from 'react-icons/bi';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
@@ -8,19 +8,19 @@ export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
   return (
     <Wrapper
       animate={{
-        opacity: Display === 1 ? [0, 1, 0] : 0,
+        opacity: Display === 1 ? 1 : 0,
         display: Display === 1 ? 'flex' : 'none',
       }}
       transition={{
-        duration: 1,
+        duration: 0,
         ease: 'linear',
-        repeat: Infinity,
         delay: 0,
       }}
+      whileHover={{ scale: 1.1 }}
       // onClick={NextPage}
       onTap={NextPage}
     >
-      <MdNavigateNext style={ButtonStyle} color={Color} />
+      <BiDrink style={ButtonStyle} color={Color} />
     </Wrapper>
   );
 };
@@ -31,6 +31,7 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   bottom: 10px;
+  opacity: 0;
 `;
 
-const ButtonStyle = { fontSize: '70px', cursor: 'pointer', transform: ' rotate(90deg)' };
+const ButtonStyle = { fontSize: '60px', cursor: 'pointer' };

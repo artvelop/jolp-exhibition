@@ -15,7 +15,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
 
   useEffect(() => {
     const wait2 = async () => {
-      await timeout(4000);
+      await timeout(4500);
       setNextButton(1);
     };
     wait2();
@@ -199,6 +199,7 @@ const JackImg = styled(motion.div)`
   background-repeat: no-repeat;
   background-size: cover;
 
+  filter: drop-shadow(16px 16px 10px);
   opacity: 0;
 `;
 const BarWrapper = styled.div`

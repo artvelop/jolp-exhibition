@@ -32,43 +32,47 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           ease: 'easeOut',
         }}
       >
-        <Wrapper>
+        <Wrapper
+          animate={{
+            opacity: curState === 0 ? 1 : 0,
+            x: curState === 0 ? 0 : '200px',
+          }}
+          transition={{
+            duration: 1,
+            ease: 'easeOut',
+          }}
+        >
           <TitleImg
             animate={{
               opacity: curState === 0 ? 1 : 0,
-              x: curState === 0 ? 0 : '200px',
             }}
             transition={{
               duration: 1,
               ease: 'easeOut',
             }}
-            onClick={NextPage}
           />
           <Start
             animate={{
               opacity: curState === 0 ? [1, 0, 1] : 0,
-              x: curState === 0 ? 0 : '200px',
-              cursor: PageLock == 1 ? 'default' : 'pointer',
+              cursor: PageLock === 1 ? 'default' : 'pointer',
             }}
             transition={{
-              duration: 1,
+              duration: 3,
               ease: 'easeOut',
               repeat: curState === 0 ? Infinity : undefined,
             }}
             onClick={NextPage}
           >
-            Click To Start
+            잭다니엘 알아보기
           </Start>
           <Exit
             animate={{
               opacity: curState === 0 ? 1 : 0,
-              x: curState === 0 ? 0 : '200px',
             }}
             transition={{
               duration: 1,
               ease: 'easeOut',
             }}
-            onClick={NextPage}
           >
             Exit
           </Exit>
@@ -85,7 +89,7 @@ const BackgroundImg = styled(motion.div)`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   margin-right: 80px;
   height: 100%;
   display: flex;

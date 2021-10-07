@@ -60,7 +60,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
             transition={{
               duration: 1,
               ease: 'easeOut',
-              delay: curState === 0 ? 2 : 0,
+              delay: curState === 0 ? 1 : 0,
             }}
           >
             테네시위스키의 자존심
@@ -75,7 +75,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
             transition={{
               duration: 1,
               ease: 'easeOut',
-              delay: curState === 0 ? 2 : 0,
+              delay: curState === 0 ? 1 : 0,
             }}
           >
             잭 다니엘 Old No.7
@@ -85,19 +85,21 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
         <JackImg
           animate={{
             opacity: curState === 0 ? [0, 1] : curState === 2 ? 0 : 1,
-            scale: curState === 0 ? [1, 1.1] : 1,
+            scale: curState === 0 ? 1.1 : 1,
             top: curState === 1 ? '100px' : curState === 2 ? '100px' : '50%',
             left: curState === 1 ? '50px' : curState === 2 ? '50px' : '50%',
             translateX: '-50%',
             translateY: '-50%',
-
+            cursor: curState === 0 ? 'pointer' : 'default',
             rotate: curState === 1 ? 90 : curState === 2 ? 90 : undefined,
           }}
           transition={{
             duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 1 : 0,
+            delay: 0,
           }}
+          whileHover={{ scale: curState === 0 ? 1.2 : 1 }}
+          onClick={() => curState === 0 && NextPage()}
         />
         {(curState === 1 || curState === 2) && (
           <Section>
@@ -195,7 +197,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
           </Section>
         )}
 
-        <ArrowNext NextPage={NextPage} Color={'black'} Display={nextButton} />
+        {curState === 1 && <ArrowNext NextPage={NextPage} Color={'black'} Display={nextButton} />}
       </Background>
     </LayoutContainer>
   );
@@ -258,7 +260,7 @@ const JackImg = styled(motion.div)`
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
-
+  filter: drop-shadow(16px 16px 10px black);
   opacity: 0;
 `;
 /////////////////////////////////////////
