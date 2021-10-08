@@ -9,20 +9,36 @@ type Props = {
 }
 
 const transition = {
-  duration: 1
+  duration: 1,
 }
 const imageVariants = {
-  exit: { x: "-10%", opacity: 0, transition},
-  enter: {
+  hidden: { x: "-10%", opacity: 0, transition},
+  show: {
     x: "0%",
     opacity: 1,
     transition
   }
 }
+
 const descriptionVariants = {
-  exit: { y: "50%", opacity: 0, transition },
-  enter: {
-    y: "0%",
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      when:"beforeChildren",
+      staggerChildren: 1,
+      ...transition}
+  }
+}
+
+const descriptionContents = {
+  hidden:{
+    y: 50,
+    opacity: 0,
+    transition
+  },
+  show: {
+    y: 0,
     opacity: 1,
     transition
   }
@@ -41,16 +57,18 @@ const Covernat = ({selected, setSelected}:Props) => {
       src={`/koJaem/img/Covernat.jpg`}
       alt="brand"
       variants={imageVariants}
-      initial="exit"
-      animate="enter"
+      initial="hidden"
+      animate="show"
       />
       <Description
       variants={descriptionVariants}
-      initial="exit"
-      animate="enter"
+      initial="hidden"
+      animate="show"
       >
-      <BrandName>Covernat</BrandName>
-      <Intro>커버낫에 대한 설명</Intro>
+      <BrandName variants={descriptionContents}
+      >Covernat</BrandName>
+      <Intro variants={descriptionContents}
+      >커버낫에 대한 설명</Intro>
       </Description>
     </CovernatWrapper> 
 
@@ -85,10 +103,9 @@ const Description = styled(motion.div)`
   width: 50vw;
   display:flex;
   flex-direction: column;
-  text-align: center;
-  
+  text-align: center;  
 `;
-const BrandName = styled.h1`
+const BrandName = styled(motion.h1)`
   font-size: 30px;
   color: white;
 
@@ -108,7 +125,7 @@ const BrandName = styled.h1`
 }
 `;
 
-const Intro = styled.h1`
+const Intro = styled(motion.h1)`
   font-size: 20px;
 
   @media screen and (min-width: 600px) {
