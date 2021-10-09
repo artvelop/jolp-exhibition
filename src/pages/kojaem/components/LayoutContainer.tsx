@@ -13,6 +13,7 @@ const colors: string[] = [
   '#c08bc7',
 ];
 
+
 type Props = {
   selected: string
   setSelected: (link:string) => void
