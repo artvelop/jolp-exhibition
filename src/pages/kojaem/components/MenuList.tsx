@@ -1,49 +1,45 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const spring: {
-    type: string;
-    stiffness: number;
-    damping: number;
-    mass: number;
-  } = {
-    type: 'spring',
-    stiffness: 500,
-    damping: 30,
-    mass: 1, // 무게조절
-  };
-  
-  
-  type Props = {
-    color: string;
-    isSelected: boolean;
-    onClick: () => void;
-    menuItem: string;
-  };
-  
-export const MenuList = ({color, isSelected, onClick, menuItem}: Props) => {
-    return (
-      <>
-        <MenuItem
-          onClick={onClick}
-          style={{ backgroundColor: color }}
-        >
-          <MenuItemLink exact to={`/kojaem/${menuItem}`}>
-            {menuItem}
-          </MenuItemLink>
-          {isSelected && (
-            <Outline
-              layoutId="outline"
-              initial={false}
-              animate={{ borderColor: color }}
-              transition={spring}
-            />
-          )}
-        </MenuItem>
-      </>
-    );
-  }
+  type: string;
+  stiffness: number;
+  damping: number;
+  mass: number;
+} = {
+  type: "spring",
+  stiffness: 500,
+  damping: 30,
+  mass: 1,
+};
+
+type Props = {
+  color: string;
+  isSelected: boolean;
+  onClick: () => void;
+  menuItem: string;
+};
+
+export const MenuList = ({ color, isSelected, onClick, menuItem }: Props) => {
+  return (
+    <>
+      <MenuItem onClick={onClick} style={{ backgroundColor: color }}>
+        <MenuItemLink exact to={`/kojaem/${menuItem}`}>
+          {menuItem}
+        </MenuItemLink>
+        {isSelected && (
+          <Outline
+            layoutId="outline"
+            initial={false}
+            animate={{ borderColor: color }}
+            transition={spring}
+          />
+        )}
+      </MenuItem>
+    </>
+  );
+};
 
 const MenuItem = styled.li`
   list-style: none;
@@ -57,7 +53,6 @@ const MenuItem = styled.li`
   cursor: pointer;
   border-radius: 4px;
 `;
-
 
 const MenuItemLink = styled(NavLink)`
   position: absolute;
