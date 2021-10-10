@@ -16,7 +16,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: auto; */
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url(${backImg});
+  background-attachment: fixed;
   background-size: cover;
 `;

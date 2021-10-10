@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Layout, TypoGraphy, Footer } from "./components";
+import { TypoGraphy } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
 import { randomWisdom } from "./dummy/wiseSaying";
+
+// import backImg from "../img/mikolaj-DCzpr09cTXY-unsplash.jpg";
+import backImg from "../sanghun/img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import "animate.css";
 
 const Menu: React.FC = () => {
@@ -11,7 +14,8 @@ const Menu: React.FC = () => {
     // 페이지 이동 추가할 예정
   }
   return (
-    <Layout>
+    // <Layout>
+    <DDD>
       <Container>
         <Box onClick={onClick}>
           {" "}
@@ -34,7 +38,6 @@ const Menu: React.FC = () => {
           <Img src={talkGod.imgSrc} />
         </Box>
       </Container>
-
       <Content>
         <TitleAnimation>
           <TypoGraphy type="Title" color="white" fontWeight="bold">
@@ -54,7 +57,8 @@ const Menu: React.FC = () => {
           <Gap />
         </TitleAnimation>
       </Content>
-    </Layout>
+    </DDD>
+    // </Layout>
   );
 };
 
@@ -88,11 +92,15 @@ const Content = styled.div`
   user-select: none;
   width: 1400px;
   height: 300px;
-  margin: 40px auto;
+  margin: 36px auto;
 `;
 const TitleAnimation = styled.span`
   animation: flipInX;
-  /* animation: flipInY; */
   animation-duration: 3s;
+`;
+const DDD = styled.div`
+  padding: 0.54%;
+  background-size: cover;
+  background-image: url(${backImg});
 `;
 export default Menu;
