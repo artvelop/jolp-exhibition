@@ -9,11 +9,6 @@ type Props = {
   selected: string;
   setSelected: (link: string) => void;
 };
-
-const transition = {
-  duration: 1,
-};
-
 const Covernat = ({ selected, setSelected }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   return (
