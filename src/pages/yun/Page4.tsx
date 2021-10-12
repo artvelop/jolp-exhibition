@@ -261,7 +261,6 @@ const TitleSection = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   width: 50%;
-
   opacity: 0;
 `;
 

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Page1, Page2, Page3, Page4, Page5 } from './index';
+import { Page1, Page2, Page3, Page4, Page5, Page6 } from './index';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 export default function Main() {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(4);
   const handlePage = () => {
     setPageNumber((pageNumber) => pageNumber + 1);
   };
   return (
     <Section
       animate={{
-        background: pageNumber === 2 ? 'white' : pageNumber === 3 ? 'rgba(253, 224, 223, 1)' : 'black',
+        background: pageNumber === 2 || pageNumber === 5 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgba(253, 224, 223, 1)' : 'black',
       }}
       transition={{ delay: 2 }}
     >
@@ -19,6 +19,7 @@ export default function Main() {
       {pageNumber === 3 && <Page3 handlePage={handlePage} />}
       {pageNumber === 4 && <Page4 handlePage={handlePage} />}
       {pageNumber === 5 && <Page5 handlePage={handlePage} />}
+      {pageNumber === 6 && <Page6 handlePage={handlePage} />}
     </Section>
   );
 }
