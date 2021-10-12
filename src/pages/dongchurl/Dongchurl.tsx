@@ -1,5 +1,6 @@
 import React from 'react';
-import { Intro, LayoutContainer, Step1, StepLayout } from './components';
+import { Intro, LayoutContainer, StepLayout } from './components';
+import { Step1 } from './components/Step1';
 
 const Dongchurl = () => {
   return (
