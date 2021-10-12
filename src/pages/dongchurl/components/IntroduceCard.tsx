@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import { TyphoGraphy } from './TyphoGraphy';
 
-const options = { threshold: 1.0 };
+const options = { threshold: 0.2 };
 
 type Props = {
   title: string;
@@ -15,7 +15,11 @@ export const IntroduceCard: React.FC<Props> = ({ children, title }) => {
 
   useEffect(() => {
     const io = new IntersectionObserver(([enteries], observer) => {
-      setVisible(enteries.isIntersecting);
+      if (enteries.isIntersecting) {
+        setVisible(true);
+      } else if (enteries.intersectionRatio < 0.2) {
+        setVisible(false);
+      }
     }, options);
 
     if (target.current !== null) {
