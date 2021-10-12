@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
+import { TyphoGraphy } from './TyphoGraphy';
 
 const options = { threshold: 1.0 };
 
-export const ShowCard: React.FC = () => {
+type Props = {
+  title: string;
+};
+
+export const IntroduceCard: React.FC<Props> = ({ children, title }) => {
   const [visible, setVisible] = useState(false);
   const target = useRef<HTMLDivElement>(null);
 
@@ -20,14 +25,25 @@ export const ShowCard: React.FC = () => {
 
   return (
     <Wrapper ref={target}>
-      <TextMotion
+      <Title
         animate={{
           scale: [0, 1],
-          rotateY: [0, 360, 0],
           opacity: visible ? [0, 1] : [1, 0],
         }}>
-        범인
-      </TextMotion>
+        <TyphoGraphy type="Title" textAlign="center" color="#000">
+          {title}
+        </TyphoGraphy>
+      </Title>
+      <Content
+        animate={{
+          scale: [0, 1],
+          opacity: visible ? [0, 1] : [1, 0],
+        }}
+        transition={{ delay: visible ? 0.5 : 0 }}>
+        <TyphoGraphy type="h1" textAlign="center" color="#000" fontHeight="1.5">
+          {children}
+        </TyphoGraphy>
+      </Content>
     </Wrapper>
   );
 };
@@ -38,9 +54,14 @@ const Wrapper = styled.div`
   margin-right: auto;
 `;
 
-const TextMotion = styled(motion.div)`
+const Title = styled(motion.div)`
   opacity: 1;
-  font-size: 400px;
-  font-weight: bold;
-  color: #000;
+  width: 100%;
+`;
+
+const Content = styled(motion.div)`
+  margin-top: 80px;
+  margin-bottom: 80px;
+  opacity: 1;
+  width: 100%;
 `;
