@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import { useState } from "react";
 import { LayoutContainer } from "../components/LayoutContainer";
 import { Loading } from "./components/Loading";
-import { motion } from "framer-motion";
 import { Description } from "./components/Description";
 
 type Props = {

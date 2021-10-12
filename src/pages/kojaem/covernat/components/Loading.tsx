@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 type Props = {
@@ -15,14 +15,14 @@ export const Loading = ({ setIsLoading }: Props) => {
       imageRef.current!.style.opacity = "0";
     }, 3000);
     return () => clearTimeout(tick);
-  }, []);
+  });
 
   useEffect(() => {
     const tick = setTimeout(() => {
       setIsLoading(true);
     }, 4000);
     return () => clearTimeout(tick);
-  }, []);
+  });
 
   return (
     <LoadingWrapper>

@@ -1,15 +1,12 @@
 import styled from "@emotion/styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef, useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import { THookReturn, useKeenSlider } from "keen-slider/react";
 
 export const ImageBanner = () => {
-  const [sliderRef]: any = useKeenSlider({
+  const [sliderRef]: THookReturn<HTMLDivElement> = useKeenSlider({
     slidesPerView: 4,
     spacing: 10,
-    mode: "free",
+    loop: true,
   });
 
   return (
@@ -49,6 +46,7 @@ export const ImageBanner = () => {
 
 const ImageUl = styled(motion.div)`
   margin-top: 200px;
+  width: 100vw;
 `;
 
-const Image = styled.img``;
+const Image = styled(motion.img)``;
