@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/jolp-exhibition/static/css/main.3c244b95.chunk.css",
-    "main.js": "/jolp-exhibition/static/js/main.a61dcd55.chunk.js",
-    "main.js.map": "/jolp-exhibition/static/js/main.a61dcd55.chunk.js.map",
+    "main.js": "/jolp-exhibition/static/js/main.e8616fcf.chunk.js",
+    "main.js.map": "/jolp-exhibition/static/js/main.e8616fcf.chunk.js.map",
     "runtime-main.js": "/jolp-exhibition/static/js/runtime-main.9f092d80.js",
     "runtime-main.js.map": "/jolp-exhibition/static/js/runtime-main.9f092d80.js.map",
     "static/css/2.bded3b46.chunk.css": "/jolp-exhibition/static/css/2.bded3b46.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.bded3b46.chunk.css",
     "static/js/2.43d448e2.chunk.js",
     "static/css/main.3c244b95.chunk.css",
-    "static/js/main.a61dcd55.chunk.js"
+    "static/js/main.e8616fcf.chunk.js"
   ]
 }
