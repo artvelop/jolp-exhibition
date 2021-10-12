@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { TagCard } from './TagCard';
 import { motion } from 'framer-motion';
 
-const options = { threshold: 1.0 };
+const options = { threshold: 0.2 };
 
 export const Step1Box = () => {
   const [visible, setVisible] = useState(false);
@@ -11,7 +11,11 @@ export const Step1Box = () => {
 
   useEffect(() => {
     const io = new IntersectionObserver(([enteries], observer) => {
-      setVisible(enteries.isIntersecting);
+      if (enteries.isIntersecting) {
+        setVisible(true);
+      } else if (enteries.intersectionRatio < 0.2) {
+        setVisible(false);
+      }
     }, options);
 
     if (target.current !== null) {
@@ -116,6 +120,18 @@ const Content = styled.div`
   position: relative;
   width: 1178px;
   display: flex;
+`;
+
+const SubTitle = styled(motion.div)`
+  margin-top: 80px;
+  margin-bottom: 80px;
+  opacity: 1;
+  width: 100%;
+`;
+
+const Title = styled(motion.div)`
+  opacity: 1;
+  width: 100%;
 `;
 
 const Gap = styled(motion.div)`
