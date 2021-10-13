@@ -7,7 +7,7 @@ import KojaemRouter from './pages/kojaem/KojaemRouter';
 
 function Root() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/dongchurl" component={Dongchurl} />
