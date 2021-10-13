@@ -3,16 +3,20 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
-
+// import { ShowImg } from './components/page7';
 type Props = { handlePage: () => void };
 export const Page7: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  //name: number; imgX: number; imgY: number; imgW: number; imgH: number
+  // const imgData = [
+  //   { name: 1, imgX: 0, imgY: 0, imgW: 100, imgH: 100 },
+  //   { name: 2, imgX: 10, imgY: 0, imgW: 100, imgH: 100 },
+  // ];
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
-  const w = 'white';
-  const r = 'rgba(244, 70, 70, 1)';
+
   useEffect(() => {
     const wait2 = async () => {
       await timeout(3000);
@@ -41,6 +45,7 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
+        {}
         <TitleSection
           animate={{
             opacity: curState === 0 ? [0, 1] : 0,

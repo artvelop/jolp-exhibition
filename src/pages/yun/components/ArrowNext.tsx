@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiDrink } from 'react-icons/bi';
+import { VscDebugBreakpointLog } from 'react-icons/vsc';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
@@ -16,11 +16,12 @@ export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
         ease: 'linear',
         delay: 0,
       }}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.3 }}
+      whileTap={{ scale: 1 }}
       // onClick={NextPage}
       onTap={NextPage}
     >
-      <BiDrink style={ButtonStyle} color={Color} />
+      <VscDebugBreakpointLog style={ButtonStyle} color={Color} />
     </Wrapper>
   );
 };
