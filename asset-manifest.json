@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/jolp-exhibition/static/css/main.3c244b95.chunk.css",
+    "main.js": "/jolp-exhibition/static/js/main.71e55442.chunk.js",
+    "main.js.map": "/jolp-exhibition/static/js/main.71e55442.chunk.js.map",
+    "runtime-main.js": "/jolp-exhibition/static/js/runtime-main.5f838fb5.js",
+    "runtime-main.js.map": "/jolp-exhibition/static/js/runtime-main.5f838fb5.js.map",
+    "static/js/2.54f3ebf6.chunk.js": "/jolp-exhibition/static/js/2.54f3ebf6.chunk.js",
+    "static/js/2.54f3ebf6.chunk.js.map": "/jolp-exhibition/static/js/2.54f3ebf6.chunk.js.map",
+    "static/js/3.ba862a97.chunk.js": "/jolp-exhibition/static/js/3.ba862a97.chunk.js",
+    "static/js/3.ba862a97.chunk.js.map": "/jolp-exhibition/static/js/3.ba862a97.chunk.js.map",
+    "index.html": "/jolp-exhibition/index.html",
+    "static/css/main.3c244b95.chunk.css.map": "/jolp-exhibition/static/css/main.3c244b95.chunk.css.map",
+    "static/js/2.54f3ebf6.chunk.js.LICENSE.txt": "/jolp-exhibition/static/js/2.54f3ebf6.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/jolp-exhibition/static/media/RIDIBatang.80d8670c.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f838fb5.js",
+    "static/js/2.54f3ebf6.chunk.js",
+    "static/css/main.3c244b95.chunk.css",
+    "static/js/main.71e55442.chunk.js"
+  ]
+}
