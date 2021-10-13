@@ -1,39 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { TypoGraphy } from "./components";
+import { TypoGraphy, SanghunModal } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
 import { randomWisdom } from "./dummy/wiseSaying";
-
 // import backImg from "../img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import backImg from "../sanghun/img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import "animate.css";
 
 const Menu: React.FC = () => {
-  function onClick(): void {
-    alert(randomWisdom());
-    // 페이지 이동 추가할 예정
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [adress, setAdress] = useState<string>("");
+
+  function linkToDetail(): void {
+    // history.push(`/sanghun/${adress}`);
+    console.log("이동 할거야");
   }
   return (
     // <Layout>
     <DDD>
       <Container>
-        <Box onClick={onClick}>
+        <Box
+          onClick={() => {
+            setModalIsOpen(true);
+            setAdress(philosophy.address);
+          }}
+        >
           {" "}
           <Img src={philosophy.imgSrc} />
         </Box>
-        <Box onClick={onClick}>
+        <Box
+          onClick={() => {
+            setModalIsOpen(true);
+            setAdress(myself.address);
+          }}
+        >
           {" "}
           <Img src={myself.imgSrc} />
         </Box>
-        <Box onClick={onClick}>
+        <Box
+          onClick={() => {
+            setModalIsOpen(true);
+            setAdress(harvard.address);
+          }}
+        >
           {" "}
           <Img src={harvard.imgSrc} />
         </Box>
-        <Box onClick={onClick}>
+        <Box
+          onClick={() => {
+            setModalIsOpen(true);
+            setAdress(live.address);
+          }}
+        >
           {" "}
           <Img src={live.imgSrc} />
         </Box>
-        <Box onClick={onClick}>
+        <Box
+          onClick={() => {
+            setModalIsOpen(true);
+            setAdress(talkGod.address);
+          }}
+        >
           {" "}
           <Img src={talkGod.imgSrc} />
         </Box>
@@ -57,6 +84,12 @@ const Menu: React.FC = () => {
           <Gap />
         </TitleAnimation>
       </Content>
+      <SanghunModal
+        modalIsOpen={modalIsOpen}
+        closeModal={() => setModalIsOpen(!modalIsOpen)}
+        text={randomWisdom()}
+        linkToDetail={linkToDetail}
+      />
     </DDD>
     // </Layout>
   );
