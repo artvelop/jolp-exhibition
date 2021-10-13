@@ -122,19 +122,8 @@ const Content = styled.div`
   display: flex;
 `;
 
-const SubTitle = styled(motion.div)`
-  margin-top: 80px;
-  margin-bottom: 80px;
-  opacity: 1;
-  width: 100%;
-`;
-
-const Title = styled(motion.div)`
-  opacity: 1;
-  width: 100%;
-`;
-
 const Gap = styled(motion.div)`
   height: 500px;
-  background-image: url('/dongchurl/img/step1/domtreedivider.png');
+  background-image: url(${process.env.PUBLIC_URL +
+  '/dongchurl/img/step1/domtreedivider.png'});
 `;

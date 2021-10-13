@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import Home from 'pages/Home';
-import Dongchurl from 'pages/dongchurl/Dongchurl';
-import Yun from 'pages/yun/Main';
-import KojaemRouter from 'pages/kojaem/KojaemRouter';
+import Home from './pages/Home';
+import Dongchurl from './pages/dongchurl/Dongchurl';
+import Yun from './pages/yun/Main';
+import KojaemRouter from './pages/kojaem/KojaemRouter';
 
 function Root() {
   return (
