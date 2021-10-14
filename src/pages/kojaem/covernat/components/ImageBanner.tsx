@@ -8,11 +8,12 @@ type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const ImageBanner = () => {
   const [pause, setPause] = useState(false);
 
-  const timer: any = useRef(null);
+  const timer = useRef<NodeJS.Timeout>();
 
   const [sliderRef, slider]: sliderType = useKeenSlider({
     slidesPerView: 4,
     spacing: 10,
+    mode: "free",
     loop: true,
     duration: 1500,
     dragStart: () => {
@@ -39,7 +40,7 @@ export const ImageBanner = () => {
       }
     }, 2000);
     return () => {
-      clearInterval(timer.current);
+      clearInterval(timer.current as NodeJS.Timeout);
     };
   }, [pause, slider]);
 
