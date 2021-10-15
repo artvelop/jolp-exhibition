@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
+import { SlideImage } from "./SlideImage";
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const ImageBanner = () => {
@@ -25,20 +26,11 @@ export const ImageBanner = () => {
   });
 
   useEffect(() => {
-    sliderRef.current!.addEventListener("mouseover", () => {
-      setPause(true);
-    });
-    sliderRef.current!.addEventListener("mouseout", () => {
-      setPause(false);
-    });
-  }, [sliderRef]);
-
-  useEffect(() => {
     timer.current = setInterval(() => {
       if (!pause && slider) {
         slider.next();
       }
-    }, 2000);
+    }, 1500);
     return () => {
       clearInterval(timer.current as NodeJS.Timeout);
     };
@@ -55,25 +47,30 @@ export const ImageBanner = () => {
         duration: 1,
       }}
     >
-      <Image
+      <SlideImage
         className="keen-slider__slide number-slide1"
         src="/koJaem/img/covernat/roll_01.jpg"
+        setPause={setPause}
       />
-      <Image
+      <SlideImage
         className="keen-slider__slide number-slide2"
         src="/koJaem/img/covernat/roll_02.jpg"
+        setPause={setPause}
       />
-      <Image
+      <SlideImage
         className="keen-slider__slide number-slide3"
         src="/koJaem/img/covernat/roll_03.jpg"
+        setPause={setPause}
       />
-      <Image
+      <SlideImage
         className="keen-slider__slide number-slide4"
         src="/koJaem/img/covernat/roll_04.jpg"
+        setPause={setPause}
       />
-      <Image
+      <SlideImage
         className="keen-slider__slide number-slide5"
         src="/koJaem/img/covernat/roll_05.jpg"
+        setPause={setPause}
       />
     </ImageUl>
   );
@@ -83,5 +80,3 @@ const ImageUl = styled(motion.div)`
   margin-top: 200px;
   width: 100vw;
 `;
-
-const Image = styled(motion.img)``;
