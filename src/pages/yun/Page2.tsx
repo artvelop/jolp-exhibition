@@ -253,7 +253,7 @@ const RightTitle = styled(motion.div)`
 `;
 
 const JackImg = styled(motion.div)`
-  background: url('/yun/img/jack.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/jack.png');
   position: absolute;
   object-fit: cover;
   width: 215px;

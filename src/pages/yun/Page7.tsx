@@ -3,16 +3,16 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
-// import { ShowImg } from './components/page7';
+import { ShowImg } from './components/page7';
 type Props = { handlePage: () => void };
 export const Page7: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
   //name: number; imgX: number; imgY: number; imgW: number; imgH: number
-  // const imgData = [
-  //   { name: 1, imgX: 0, imgY: 0, imgW: 100, imgH: 100 },
-  //   { name: 2, imgX: 10, imgY: 0, imgW: 100, imgH: 100 },
-  // ];
+  const imgData = [
+    { name: 1, imgX: 50, imgY: 0, imgW: 120, imgH: 200 },
+    { name: 2, imgX: 10, imgY: 0, imgW: 100, imgH: 100 },
+  ];
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
@@ -20,13 +20,13 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
   useEffect(() => {
     const wait2 = async () => {
       await timeout(3000);
-
       setNextButton(1);
     };
     wait2();
   }, []);
 
   const NextPage = async () => {
+    await timeout(200);
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
@@ -45,7 +45,13 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
-        {}
+        {imgData.map(
+          (
+            { name, imgX, imgY, imgW, imgH } //딜레이를 여기서 줘서 조금씩 늘려야할듯
+          ) => (
+            <ShowImg key={name} name={name} imgX={imgX} imgY={imgY} imgW={imgW} imgH={imgH} />
+          )
+        )}
         <TitleSection
           animate={{
             opacity: curState === 0 ? [0, 1] : 0,
@@ -59,7 +65,7 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           <MainTitle>음악과 함께 하다</MainTitle>
           <SubTitle>뮤지션들이 인정한 최고의 위스키</SubTitle>
         </TitleSection>
-
+        <ArrowNext NextPage={NextPage} Color={'white'} Display={nextButton} />
         <SubBackground
           animate={{
             opacity: curState === 0 ? [0, 1] : 0,
@@ -70,7 +76,6 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
             delay: curState === 0 ? 3 : 0,
           }}
         />
-        <ArrowNext NextPage={NextPage} Color={'white'} Display={nextButton} />
       </Background>
     </LayoutContainer>
   );

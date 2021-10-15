@@ -83,7 +83,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
 };
 
 const BackgroundImg = styled(motion.div)`
-  background: url('/yun/img/background.jpg');
+  background: url('${process.env.PUBLIC_URL}/yun/img/background.jpg');
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const TitleImg = styled(motion.div)`
-  background: url('/yun/img/logo.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/logo.png');
   width: 320px;
   height: 250px;
   background-repeat: no-repeat;

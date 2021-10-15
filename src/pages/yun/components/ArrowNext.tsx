@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { VscDebugBreakpointLog } from 'react-icons/vsc';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 type Props = { NextPage: () => void; Color: string; Display: number };
 export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
+  const [PageLock, setPageLock] = useState(0);
+  const NextPageHandle = () => {
+    if (PageLock === 0) {
+      setPageLock(1);
+      NextPage();
+    }
+  };
   return (
     <Wrapper
       animate={{
@@ -12,14 +19,11 @@ export const ArrowNext: React.FC<Props> = ({ NextPage, Color, Display }) => {
         display: Display === 1 ? 'flex' : 'none',
       }}
       transition={{
-        duration: 0,
-        ease: 'linear',
         delay: 0,
       }}
       whileHover={{ scale: 1.3 }}
-      whileTap={{ scale: 1 }}
-      // onClick={NextPage}
-      onTap={NextPage}
+      whileTap={{ scale: 0.8 }}
+      onTap={NextPageHandle}
     >
       <VscDebugBreakpointLog style={ButtonStyle} color={Color} />
     </Wrapper>
@@ -33,6 +37,7 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   bottom: 10px;
   opacity: 0;
+  z-index: 5;
 `;
 
 const ButtonStyle = { fontSize: '60px', cursor: 'pointer' };
