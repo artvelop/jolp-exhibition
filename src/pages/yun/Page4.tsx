@@ -22,6 +22,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
   }, []);
 
   const NextPage = async () => {
+    await timeout(200);
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
@@ -192,7 +193,7 @@ const ImgSection = styled.div`
 `;
 
 const JackImg = styled(motion.div)`
-  background: url('/yun/img/jack.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/jack.png');
   object-fit: cover;
   width: 315px;
   height: 870px;

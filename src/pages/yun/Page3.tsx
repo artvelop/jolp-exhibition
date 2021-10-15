@@ -22,6 +22,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
   }, []);
 
   const NextPage = async () => {
+    await timeout(200);
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
@@ -81,7 +82,7 @@ const Background = styled(motion.div)`
 `;
 
 const MapWrapper = styled(motion.div)`
-  background: url('/yun/img/map.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/map.png');
 
   display: flex;
   justify-content: center;

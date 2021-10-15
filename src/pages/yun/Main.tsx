@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Page1, Page2, Page3, Page4, Page5, Page6, Page7 } from './index';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
+
 export default function Main() {
-  const [pageNumber, setPageNumber] = useState(4);
+  const [pageNumber, setPageNumber] = useState(5);
   const handlePage = () => {
     setPageNumber((pageNumber) => pageNumber + 1);
   };

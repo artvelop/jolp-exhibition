@@ -22,6 +22,7 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
   }, []);
 
   const NextPage = async () => {
+    await timeout(200);
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
@@ -66,7 +67,7 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
 };
 
 const Background = styled(motion.div)`
-  background: url('/yun/img/water.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/water.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
