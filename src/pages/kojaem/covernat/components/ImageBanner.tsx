@@ -14,7 +14,6 @@ export const ImageBanner = () => {
   const [sliderRef, slider]: sliderType = useKeenSlider({
     slidesPerView: 4,
     spacing: 10,
-    mode: "free",
     loop: true,
     duration: 1500,
     dragStart: () => {
@@ -51,26 +50,31 @@ export const ImageBanner = () => {
         className="keen-slider__slide number-slide1"
         src="/koJaem/img/covernat/roll_01.jpg"
         setPause={setPause}
+        text="현석&예나 커플이 선택한 커버낫 맨투맨 스타일링"
       />
       <SlideImage
         className="keen-slider__slide number-slide2"
         src="/koJaem/img/covernat/roll_02.jpg"
         setPause={setPause}
+        text="Covernat ECO CAPSULE COLLECTION"
       />
       <SlideImage
         className="keen-slider__slide number-slide3"
         src="/koJaem/img/covernat/roll_03.jpg"
         setPause={setPause}
+        text="솔지와 지선 커플의 일상속 맨투맨 활용법"
       />
       <SlideImage
         className="keen-slider__slide number-slide4"
         src="/koJaem/img/covernat/roll_04.jpg"
         setPause={setPause}
+        text="2021 F/W PRE-ORDER COLLECTION"
       />
       <SlideImage
         className="keen-slider__slide number-slide5"
         src="/koJaem/img/covernat/roll_05.jpg"
         setPause={setPause}
+        text="21FW Covernat Fleece Collection"
       />
     </ImageUl>
   );

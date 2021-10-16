@@ -6,8 +6,9 @@ type Props = {
   className: string;
   src: string;
   setPause: Dispatch<React.SetStateAction<boolean>>;
+  text: string;
 };
-export const SlideImage = ({ className, src, setPause }: Props) => {
+export const SlideImage = ({ className, src, setPause, text }: Props) => {
   const [isClick, setIsClick] = useState(false);
   const clickEvent = () => {
     setPause(!isClick);
@@ -21,7 +22,9 @@ export const SlideImage = ({ className, src, setPause }: Props) => {
         onClick={() => clickEvent()}
         animate={{
           zIndex: isClick ? 1000 : 0,
+          opacity: isClick ? [0, 1] : 1,
         }}
+        transition={{ duration: 1 }}
       ></Image>
       <Colored
         animate={{
@@ -36,6 +39,18 @@ export const SlideImage = ({ className, src, setPause }: Props) => {
         }}
         onClick={() => clickEvent()}
       />
+      <Text
+        animate={{
+          display: isClick ? "flex" : "none",
+          top: "80vh",
+          left: "50vw",
+          height: "100px",
+          zIndex: isClick ? 1001 : 0,
+        }}
+        transition={{ delay: 0.1 }}
+      >
+        {text}
+      </Text>
     </>
   );
 };
@@ -46,4 +61,11 @@ const Colored = styled(motion.div)`
   background-color: white;
   position: fixed;
   top: 0px;
+`;
+
+const Text = styled(motion.div)`
+  position: fixed;
+  color: black;
+  font-size: 24px;
+  transform: translate(-50%);
 `;
