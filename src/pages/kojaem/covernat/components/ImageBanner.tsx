@@ -62,7 +62,7 @@ export const ImageBanner = () => {
         className="keen-slider__slide number-slide3"
         src="/koJaem/img/covernat/roll_03.jpg"
         setPause={setPause}
-        text="솔지와 지선 커플의 일상속 맨투맨 활용법"
+        text="편안함 속 스타일리시한 커버낫 맨투맨세트"
       />
       <SlideImage
         className="keen-slider__slide number-slide4"

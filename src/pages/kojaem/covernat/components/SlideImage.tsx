@@ -14,6 +14,8 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
     setPause(!isClick);
     setIsClick(!isClick);
   };
+  const slideNumber = className.charAt(className.length - 1);
+
   return (
     <>
       <Image
@@ -22,16 +24,17 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
         onClick={() => clickEvent()}
         animate={{
           zIndex: isClick ? 1000 : 0,
-          opacity: isClick ? [0, 1] : 1,
+          opacity: isClick ? 0 : 1,
         }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8 }}
       ></Image>
-      <Colored
+      <Background
+        src={`/koJaem/img/covernat/background_${slideNumber}.jpg`}
         animate={{
-          width: isClick ? "100vw" : 0,
-          height: isClick ? "100vh" : 0,
+          display: isClick ? "flex" : undefined,
           zIndex: isClick ? 999 : 0,
-          opacity: isClick ? 0.9 : 0,
+          opacity: isClick ? 1 : 0,
+          transitionEnd: { display: isClick ? undefined : "none" },
         }}
         transition={{
           duration: 0.3,
@@ -55,17 +58,23 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
   );
 };
 
-const Image = styled(motion.img)``;
+const Image = styled(motion.img)`
+  background-color: white;
+`;
 
-const Colored = styled(motion.div)`
+const Background = styled(motion.img)`
   background-color: white;
   position: fixed;
   top: 0px;
+  width: 100vw;
+  height: "100vh";
+  position: fixed;
+  overflow: hidden;
 `;
 
 const Text = styled(motion.div)`
   position: fixed;
-  color: black;
+  color: white;
   font-size: 24px;
   transform: translate(-50%);
 `;
