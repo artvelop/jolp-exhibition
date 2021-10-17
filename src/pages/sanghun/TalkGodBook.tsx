@@ -2,8 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Layout, TypoGraphy, Footer } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
+// import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-const Detail: React.FC = () => {
+const TalkGodBook: React.FC = () => {
   return (
     <Layout>
       <Wrapper>
@@ -342,4 +343,4 @@ const ContentBox = styled.div`
 const Div = styled.div`
   margin-bottom: 4%;
 `;
-export default Detail;
+export default TalkGodBook;

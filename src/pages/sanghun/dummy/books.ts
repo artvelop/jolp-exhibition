@@ -12,7 +12,7 @@ interface Book {
 
 export const harvard: Book = {
   imgSrc: "http://image.yes24.com/goods/57634898/XL",
-  address: "harvard",
+  address: "HarvardBook",
   name: "하버드의 새벽 4시 반",
   subject: "자기계발서",
   author: "웨이슈잉(韦秀英)",
@@ -30,7 +30,7 @@ export const harvard: Book = {
 };
 export const myself: Book = {
   imgSrc: "http://image.yes24.com/goods/22659314/XL",
-  address: "myself",
+  address: "MyselfBook",
   name: "내 안에서 나를 만드는 것들",
   subject: "자기계발서",
   author: "러셀 로버츠 (Russell Roberts)",
@@ -53,7 +53,7 @@ export const myself: Book = {
 };
 export const philosophy: Book = {
   imgSrc: "http://image.yes24.com/Goods/11922751/L",
-  address: "philosophy",
+  address: "PhilosophyBook",
   name: "프로그래머 철학을 만나다",
   subject: "철학",
   author: "유석문",
@@ -72,7 +72,7 @@ export const philosophy: Book = {
 };
 export const live: Book = {
   imgSrc: "http://image.yes24.com/momo/TopCate207/MidCate001/20609994.jpg",
-  address: "live",
+  address: "LiveBook",
   name: "프로그래머로 산다는 것",
   subject: "IT 에세이",
   author: "이상민",
@@ -97,7 +97,7 @@ export const live: Book = {
 };
 export const talkGod: Book = {
   imgSrc: "http://image.yes24.com/momo/TopCate0001/kepub/L_276813.jpg",
-  address: "talkGod",
+  address: "TalkGodBook",
   name: "대화의 신",
   subject: "자기계발서",
   author: "래리 킹 (Larry King)",

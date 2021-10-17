@@ -37,7 +37,7 @@ export const SanghunModal: React.FC<ModalProps> = ({
     >
       <Box>
         <TypoGraphy type="h1" color="green" fontWeight="bold">
-          랜덤으로 나오는 책 관련 명언
+          랜덤으로 나오는 독서 관련 명언
         </TypoGraphy>
         <TypoGraphy type="h2" color="black" fontWeight="bold">
           {text}

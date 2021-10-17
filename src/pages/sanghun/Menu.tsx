@@ -6,13 +6,14 @@ import { randomWisdom } from "./dummy/wiseSaying";
 // import backImg from "../img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import backImg from "../sanghun/img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import "animate.css";
-
+import { useHistory } from "react-router";
 const Menu: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [adress, setAdress] = useState<string>("");
+  const history = useHistory();
 
   function linkToDetail(): void {
-    // history.push(`/sanghun/${adress}`);
+    history.push(`/sanghun/${adress}`);
     console.log("이동 할거야");
   }
   return (
