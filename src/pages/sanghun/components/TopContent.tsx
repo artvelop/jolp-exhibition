@@ -33,7 +33,7 @@ export const TopContent: React.FC<TopContentType> = ({
           저자 소개 : {author}
         </TypoGraphy>
         <Gap />
-        <TypoGraphy type="h3" fontHeight="24px">
+        <TypoGraphy type="h3" fontHeight="26px">
           {authorInfo}
         </TypoGraphy>
       </Content>
@@ -42,7 +42,7 @@ export const TopContent: React.FC<TopContentType> = ({
           줄거리
         </TypoGraphy>
         <Gap />
-        <TypoGraphy type="h3" fontHeight="24px">
+        <TypoGraphy type="h3" fontHeight="26px">
           {summary}
         </TypoGraphy>
       </Content>
@@ -52,11 +52,11 @@ export const TopContent: React.FC<TopContentType> = ({
 
 const Wrap = styled.div`
   flex: 2;
-  background-color: white;
   padding: 2%;
-  border: 1px solid black;
+  margin-top: -2%;
 `;
 const Content = styled.div`
+  background-color: white;
   margin-bottom: 2%;
   border: 1px solid black;
   padding: 2%;
