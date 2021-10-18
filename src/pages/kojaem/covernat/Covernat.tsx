@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import { LayoutContainer } from "../components/LayoutContainer";
 import { Loading } from "./components/Loading";
-import { Description } from "./components/Description";
+import { CovernatMain } from "./components/CovernatMain";
 
 type Props = {
   selected: string;
@@ -14,7 +14,7 @@ const Covernat = ({ selected, setSelected }: Props) => {
     <LayoutContainer selected={selected} setSelected={setSelected}>
       {isLoading ? (
         <CovernatWrapper>
-          <Description />
+          <CovernatMain />
         </CovernatWrapper>
       ) : (
         <Loading setIsLoading={setIsLoading} />

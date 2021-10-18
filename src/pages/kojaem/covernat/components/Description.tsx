@@ -4,56 +4,54 @@ import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { ImageBanner } from "./ImageBanner";
-
-export const Description = () => {
-  const [first, setFirst] = useState(true);
+type Props = {
+  setFirst: React.Dispatch<React.SetStateAction<boolean>>,
+}
+export const Description = ({setFirst}:Props) => {
   const nextButtonIcon = <FontAwesomeIcon icon={faArrowRight} />;
-
-  const imageVariants = {
-    hidden: {
-      x: "-10%",
-      opacity: 0,
-      transition: { duration: 0.5 },
-      transitionEnd: { display: "none" },
-    },
-    show: {
-      display: "flex",
-      x: "0%",
-      opacity: 1,
-      transition: { duration: 1 },
-    },
-  };
+  const [show, setShow] = useState(true);
+  const clickEvent = () => {
+    setShow(false);
+    setTimeout(() => {
+      setFirst(false);
+    },4000)
+  }
 
   return (
     <Wrapper>
       <BrandImage
         src={`/koJaem/img/covernat/covernat1.jpg`}
         alt="brand"
-        variants={imageVariants}
-        initial="hidden"
-        animate={first ? "show" : "hidden"}
+        animate={{
+          display: show ? 'flex' : undefined,
+          x: show ? [-20 ,0] : 0,
+          opacity: show ? [0,1] : 0,
+          transition: show ? {duration:1} : {duration:0.5},
+          transitionEnd: show ? {display:'flex'} : {display:'none'}
+        }}
+        
       />
-      <RightWrapper animate={first ? undefined : { width: "100vw" }}>
+      <RightWrapper animate={show ? undefined : { width: "100vw" }}>
         <BrandName
           animate={{
-            opacity: first ? [0, 1] : 1,
-            top: first ? "150px" : "70px",
-            left: first ? "62%" : "50%",
-            translateX: first ? undefined : "-50%",
-            y: first ? [50, 0] : 0,
-            scale: first ? undefined : [1, 2, 1.5],
-            rotate: first ? undefined : [0, 360],
-            transition: first ? { delay: 1 } : { delay: 1.5, duration: 1.5 },
+            opacity: show ? [0, 1] : 1,
+            top: show ? "15%" : "7%",
+            left: show ? "62%" : "50%",
+            translateX: show ? undefined : "-50%",
+            y: show ? [50, 0] : 0,
+            scale: show ? undefined : [1, 2, 1.5],
+            rotate: show ? undefined : [0, 360],
+            transition: show ? { delay: 1 } : { delay: 1.5, duration: 1.5 },
           }}
         >
           Covernat
         </BrandName>
         <Intro
           animate={{
-            opacity: first ? [0, 1] : [1, 0],
-            y: first ? [50, 0] : [0, 50],
-            transitionEnd: first ? { display: "flex" } : { display: "none" },
-            transition: first ? { delay: 2 } : { duration: 0.5 },
+            opacity: show ? [0, 1] : [1, 0],
+            y: show ? [50, 0] : [0, 50],
+            transitionEnd: show ? { display: "flex" } : { display: "none" },
+            transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
           커버낫(COVERNAT)은 COVER-(다루다) NAT-Needle And Thread-(바늘과 실)의
@@ -64,18 +62,17 @@ export const Description = () => {
         <NextButton
           initial={{ opacity: 0 }}
           animate={{
-            opacity: first ? 1 : [1, 0],
-            x: first ? [-50, 0] : 0,
-            transitionEnd: first ? { display: "flex" } : { display: "none" },
-            transition: first
+            opacity: show ? 1 : [1, 0],
+            x: show ? [-50, 0] : undefined,
+            transitionEnd: show ? { display: "flex" } : { display: "none" },
+            transition: show
               ? { delay: 3, duration: 1.5, repeat: Infinity }
               : { duration: 0.5 },
           }}
-          onClick={() => setFirst(false)}
+          onClick={() => clickEvent()}
         >
           {nextButtonIcon}
         </NextButton>
-        {first ? null : <ImageBanner />}
       </RightWrapper>
     </Wrapper>
   );
