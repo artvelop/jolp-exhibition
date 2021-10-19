@@ -10,7 +10,6 @@ export const Top = () => {
   const [first, setFirst] = useState(true);
   return (
     <Wrapper>
-      {/* <Description setFirst={setFirst} /> */}
         {first ? <Description setFirst={setFirst} /> : <ImageBanner />}
     </Wrapper>
   );
@@ -18,6 +17,7 @@ export const Top = () => {
 
 const Wrapper = styled(motion.div)`
   display: flex;
+  background-color: #d7d7d5;
   width: 100vw;
   height: 100vh;
   @media screen and (max-width: 600px) {

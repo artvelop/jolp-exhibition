@@ -6,22 +6,22 @@ import { useState } from "react";
 import { ImageBanner } from "./ImageBanner";
 import { Description } from './Description';
 import { Top } from './Top';
+import { Mid } from "./Mid";
 
 
 export const CovernatMain = () => {
   return (
     <Wrapper>
       <Top />
+      <Mid />
     </Wrapper>
   );
 };
 
 const Wrapper = styled(motion.div)`
-  display: flex;
   width: 100vw;
   height: 100vh;
   @media screen and (max-width: 600px) {
-    flex-direction: column;
     justify-content: center;
   }
 `;

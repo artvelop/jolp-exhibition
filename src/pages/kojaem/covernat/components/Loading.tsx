@@ -13,14 +13,14 @@ export const Loading = ({ setIsLoading }: Props) => {
     const tick = setTimeout(() => {
       loadingRef.current!.style.opacity = "0";
       imageRef.current!.style.opacity = "0";
-    }, 3000);
+    }, 0);
     return () => clearTimeout(tick);
   });
 
   useEffect(() => {
     const tick = setTimeout(() => {
       setIsLoading(true);
-    }, 4000);
+    }, 0);
     return () => clearTimeout(tick);
   });
 

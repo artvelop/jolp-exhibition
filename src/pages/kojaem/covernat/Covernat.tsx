@@ -27,7 +27,4 @@ export default Covernat;
 
 const CovernatWrapper = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: #d7d7d5;
 `;
