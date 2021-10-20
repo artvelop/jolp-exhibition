@@ -115,6 +115,8 @@ const Background = styled(motion.div)`
   flex-direction: column;
   opacity: 0;
   background-color: white;
+
+  overflow: hidden;
 `;
 
 const ImgWrapper = styled(motion.div)``;

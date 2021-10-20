@@ -5,3 +5,4 @@ export { Page4 } from './Page4';
 export { Page5 } from './Page5';
 export { Page6 } from './Page6';
 export { Page7 } from './Page7';
+export { Page8 } from './Page8';
