@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 export default function Main() {
-  const [pageNumber, setPageNumber] = useState(5);
+  const [pageNumber, setPageNumber] = useState(7);
   const handlePage = () => {
     setPageNumber((pageNumber) => pageNumber + 1);
   };
