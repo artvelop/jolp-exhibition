@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { ImageBanner } from "./ImageBanner";
-import { Description } from './Description';
 import { Top } from './Top';
 import { Mid } from "./Mid";
 

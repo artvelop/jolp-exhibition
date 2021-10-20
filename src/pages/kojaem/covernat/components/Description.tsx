@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { ImageBanner } from "./ImageBanner";
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }
