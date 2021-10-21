@@ -35,32 +35,49 @@ export const Mid = () => {
         transition:{duration:0.5}
       }}
       >
-        <MidImage src="/kojaem/img/covernat/img1.png"
-        style={Img1}
+        <Title>이번가을 코디 고민중이 신가요?</Title>
+        <MidImageContainer>
+        <MidImage src="/kojaem/img/covernat/MidImage1.jpg"
         />
-        <MidImage src="/kojaem/img/covernat/img2.png"
-        style={Img2}
+        <MidImage src="/kojaem/img/covernat/MidImage2.jpg"
         />
+        <MidImage src="/kojaem/img/covernat/MidImage3.jpg"
+        />
+        </MidImageContainer>
       </Wrapper>
   );
 };
 
 
 const Wrapper = styled(motion.div)`
-  display:flex;
-  background-color: #cce0ff;
+  background-color: #f7ebcb;
   width: 100vw;
+  display:flex;
+  flex-direction: column;
 `;
-const Img1 = {
-  marginTop:'10%',
-  marginLeft: '10%',
-  width:'20%',
-  height:'20%',
-};
-const Img2 = {
-  marginTop: '70%',
-  marginLeft: 'auto',
-  marginRight: '10%',
-  width:'20%',
-  height:'20%',
-};
+const Title = styled(motion.div)`
+  color:white;
+  text-shadow: 1px 1px 5px black;
+  font-size: 4vw;
+  margin-top: 10vh;
+  align-self: center;
+`;
+const MidImageContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 30vh;
+`;
+// const Img1 = {
+//   marginTop:'10%',
+//   marginLeft: '10%',
+//   width:'20%',
+//   height:'20%',
+// };
+// const Img2 = {
+//   marginTop: '70%',
+//   marginLeft: 'auto',
+//   marginRight: '10%',
+//   width:'20%',
+//   height:'20%',
+// };

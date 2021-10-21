@@ -26,7 +26,7 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
           zIndex: isClick ? 1000 : 0,
           opacity: isClick ? 0 : 1,
         }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
       ></Image>
       <Background
         src={`/koJaem/img/covernat/background_${slideNumber}.jpg`}
