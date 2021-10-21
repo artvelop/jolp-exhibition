@@ -87,6 +87,11 @@ const Wrapper = styled.div`
   height: 100vh;
   padding: 40px;
   display: flex;
+
+  @media all and (max-width: 1500px) and (orientation: landscape) {
+    min-height: 84vh;
+    height: 84vh;
+  }
 `;
 
 const LayoutWrapper = styled.div`
@@ -95,6 +100,9 @@ const LayoutWrapper = styled.div`
   flex-direction: column;
   padding: 24px;
   border: 24px solid #000;
+  /* @media all and (max-width: 1500px) and (orientation: landscape) {
+    border: 24px solid #000 !important;
+  } */
 `;
 
 const TitleWrapper = styled.div`
@@ -114,6 +122,9 @@ const BoxWrapper = styled(motion.div)`
   margin-right: auto;
   margin-bottom: 150px;
   position: relative;
-  height: 240px;
+  height: 140px;
   width: 80rem;
+  @media all and (max-width: 1500px) and (orientation: landscape) {
+    height: 120px;
+  }
 `;

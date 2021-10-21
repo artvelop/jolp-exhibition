@@ -50,7 +50,7 @@ const Wrapper = styled(motion.div)`
   left: 0;
   top: 0;
   background-color: #fff;
-  width: 80rem;
+  width: 1272px;
   height: 240px;
   border: 4px solid #000;
   display: flex;

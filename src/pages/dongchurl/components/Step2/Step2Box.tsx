@@ -112,42 +112,42 @@ export const Step2Box = () => {
         />
         <CssTagCard
           visibleDelay={2.25}
-          title="{ color: #3f3f3f; }"
+          title="color: #3f3f3f;"
           visible={visible}
           left="58%"
           top="320px"
         />
         <CssTagCard
           visibleDelay={2.25}
-          title="{ margin-top: 24px; }"
+          title="margin-top: 24px;"
           visible={visible}
           left="79.5%"
           top="320px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="{ color: #333; }"
+          title="color: #333;"
           visible={visible}
           left="70.2%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="{ color: #333; }"
+          title="color: #333;"
           visible={visible}
           left="58%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="{ color: #333; }"
+          title="color: #333;"
           visible={visible}
           left="46.2%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="{ color: #333; }"
+          title="color: #333;"
           visible={visible}
           left="34.2%"
           top="510px"
