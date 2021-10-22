@@ -1,12 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Layout, TopContent, BodyContent } from "./components";
+import {
+  DetailLayout,
+  TopContent,
+  BodyContent,
+  ScrollBtn,
+} from "./components";
 import { philosophy } from "./dummy/books";
 
 const PhilosophyBook: React.FC = () => {
   return (
-    <Layout>
+    <DetailLayout>
       <Wrapper>
+      <ScrollBtn />
         <TopBox>
           <Img src={philosophy.imgSrc} />
           <TopContent
@@ -22,7 +28,7 @@ const PhilosophyBook: React.FC = () => {
           MyOpinionDetail={philosophy.MyOpinionDetail}
         />
       </Wrapper>
-    </Layout>
+    </DetailLayout>
   );
 };
 

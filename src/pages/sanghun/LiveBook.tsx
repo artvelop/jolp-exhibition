@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Layout, TopContent, BodyContent } from "./components";
+import { DetailLayout, TopContent, BodyContent,ScrollBtn } from "./components";
 import { live } from "./dummy/books";
 
 const LiveBook: React.FC = () => {
   return (
-    <Layout>
+    <DetailLayout>
       <Wrapper>
+      <ScrollBtn />
         <TopBox>
           <Img src={live.imgSrc} />
           <TopContent
@@ -22,7 +23,7 @@ const LiveBook: React.FC = () => {
           MyOpinionDetail={live.MyOpinionDetail}
         />
       </Wrapper>
-    </Layout>
+    </DetailLayout>
   );
 };
 

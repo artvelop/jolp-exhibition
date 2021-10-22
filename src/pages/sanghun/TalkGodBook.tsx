@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Layout, TopContent, BodyContent } from "./components";
+import { DetailLayout, TopContent, BodyContent, ScrollBtn } from "./components";
 import { talkGod } from "./dummy/books";
 
 const TalkGod: React.FC = () => {
   return (
-    <Layout>
+    <DetailLayout>
       <Wrapper>
+        <ScrollBtn />
         <TopBox>
           <Img src={talkGod.imgSrc} />
           <TopContent
@@ -22,7 +23,7 @@ const TalkGod: React.FC = () => {
           MyOpinionDetail={talkGod.MyOpinionDetail}
         />
       </Wrapper>
-    </Layout>
+    </DetailLayout>
   );
 };
 
@@ -39,6 +40,5 @@ const TopBox = styled.div`
 const Img = styled.img`
   flex: 1.2;
 `;
-
 
 export default TalkGod;

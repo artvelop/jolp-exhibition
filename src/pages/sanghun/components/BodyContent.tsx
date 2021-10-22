@@ -13,7 +13,7 @@ export const BodyContent: React.FC<TopContentType> = ({
   return (
     <Wrap>
       <TypoGraphy type="h1" fontWeight="bold" color="white">
-        나의 의견과 내용 정리
+        자세한 이야기
       </TypoGraphy>
       {MyOpinionChapter.map((item, i) => {
         return (
