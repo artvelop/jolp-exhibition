@@ -35,7 +35,7 @@ export const Mid = () => {
         transition:{duration:0.5}
       }}
       >
-        <Title>이번가을 코디 고민중이 신가요?</Title>
+        <Title>편안한 커버낫의 가을 코디</Title>
         <MidImageContainer>
         <MidImage src="/kojaem/img/covernat/MidImage1.jpg"
         />
@@ -66,7 +66,7 @@ const MidImageContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width:100%;
-  margin-top: 30vh;
+  margin-top: 10vh;
 `;
 // const Img1 = {
 //   marginTop:'10%',
