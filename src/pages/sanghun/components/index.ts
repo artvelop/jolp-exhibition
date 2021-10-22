@@ -6,3 +6,4 @@ export { SanghunModal } from "./SanghunModal";
 export { TopContent } from "./TopContent";
 export { BodyContent } from "./BodyContent";
 export { ScrollBtn } from "./ScrollBtn";
+export { Header } from "./Header";

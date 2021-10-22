@@ -5,6 +5,7 @@ import {
   TopContent,
   BodyContent,
   ScrollBtn,
+  Header,
 } from "./components";
 import { philosophy } from "./dummy/books";
 
@@ -12,17 +13,20 @@ const PhilosophyBook: React.FC = () => {
   return (
     <DetailLayout>
       <Wrapper>
-      <ScrollBtn />
-        <TopBox>
-          <Img src={philosophy.imgSrc} />
-          <TopContent
-            name={philosophy.name}
-            subject={philosophy.subject}
-            author={philosophy.author}
-            authorInfo={philosophy.authorInfo}
-            summary={philosophy.summary}
-          />
-        </TopBox>
+        <ScrollBtn />
+        <Box>
+          <Header />
+          <TopBox>
+            <Img src={philosophy.imgSrc} />
+            <TopContent
+              name={philosophy.name}
+              subject={philosophy.subject}
+              author={philosophy.author}
+              authorInfo={philosophy.authorInfo}
+              summary={philosophy.summary}
+            />
+          </TopBox>
+        </Box>
         <BodyContent
           MyOpinionChapter={philosophy.MyOpinionChapter}
           MyOpinionDetail={philosophy.MyOpinionDetail}
@@ -39,11 +43,15 @@ const Wrapper = styled.div`
 const TopBox = styled.div`
   display: flex;
   gap: 2%;
-  height: 100vh;
+  height: 80vh;
   padding: 2%;
 `;
 const Img = styled.img`
-  flex: 1.2;
+  width: 36%;
 `;
-
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* width: 100vw; */
+`;
 export default PhilosophyBook;

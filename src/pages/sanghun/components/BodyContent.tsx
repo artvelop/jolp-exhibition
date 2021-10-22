@@ -12,9 +12,6 @@ export const BodyContent: React.FC<TopContentType> = ({
 }) => {
   return (
     <Wrap>
-      <TypoGraphy type="h1" fontWeight="bold" color="white">
-        자세한 이야기
-      </TypoGraphy>
       {MyOpinionChapter.map((item, i) => {
         return (
           <ViewPort>
@@ -40,7 +37,7 @@ export const BodyContent: React.FC<TopContentType> = ({
 
 const Wrap = styled.div``;
 const ViewPort = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: black;
   display: flex;

@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { DetailLayout, TopContent, BodyContent,ScrollBtn } from "./components";
+import {
+  DetailLayout,
+  TopContent,
+  BodyContent,
+  ScrollBtn,
+  Header,
+} from "./components";
 import { harvard } from "./dummy/books";
 
 const HarvardBook: React.FC = () => {
@@ -8,16 +14,19 @@ const HarvardBook: React.FC = () => {
     <DetailLayout>
       <Wrapper>
         <ScrollBtn />
-        <TopBox>
-          <Img src={harvard.imgSrc} />
-          <TopContent
-            name={harvard.name}
-            subject={harvard.subject}
-            author={harvard.author}
-            authorInfo={harvard.authorInfo}
-            summary={harvard.summary}
-          />
-        </TopBox>
+        <Box>
+          <Header />
+          <TopBox>
+            <Img src={harvard.imgSrc} />
+            <TopContent
+              name={harvard.name}
+              subject={harvard.subject}
+              author={harvard.author}
+              authorInfo={harvard.authorInfo}
+              summary={harvard.summary}
+            />
+          </TopBox>
+        </Box>
         <BodyContent
           MyOpinionChapter={harvard.MyOpinionChapter}
           MyOpinionDetail={harvard.MyOpinionDetail}
@@ -34,11 +43,15 @@ const Wrapper = styled.div`
 const TopBox = styled.div`
   display: flex;
   gap: 2%;
-  height: 100vh;
+  height: 80vh;
   padding: 2%;
 `;
 const Img = styled.img`
-  width: 40%;
+  width: 36%;
 `;
-
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* width: 100vw; */
+`;
 export default HarvardBook;

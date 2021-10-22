@@ -1,23 +1,32 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { DetailLayout, TopContent, BodyContent, ScrollBtn } from "./components";
+import {
+  DetailLayout,
+  TopContent,
+  BodyContent,
+  ScrollBtn,
+  Header,
+} from "./components";
 import { talkGod } from "./dummy/books";
 
-const TalkGod: React.FC = () => {
+const TalkGodBook: React.FC = () => {
   return (
     <DetailLayout>
       <Wrapper>
         <ScrollBtn />
-        <TopBox>
-          <Img src={talkGod.imgSrc} />
-          <TopContent
-            name={talkGod.name}
-            subject={talkGod.subject}
-            author={talkGod.author}
-            authorInfo={talkGod.authorInfo}
-            summary={talkGod.summary}
-          />
-        </TopBox>
+        <Box>
+          <Header />
+          <TopBox>
+            <Img src={talkGod.imgSrc} />
+            <TopContent
+              name={talkGod.name}
+              subject={talkGod.subject}
+              author={talkGod.author}
+              authorInfo={talkGod.authorInfo}
+              summary={talkGod.summary}
+            />
+          </TopBox>
+        </Box>
         <BodyContent
           MyOpinionChapter={talkGod.MyOpinionChapter}
           MyOpinionDetail={talkGod.MyOpinionDetail}
@@ -34,11 +43,14 @@ const Wrapper = styled.div`
 const TopBox = styled.div`
   display: flex;
   gap: 2%;
-  height: 100vh;
+  height: 80vh;
   padding: 2%;
 `;
 const Img = styled.img`
-  flex: 1.2;
+  width: 36%;
 `;
-
-export default TalkGod;
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export default TalkGodBook;

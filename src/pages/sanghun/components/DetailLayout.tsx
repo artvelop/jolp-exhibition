@@ -6,5 +6,6 @@ export const DetailLayout: React.FC = ({ children }) => {
 };
 
 const Wrapper = styled.div`
+  width: 100%;
   background-color: black;
 `;

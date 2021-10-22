@@ -5,14 +5,14 @@ import { BsCaretUpSquareFill, BsCaretDownSquareFill } from "react-icons/bs";
 export const ScrollBtn: React.FC = () => {
   const pageDown = () => {
     window.scrollBy({
-      top: 980,
+      top: 950,
       left: 0,
       behavior: "smooth",
     });
   };
   const pageUp = () => {
     window.scrollBy({
-      top: -980,
+      top: -950,
       left: 0,
       behavior: "smooth",
     });
