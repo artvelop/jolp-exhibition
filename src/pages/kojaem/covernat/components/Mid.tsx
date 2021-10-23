@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { MidImage } from './MidImage';
 
-const options = {threshold: 0.1}
+// Mid 높이가 커지면 이 값은 수정해야함
+const options = {threshold: [0.1,0.15,0.2,0.25]}
 export const Mid = () => {
   const [show, setShow] = useState(false);
+  const [showImg1, setShowImg1] = useState(false);
+  const [showImg2, setShowImg2] = useState(false);
+  const [showImg3, setShowImg3] = useState(false);
   const midRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -13,7 +17,23 @@ export const Mid = () => {
           setShow(true);
         }
         else {
-          setShow(false)
+          setShow(false);
+        }
+
+        if(entry.intersectionRatio > 0.15) {
+          setShowImg1(true);
+        }
+        if(entry.intersectionRatio > 0.2) {
+          setShowImg2(true);
+        }
+        if(entry.intersectionRatio > 0.25) {
+          setShowImg3(true);
+        }
+
+        if(entry.intersectionRatio < 0.15) {
+          setShowImg1(false);
+          setShowImg2(false);
+          setShowImg3(false);
         }
     },options)
 
@@ -37,11 +57,11 @@ export const Mid = () => {
       >
         <Title>편안한 커버낫의 가을 코디</Title>
         <MidImageContainer>
-        <MidImage src="/kojaem/img/covernat/MidImage1.jpg"
+        <MidImage src="/kojaem/img/covernat/MidImage1.jpg" show = {showImg1}
         />
-        <MidImage src="/kojaem/img/covernat/MidImage2.jpg"
+        <MidImage src="/kojaem/img/covernat/MidImage2.jpg" show = {showImg2}
         />
-        <MidImage src="/kojaem/img/covernat/MidImage3.jpg"
+        <MidImage src="/kojaem/img/covernat/MidImage3.jpg" show = {showImg3}
         />
         </MidImageContainer>
       </Wrapper>
@@ -52,6 +72,7 @@ export const Mid = () => {
 const Wrapper = styled(motion.div)`
   background-color: #f7ebcb;
   width: 100vw;
+  height: 300vh;
   display:flex;
   flex-direction: column;
 `;

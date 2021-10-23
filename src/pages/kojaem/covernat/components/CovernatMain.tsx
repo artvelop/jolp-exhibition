@@ -15,7 +15,6 @@ export const CovernatMain = () => {
 
 const Wrapper = styled(motion.div)`
   width: 100vw;
-  height: 100vh;
   @media screen and (max-width: 600px) {
     justify-content: center;
   }
