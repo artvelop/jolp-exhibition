@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { GenderChart } from './GenderChart';
 import { MidImage } from './MidImage';
 
 // Mid 높이가 커지면 이 값은 수정해야함
@@ -64,6 +65,7 @@ export const Mid = () => {
         <MidImage src="/kojaem/img/covernat/MidImage3.jpg" show = {showImg3}
         />
         </MidImageContainer>
+        <GenderChart />
       </Wrapper>
   );
 };
