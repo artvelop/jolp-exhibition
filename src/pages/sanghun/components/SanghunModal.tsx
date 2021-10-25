@@ -16,6 +16,7 @@ const customStyles: any = {
     left: "50%",
     width: "800px",
     height: "180px",
+    padding: " 20px",
     transform: "translate(-50%, -50%)",
   },
 };
@@ -42,22 +43,24 @@ export const SanghunModal: React.FC<ModalProps> = ({
         <TypoGraphy type="h2" color="black" fontWeight="bold">
           {text}
         </TypoGraphy>
+        <ButtonBox>
+          <Button onClick={linkToDetail}>
+            <TypoGraphy type="h2" color="black" fontWeight="bold">
+              이동하기
+            </TypoGraphy>
+          </Button>
+          <Button onClick={closeModal}>
+            <TypoGraphy
+              type="h2"
+              color="black"
+              fontWeight="bold"
+              textAlign="center"
+            >
+              취소
+            </TypoGraphy>
+          </Button>
+        </ButtonBox>
       </Box>
-      <Button onClick={linkToDetail}>
-        <TypoGraphy type="h2" color="black" fontWeight="bold">
-          이동하기
-        </TypoGraphy>
-      </Button>
-      <Button onClick={closeModal}>
-        <TypoGraphy
-          type="h2"
-          color="black"
-          fontWeight="bold"
-          textAlign="center"
-        >
-          취소
-        </TypoGraphy>
-      </Button>
     </Modal>
   );
 };
@@ -65,8 +68,13 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-evenly;
+  gap: 20px;
+  height: 100%;
+`;
+const ButtonBox = styled.div`
+  margin-left: 550px;
+  margin-top: 16px;
 `;
 const Button = styled.button`
   font-size: 32px;
@@ -74,7 +82,6 @@ const Button = styled.button`
   height: 48px;
   display: block;
   float: right;
-  margin-top: 26px;
   margin-left: 10px;
   cursor: pointer;
   border-radius: 6px;

@@ -37,7 +37,7 @@ const Head = styled.div`
   left: 0;
   width: 100%;
   height: 102px;
-  background-color: teal;
+  background-color: wheat;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,5 +56,5 @@ const ImgBox = styled.div`
 const QQQ = styled(TiThMenuOutline)`
   margin-left: 10px;
   font-size: 80px;
-  color: black;
+  color: white;
 `;
