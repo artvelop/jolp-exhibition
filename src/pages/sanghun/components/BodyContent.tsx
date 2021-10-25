@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { TypoGraphy } from "./index";
+import { color } from "../constants";
 
 type TopContentType = {
   MyOpinionChapter: string[];
@@ -16,13 +17,13 @@ export const BodyContent: React.FC<TopContentType> = ({
         return (
           <ViewPort>
             <Box>
-              <TypoGraphy type="h1" fontWeight="bold">
+              <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
                 {item}
               </TypoGraphy>
               <Gap />
               {MyOpinionDetail[i].map((item) => {
                 return (
-                  <TypoGraphy type="h3" fontHeight="34px">
+                  <TypoGraphy type="h3" fontHeight="34px" color={color.gray}>
                     <li> {item}</li>
                   </TypoGraphy>
                 );
@@ -45,10 +46,14 @@ const ViewPort = styled.div`
 `;
 
 const Box = styled.div`
-  width: 50%;
-  background-color: wheat;
+  width: 80%;
   padding: 2%;
   margin-left: 10%;
+  box-shadow: 0px 0px 31px 10px rgba(174, 134, 37, 1);
+  -webkit-box-shadow: 0px 0px 31px 10px rgba(174, 134, 37, 1);
+  -moz-box-shadow: 0px 0px 31px 10px rgba(174, 134, 37, 1);
+  border: 2px inset ${color.gold_light};
+  border-radius: 16px;
 `;
 const Gap = styled.div`
   margin-top: 1%;

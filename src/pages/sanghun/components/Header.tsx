@@ -2,7 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { harvard, philosophy, talkGod, live, myself } from "../dummy/books";
-import { TiThMenuOutline } from "react-icons/ti";
+import { MdMenuBook } from "react-icons/md";
+import { color } from "../constants";
 
 export const Header: React.FC = () => {
   return (
@@ -33,11 +34,11 @@ export const Header: React.FC = () => {
 
 const Head = styled.div`
   position: sticky;
-  top: 0;
+  top: 10px;
   left: 0;
   width: 100%;
   height: 102px;
-  background-color: wheat;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,8 +54,8 @@ const ImgBox = styled.div`
   gap: 20%;
   margin-right: 400px;
 `;
-const QQQ = styled(TiThMenuOutline)`
-  margin-left: 10px;
-  font-size: 80px;
-  color: white;
+const QQQ = styled(MdMenuBook)`
+  margin-left: 30px;
+  font-size: 70px;
+  color: ${color.gray};
 `;

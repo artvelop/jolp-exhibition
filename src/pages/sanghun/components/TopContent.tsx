@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { TypoGraphy } from "./index";
-
+import { color } from "../constants";
 type TopContentType = {
   name: string;
   subject: string;
@@ -19,30 +19,30 @@ export const TopContent: React.FC<TopContentType> = ({
   return (
     <Wrap>
       <Content>
-        <TypoGraphy type="h1" fontWeight="bold">
+        <TypoGraphy type="h1" fontWeight="bold" color="white">
           제목 : {name}
         </TypoGraphy>
       </Content>
       <Content>
-        <TypoGraphy type="h1" fontWeight="bold">
+        <TypoGraphy type="h1" fontWeight="bold" color="white">
           주제 : {subject}
         </TypoGraphy>
       </Content>
       <Content>
-        <TypoGraphy type="h1" fontWeight="bold">
+        <TypoGraphy type="h1" fontWeight="bold" color="white">
           저자 소개 : {author}
         </TypoGraphy>
         <Gap />
-        <TypoGraphy type="h3" fontHeight="26px">
+        <TypoGraphy type="h3" fontHeight="26px" color={color.gray}>
           {authorInfo}
         </TypoGraphy>
       </Content>
       <Content>
-        <TypoGraphy type="h1" fontWeight="bold">
+        <TypoGraphy type="h1" fontWeight="bold" color="white">
           줄거리
         </TypoGraphy>
         <Gap />
-        <TypoGraphy type="h3" fontHeight="26px">
+        <TypoGraphy type="h3" fontHeight="26px" color={color.gray}>
           {summary}
         </TypoGraphy>
       </Content>
@@ -56,10 +56,12 @@ const Wrap = styled.div`
   margin-top: -2%;
 `;
 const Content = styled.div`
-  background-color: white;
   margin-bottom: 2%;
-  border: 1px solid black;
+  border: 3px inset ${color.gold_normal};
   padding: 2%;
+  box-shadow: 5px 1px 10px -1px rgba(199, 175, 35, 0.77);
+  -webkit-box-shadow: 5px 1px 10px -1px rgba(199, 175, 35, 0.77);
+  -moz-box-shadow: 5px 1px 10px -1px rgba(199, 175, 35, 0.77);
 `;
 const Gap = styled.div`
   margin-bottom: 2%;
