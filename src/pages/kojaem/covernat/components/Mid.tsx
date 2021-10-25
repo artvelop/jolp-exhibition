@@ -72,7 +72,8 @@ export const Mid = () => {
 
 
 const Wrapper = styled(motion.div)`
-  background-color: #f7ebcb;
+  // background-color: #f7ebcb;
+  background-color: green;
   width: 100vw;
   height: 300vh;
   display:flex;
