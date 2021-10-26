@@ -19,14 +19,16 @@ const data = {
 const chartOptions = {
   plugins: {
     legend: {
+      reverse:true,
       labels: {
-        color:'#FFFFFF'
+        color:'#FFFFFF',
       }
     }
-  }
+  },
+  
 }
 
-const options = { threshold: 0.8 };
+const options = { threshold: 0.5 };
 
 export const GenderChart = () => {
   const chartRef = useRef(null);
@@ -80,10 +82,10 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   margin-top: 70vh;
-  margin-left: 10vw;
 `;
 const ChartWrapper = styled(motion.div)`
   width: 25vw;
+  margin-left: 10vw;
 `;
 
 const ChartDescriptionWrapper = styled(motion.div)`
