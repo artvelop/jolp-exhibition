@@ -9,7 +9,7 @@ type Props = {
 export const Description = ({setFirst}:Props) => {
   const nextButtonIcon = <FontAwesomeIcon icon={faArrowRight} />;
   const [show, setShow] = useState(true);
-  const clickEvent = () => {
+  const showNext = () => {
     setShow(false);
     setTimeout(() => {
       setFirst(false);
@@ -68,7 +68,7 @@ export const Description = ({setFirst}:Props) => {
               ? { delay: 3, duration: 1.5, repeat: Infinity }
               : { duration: 0.5 },
           }}
-          onClick={() => clickEvent()}
+          onClick={() => showNext()}
         >
           {nextButtonIcon}
         </NextButton>

@@ -28,7 +28,7 @@ export const Loading = ({ setIsLoading }: Props) => {
     <LoadingWrapper>
       <Colored
         initial={{ height: 0 }}
-        animate={{ height: 60 }}
+        animate={{ height: 68 }}
         exit={{ opacity: 0 }}
         ref={loadingRef}
       />
@@ -54,16 +54,20 @@ const Colored = styled(motion.span)`
     position: absolute;
     width: 240px;
     height: 0px;
-    bottom: 54%;
+    left: 50vw;
+    bottom: 50vh;
+    transform: translate(-120px, -34px);
     transition: height 2000ms, opacity 300ms linear;
     background-color: #37664d;
 }
 `;
 
 const LoadingImage = styled(motion.img)`
+  width: 240px;
+  height: 68px;
   position: absolute;
-  bottom: 50%;
-  left: 50%;
+  bottom: 50vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
   transition: opacity 1500ms linear;
 `;

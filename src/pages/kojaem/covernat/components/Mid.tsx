@@ -6,10 +6,16 @@ import { useEffect, useRef, useState } from "react";
 import { GenderChart } from './GenderChart';
 import { MidImage } from './MidImage';
 
-// Mid 높이가 커지면 이 값은 수정해야함
 const options = {threshold: [0.1,0.2,0.3,0.4]}
+const seasons = ["ChangingSeason","Summer","Winter"];
+const seasonTitle = [
+  "커버낫의 편안한 환절기 코디",
+  "커버낫의 시원한 여름 코디",
+  "커버낫의 따뜻한 겨울 코디"]
+let index = 0;
 export const Mid = () => {
   const [show, setShow] = useState(false);
+  const [season, setSeason] = useState(seasons[index])
   const [showImg1, setShowImg1] = useState(false);
   const [showImg2, setShowImg2] = useState(false);
   const [showImg3, setShowImg3] = useState(false);
@@ -49,6 +55,17 @@ export const Mid = () => {
     }
   }, [])
 
+  const nextSeason = () => {
+    if(index < seasons.length-1) {
+      index++;
+      setSeason(seasons[index])
+    }
+    else {
+      index = 0;
+      setSeason(seasons[index])
+    }
+  }
+
 
   return (
       <Wrapper
@@ -59,16 +76,18 @@ export const Mid = () => {
         transition:{duration:0.5}
       }}
       >
-        <Title>편안한 커버낫의 환절기 코디</Title>
+        <Title>{seasonTitle[index]}</Title>
         <MidImageContainer>
-        <MidImage src="/kojaem/img/covernat/MidImage1.jpg" show = {showImg1}
+        <MidImage src={`/kojaem/img/covernat/${season}Image1.jpg`} show = {showImg1}
         />
-        <MidImage src="/kojaem/img/covernat/MidImage2.jpg" show = {showImg2}
+        <MidImage src={`/kojaem/img/covernat/${season}Image2.jpg`} show = {showImg2}
         />
-        <MidImage src="/kojaem/img/covernat/MidImage3.jpg" show = {showImg3}
+        <MidImage src={`/kojaem/img/covernat/${season}Image3.jpg`} show = {showImg3}
         />
         </MidImageContainer>
-        <NextButton>{nextButtonIcon}</NextButton>
+        <NextButton
+        onClick = {() => nextSeason()}
+        >{nextButtonIcon}</NextButton>
       </Wrapper>
   );
 };

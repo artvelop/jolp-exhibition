@@ -1,51 +1,47 @@
 import styled from '@emotion/styled';
 import { motion, MotionStyle } from "framer-motion";
 import { Ref, useEffect, useRef, useState } from "react";
-import Covernat from "./../Covernat";
 
-const options = {threshold: 0.45}
 type Props = {
     src:string,
-    show:any
-    // style: MotionStyle
+    show:boolean
 }
 export const MidImage = ({src,show}:Props) => {
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
   const imageRef:Ref<HTMLImageElement> = useRef(null);
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(([entry]) => {
-  //       if(entry.isIntersecting) {
-  //         setShow(true);
-  //       }
-  //       else {
-  //         setShow(false)
-  //       }
-  //   },options)
-
-  //   if(imageRef.current) {
-  //     observer.observe(imageRef.current)
-  //   }
-  //   return () => {
-  //     observer.disconnect();
-  //   }
-  // }, [])
   
   const onClickEvent = () => {
-    if(!click) {
-      const imageHoverSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Hover.jpg";
-      imageRef.current!.src = imageHoverSrc;
+    const imgSrc = imageRef.current!.src.slice(-9,-4)
+    if(imgSrc!="Click") {
+      const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
+      imageRef.current!.src = imageClickSrc;
       setClick(!click);
+      console.log(imageClickSrc)
     }
     else {
-      const imageHoverOutSrc = imageRef.current!.src.replace(/Hover.jpg/gi,"") + ".jpg";
-      imageRef.current!.src = imageHoverOutSrc;
+      const imageSrc = imageRef.current!.src.replace(/Click.jpg/gi,"") + ".jpg";
+      imageRef.current!.src = imageSrc;
       setClick(!click);
+      console.log(imageSrc)
     }
+
+
+
+
+    // if(!click) {
+    //   const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
+    //   imageRef.current!.src = imageClickSrc;
+    //   setClick(!click);
+    //   console.log(imageClickSrc)
+    // }
+    // else {
+    //   const imageSrc = imageRef.current!.src.replace(/Click.jpg/gi,"") + ".jpg";
+    //   imageRef.current!.src = imageSrc;
+    //   setClick(!click);
+    //   console.log(imageSrc)
+    // }
   }
-
-
-
 
   return (
     <Wrapper
@@ -55,7 +51,6 @@ export const MidImage = ({src,show}:Props) => {
     >
       <Image src={src}
         ref={imageRef}
-        // style={style}
         animate={{
           y: show? [100,0] : 0,
           opacity: show? [0,1] : 0,
