@@ -67,13 +67,9 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
             delay: 0,
           }}
         >
-          {imgData.map(
-            (
-              { name, imgX, imgY, imgW, imgH, dTime } //딜레이를 여기서 줘서 조금씩 늘려야할듯
-            ) => (
-              <ShowImg key={name} name={name} imgX={imgX} imgY={imgY} imgW={imgW} imgH={imgH} dTime={dTime} />
-            )
-          )}
+          {imgData.map(({ name, imgX, imgY, imgW, imgH, dTime }) => (
+            <ShowImg key={name} name={name} imgX={imgX} imgY={imgY} imgW={imgW} imgH={imgH} dTime={dTime} />
+          ))}
         </ImgWrapper>
 
         <TitleSection
@@ -97,7 +93,7 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           transition={{
             duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 3 : 0,
+            delay: curState === 0 ? 2.5 : 0,
           }}
         />
       </Background>
