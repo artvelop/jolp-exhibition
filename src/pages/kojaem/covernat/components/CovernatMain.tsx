@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Top } from './Top';
 import { Mid } from "./Mid";
 import { Bottom } from "./Bottom";
+import { View3D } from './View3D';
 
 export const CovernatMain = () => {
   return (
@@ -10,6 +11,7 @@ export const CovernatMain = () => {
       <Top />
       <Mid />
       <Bottom />
+      {/* <View3D /> */}
     </Wrapper>
   );
 };

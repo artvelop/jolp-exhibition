@@ -12,8 +12,7 @@ export const MidImage = ({src,show}:Props) => {
   const imageRef:Ref<HTMLImageElement> = useRef(null);
   
   const onClickEvent = () => {
-    const imgSrc = imageRef.current!.src.slice(-9,-4)
-    if(imgSrc!="Click") {
+    if(!click) {
       const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
@@ -25,11 +24,8 @@ export const MidImage = ({src,show}:Props) => {
       setClick(!click);
       console.log(imageSrc)
     }
-
-
-
-
-    // if(!click) {
+    // const imgSrc = imageRef.current!.src.slice(-9,-4)
+    // if(imgSrc!="Click") {
     //   const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
     //   imageRef.current!.src = imageClickSrc;
     //   setClick(!click);
