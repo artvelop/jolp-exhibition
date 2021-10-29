@@ -8,10 +8,22 @@ type Props = { handlePage: () => void };
 export const Page7: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
-  //name: number; imgX: number; imgY: number; imgW: number; imgH: number
   const imgData = [
-    { name: 1, imgX: 50, imgY: 0, imgW: 120, imgH: 200 },
-    { name: 2, imgX: 10, imgY: 0, imgW: 100, imgH: 100 },
+    { name: 1, imgX: 45, imgY: 0, imgW: 10, imgH: 30, dTime: 0.1 },
+    { name: 2, imgX: 28, imgY: 0, imgW: 17, imgH: 18, dTime: 0.2 },
+    { name: 3, imgX: 55, imgY: 0, imgW: 20, imgH: 18, dTime: 0.3 },
+    { name: 4, imgX: 13, imgY: 0, imgW: 15, imgH: 30, dTime: 0.4 },
+    { name: 5, imgX: 75, imgY: 0, imgW: 25, imgH: 30, dTime: 0.5 },
+    { name: 6, imgX: 0, imgY: 0, imgW: 13, imgH: 30, dTime: 0.6 },
+    { name: 7, imgX: 83, imgY: 30, imgW: 17, imgH: 33, dTime: 0.7 },
+    { name: 8, imgX: 0, imgY: 30, imgW: 15, imgH: 19, dTime: 0.8 },
+    { name: 9, imgX: 86, imgY: 63, imgW: 14, imgH: 37, dTime: 0.9 },
+    { name: 10, imgX: 0, imgY: 49, imgW: 20, imgH: 20, dTime: 1 },
+    { name: 11, imgX: 71, imgY: 63, imgW: 15, imgH: 37, dTime: 1.1 },
+    { name: 12, imgX: 0, imgY: 69, imgW: 15, imgH: 31, dTime: 1.2 },
+    { name: 13, imgX: 54, imgY: 79, imgW: 17, imgH: 21, dTime: 1.3 },
+    { name: 14, imgX: 15, imgY: 69, imgW: 14, imgH: 37, dTime: 1.4 },
+    { name: 15, imgX: 29, imgY: 80, imgW: 17, imgH: 20, dTime: 1.5 },
   ];
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
@@ -45,13 +57,21 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
-        {imgData.map(
-          (
-            { name, imgX, imgY, imgW, imgH } //딜레이를 여기서 줘서 조금씩 늘려야할듯
-          ) => (
-            <ShowImg key={name} name={name} imgX={imgX} imgY={imgY} imgW={imgW} imgH={imgH} />
-          )
-        )}
+        <ImgWrapper
+          animate={{
+            opacity: curState === 0 ? [0, 1] : 0,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: 'easeOut',
+            delay: 0,
+          }}
+        >
+          {imgData.map(({ name, imgX, imgY, imgW, imgH, dTime }) => (
+            <ShowImg key={name} name={name} imgX={imgX} imgY={imgY} imgW={imgW} imgH={imgH} dTime={dTime} />
+          ))}
+        </ImgWrapper>
+
         <TitleSection
           animate={{
             opacity: curState === 0 ? [0, 1] : 0,
@@ -73,7 +93,7 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
           transition={{
             duration: 1,
             ease: 'easeOut',
-            delay: curState === 0 ? 3 : 0,
+            delay: curState === 0 ? 2.5 : 0,
           }}
         />
       </Background>
@@ -91,7 +111,11 @@ const Background = styled(motion.div)`
   flex-direction: column;
   opacity: 0;
   background-color: white;
+
+  overflow: hidden;
 `;
+
+const ImgWrapper = styled(motion.div)``;
 const TitleSection = styled(motion.div)`
   display: flex;
   justify-content: center;
