@@ -16,13 +16,11 @@ export const MidImage = ({src,show}:Props) => {
       const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
-      console.log(imageClickSrc)
     }
     else {
       const imageSrc = imageRef.current!.src.replace(/Click.jpg/gi,"") + ".jpg";
       imageRef.current!.src = imageSrc;
       setClick(!click);
-      console.log(imageSrc)
     }
     // const imgSrc = imageRef.current!.src.slice(-9,-4)
     // if(imgSrc!="Click") {
@@ -48,12 +46,11 @@ export const MidImage = ({src,show}:Props) => {
       <Image src={src}
         ref={imageRef}
         animate={{
-          y: show? [100,0] : 0,
+          y: show? [100,0] : [0,100],
           opacity: show? [0,1] : 0,
           transition: {duration:1},
           rotateY: hover ? 180 : 0
         }}
-
         />
       </Wrapper>
   );
@@ -63,5 +60,7 @@ const Wrapper = styled.div`
 `;
 const Image = styled(motion.img)`
   width:30vw;
+  opacity:0;
+  y:100;
   pointer-events: none;
 `;

@@ -9,6 +9,7 @@ import { MidImage } from './MidImage';
 const options = {threshold: [0.1,0.2,0.3,0.4]};
 const season = "Winter";
 const seasonTitle = "커버낫의 따뜻한 겨울 코디";
+const titleArray = seasonTitle.split("");
 export const WinterOutfit = () => {
   const [show, setShow] = useState(false);
   const [showImg1, setShowImg1] = useState(false);
@@ -48,10 +49,37 @@ export const WinterOutfit = () => {
       observer.disconnect();
     }
   }, [])
+  const makeText = (item: string, index: number) => (
+    <Title
+      key={index}
+      animate={{
+        opacity: show ? [0, 1] : 0,
+        y: show ? [50,-50,0] : 0,
+        scale: show ? [1, 1.2, 1] : 1,
+        rotateZ: show? [0,20,0] : 0,
+        textShadow: show
+          ? "white 1px 1px 5px"
+          : "text-shadow: white 0px 0px 0px",
+      }}
+      transition={{
+        duration: show ? 1 : undefined,
+        delay: show ? index * 0.05 : undefined
+        }}
+    >
+      {item}
+    </Title>
+);
 
-  return (
-      <Wrapper ref={seasonRef}>
-        <Title>{seasonTitle}</Title>
+return (
+  <Wrapper ref={seasonRef}
+  animate={{
+    rotate: show? [1,0]: 0,
+    opacity: show? [0.8,1]: 0.8,
+  }}
+  >
+      <TitleWrapper>
+        {titleArray.map((item, index) => makeText(item, index))}
+      </TitleWrapper>
         <MidImageContainer>
         <MidImage src={`/kojaem/img/covernat/${season}Image1.jpg`} show = {showImg1}
         />
@@ -66,19 +94,25 @@ export const WinterOutfit = () => {
 
 
 const Wrapper = styled(motion.div)`
-  background-color: white;
+  background-color: black;
   width: 100%;
   height: 100%;
   display:flex;
   flex-direction: column;
+  opacity: 0.8;
+`;
+const TitleWrapper = styled(motion.div)`
+  display:flex;
+  white-space: pre;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const Title = styled(motion.div)`
   color:white;
-  text-shadow: 1px 1px 5px black;
+  opacity:0;
   font-size: 4vw;
   margin-top: 20vh;
   align-self: center;
-  text-shadow: blue 1px 1px 3px;
 `;
 const MidImageContainer = styled.div`
   display: flex;
