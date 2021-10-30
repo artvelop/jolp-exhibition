@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 import { TypoGraphy, SanghunModal } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
 import { randomWisdom } from "./dummy/wiseSaying";
-// import backImg from "../img/mikolaj-DCzpr09cTXY-unsplash.jpg";
 import backImg from "../sanghun/img/mikolaj-DCzpr09cTXY-unsplash.jpg";
+// import backImg from "../sanghun/img/olga-tutunaru-JMATuFkXeHU-unsplash.jpg";
 import "animate.css";
 import { useHistory } from "react-router";
 const Menu: React.FC = () => {
@@ -17,7 +17,6 @@ const Menu: React.FC = () => {
     console.log("이동 할거야");
   }
   return (
-    // <Layout>
     <DDD>
       <Container>
         <Box
@@ -92,7 +91,6 @@ const Menu: React.FC = () => {
         linkToDetail={linkToDetail}
       />
     </DDD>
-    // </Layout>
   );
 };
 
