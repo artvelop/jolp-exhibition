@@ -9,7 +9,7 @@ import { ChangingSeasonOutfit } from "./ChangingSeasonOutfit";
 import { WinterOutfit } from "./WinterOutfit";
 import { SummerOutfit } from './SummerOutfit';
 
-const options = { threshold: 0.1 }
+const options = { threshold: 0.4 }
 const seasons = ["ChangingSeason","Summer","Winter"];
 let index = 0;
 export const Mid = () => {
@@ -38,6 +38,7 @@ export const Mid = () => {
   const nextSeason = () => {
     if(index < seasons.length-1) {
       index++;
+      
       setSeason(seasons[index])
     }
     else {
@@ -50,15 +51,16 @@ export const Mid = () => {
   return (
       <Wrapper
       ref={midRef}
-      animate={{
-        y: show ? [20,0] : 0,
-        opacity: show ? [0,1] : 0,
-        transition:{duration:0.5}
-      }}
       >
         {index == 0 ? <ChangingSeasonOutfit /> : index == 1 ? <WinterOutfit /> : <SummerOutfit />}
         <NextButton
         onClick = {() => nextSeason()}
+        whileHover = {{
+          scale:1.2,
+        }}
+        whileTap = {{
+          scale:0.8
+        }}
         >{nextButtonIcon}</NextButton>
       </Wrapper>
   );
@@ -66,6 +68,7 @@ export const Mid = () => {
 
 
 const Wrapper = styled(motion.div)`
+  position: relative;
   background-color: white;
   width: 100vw;
   height: 200vh;
@@ -75,9 +78,12 @@ const Wrapper = styled(motion.div)`
 
 const NextButton = styled(motion.div)`
   position: absolute;
+  display:flex;
+  top: 106vh;
+  left: 50vw;
   margin-left: auto;
   margin-right: auto;
-  color: darkolivegreen;
+  color: #51b87a;
   font-size: 70px;
   cursor: pointer;
 `;

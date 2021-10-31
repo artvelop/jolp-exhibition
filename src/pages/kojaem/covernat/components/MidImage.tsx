@@ -60,6 +60,7 @@ const Wrapper = styled.div`
 `;
 const Image = styled(motion.img)`
   width:30vw;
+  height:60vh;
   opacity:0;
   y:100;
   pointer-events: none;
