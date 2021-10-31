@@ -5,7 +5,7 @@ import {
   TopContent,
   BodyContent,
   ScrollBtn,
-  Header,
+  Header,Img,
 } from "./components";
 import { myself } from "./dummy/books";
 
@@ -46,9 +46,7 @@ const TopBox = styled.div`
   height: 80vh;
   padding: 2%;
 `;
-const Img = styled.img`
-  width: 36%;
-`;
+
 const Box = styled.div`
   display: flex;
   flex-direction: column;

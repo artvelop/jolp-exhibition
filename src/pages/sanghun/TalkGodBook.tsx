@@ -6,6 +6,7 @@ import {
   BodyContent,
   ScrollBtn,
   Header,
+  Img,
 } from "./components";
 import { talkGod } from "./dummy/books";
 
@@ -46,9 +47,7 @@ const TopBox = styled.div`
   height: 80vh;
   padding: 2%;
 `;
-const Img = styled.img`
-  width: 36%;
-`;
+
 const Box = styled.div`
   display: flex;
   flex-direction: column;

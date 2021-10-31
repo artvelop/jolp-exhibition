@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { TypoGraphy } from "./index";
 import { color } from "../constants";
+import { motion } from "framer-motion";
 
 type TopContentType = {
   MyOpinionChapter: string[];
@@ -45,7 +46,7 @@ const ViewPort = styled.div`
   align-items: center;
 `;
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   width: 80%;
   padding: 2%;
   margin-left: 10%;

@@ -6,6 +6,7 @@ import {
   BodyContent,
   ScrollBtn,
   Header,
+  Img,
 } from "./components";
 import { live } from "./dummy/books";
 
@@ -45,10 +46,6 @@ const TopBox = styled.div`
   gap: 2%;
   height: 80vh;
   padding: 2%;
-`;
-const Img = styled.img`
-    width: 36%;
-
 `;
 const Box = styled.div`
   display: flex;

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { TypoGraphy } from "./index";
 import { color } from "../constants";
+import { motion } from "framer-motion";
+
 type TopContentType = {
   name: string;
   subject: string;
@@ -55,7 +57,7 @@ const Wrap = styled.div`
   padding: 2%;
   margin-top: -2%;
 `;
-const Content = styled.div`
+const Content = styled(motion.div)`
   margin-bottom: 2%;
   border: 3px inset ${color.gold_normal};
   padding: 2%;

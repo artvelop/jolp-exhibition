@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { BsCaretUpSquareFill, BsCaretDownSquareFill } from "react-icons/bs";
 import { color } from "../constants";
+// import { motion } from "framer-motion";
+
 export const ScrollBtn: React.FC = () => {
   const pageDown = () => {
     window.scrollBy({
