@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 export default function Main() {
-  const [pageNumber, setPageNumber] = useState(7);
+  const [pageNumber, setPageNumber] = useState(6);
   const handlePage = () => {
     pageNumber === 9 ? setPageNumber((pageNumber) => (pageNumber = 1)) : setPageNumber((pageNumber) => pageNumber + 1);
   };
@@ -30,4 +30,8 @@ export default function Main() {
 
 const Section = styled(motion.div)`
   background: black;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
 `;

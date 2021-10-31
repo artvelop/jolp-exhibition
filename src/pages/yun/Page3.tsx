@@ -72,6 +72,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
 const Background = styled(motion.div)`
   position: relative;
 
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   background-color: rgba(15, 176, 211, 1);

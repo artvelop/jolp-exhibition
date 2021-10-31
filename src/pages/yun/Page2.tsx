@@ -178,7 +178,31 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                   delay: curState === 1 ? 2.5 : 0,
                 }}
               >
-                150년의 역사
+                <Emphasis
+                  animate={{
+                    fontSize: '80px',
+                  }}
+                  transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                    delay: curState === 1 ? 2.5 : 0,
+                  }}
+                >
+                  150년
+                </Emphasis>
+                <NomalFont
+                  animate={{
+                    opacity: curState === 1 ? [0, 1] : 0,
+                    y: '-20px',
+                  }}
+                  transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                    delay: curState === 1 ? 3.5 : 0,
+                  }}
+                >
+                  의 역사
+                </NomalFont>
               </SecondTitle>
               <SecondSubTitle
                 animate={{
@@ -188,7 +212,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                 transition={{
                   duration: 1,
                   ease: 'easeOut',
-                  delay: curState === 1 ? 2.5 : 0,
+                  delay: curState === 1 ? 4 : 0,
                 }}
               >
                 시간이 증명한 완벽한 맛
@@ -213,6 +237,7 @@ const Background = styled(motion.div)`
   justify-content: center;
   align-items: center;
 
+  overflow: hidden;
   opacity: 0;
 `;
 
@@ -362,12 +387,15 @@ const SecondTitle = styled(motion.div)`
   color: black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   opacity: 0;
   margin-bottom: 70px;
   font-weight: bold;
 `;
-
+const Emphasis = styled(motion.div)``;
+const NomalFont = styled(motion.div)`
+  line-height: 45px;
+`;
 const SecondSubTitle = styled(motion.div)`
   position: relative;
   font-size: 40px;

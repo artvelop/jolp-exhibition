@@ -147,8 +147,8 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
               delay: curState === 0 ? 2 : 0,
             }}
           />
-          {LinePosition.map(({ sTop, sLeft, dTop, dLeft, Rotate, boxTop, boxLeft }) => (
-            <LineAction sTop={sTop} sLeft={sLeft} dTop={dTop} dLeft={dLeft} Rotate={Rotate} boxTop={boxTop} boxLeft={boxLeft} />
+          {LinePosition.map(({ sTop, sLeft, dTop, dLeft, Rotate, boxTop, boxLeft }, index) => (
+            <LineAction key={index} sTop={sTop} sLeft={sLeft} dTop={dTop} dLeft={dLeft} Rotate={Rotate} boxTop={boxTop} boxLeft={boxLeft} />
           ))}
         </ActionWrapper>
       </Background>

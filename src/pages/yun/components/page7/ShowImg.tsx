@@ -16,7 +16,7 @@ export const ShowImg: React.FC<Props> = ({ name, imgX, imgY, imgW, imgH, dTime }
       setVisible(1);
     };
     wait2();
-  }, []);
+  }, [dTime]);
 
   return (
     <Section
@@ -31,7 +31,7 @@ export const ShowImg: React.FC<Props> = ({ name, imgX, imgY, imgW, imgH, dTime }
     >
       <Wrapper
         animate={{
-          opacity: visible == 1 ? [0, 1] : 0,
+          opacity: visible === 1 ? [0, 1] : 0,
         }}
         transition={{
           duration: 0.5,

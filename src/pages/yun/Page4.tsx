@@ -190,6 +190,7 @@ const ImgSection = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
+  height: 100%;
 `;
 
 const JackImg = styled(motion.div)`
@@ -202,6 +203,8 @@ const JackImg = styled(motion.div)`
 
   filter: drop-shadow(16px 16px 10px);
   opacity: 0;
+
+  overflow: hidden;
 `;
 const BarWrapper = styled.div`
   display: flex;
