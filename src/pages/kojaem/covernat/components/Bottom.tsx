@@ -36,7 +36,14 @@ export const Bottom = () => {
         transition:{duration:0.5}
       }}
       >
-        <Title>커버낫 구매자 남여 비율</Title>
+        <Title
+        animate={{
+          transformPerspective:300,
+          rotateY: show ? [180,360] : 0,
+          opacity: show ? [0,1] : 0,
+          transition:{duration: 1.2}
+        }}
+        >커버낫 구매자 남여 비율</Title>
         <GenderChart />
       </Wrapper>
   );
@@ -54,6 +61,7 @@ const Title = styled(motion.div)`
   color:white;
   text-shadow: 1px 1px 5px black;
   font-size: 4vw;
+  opacity: 0;
   margin-top: 20vh;
   align-self: center;
   text-shadow: white 1px 1px 5px;

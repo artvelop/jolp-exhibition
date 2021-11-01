@@ -96,34 +96,6 @@ const Wrapper = styled(motion.div)`
   margin: 100vh 0 100vh 0;
 `;
 
-const BrandName = styled(motion.h1)`
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  font-size: 30px;
-  transform: translateX(-50%) scale(1.5);;
-  color: white;
-  display: flex;
-  justify-content: center;
-
-  @media screen and (max-width: 600px) {
-    position: absolute;
-    font-size: 40px;
-    width: 100vw;
-  }
-
-  @media screen and (min-width: 600px) {
-    font-size: 50px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    font-size: 60px;
-  }
-  @media screen and (min-width: 1200px) {
-    font-size: 70px;
-  }
-`;
-
 const ImageUl = styled(motion.div)`
   margin-top: 200px;
   width: 50vw;

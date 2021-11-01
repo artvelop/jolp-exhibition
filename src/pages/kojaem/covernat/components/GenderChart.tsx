@@ -55,7 +55,6 @@ export const GenderChart = () => {
       <ChartWrapper
         ref={chartRef}
         animate={{
-          x: show ? [-50, 0] : 0,
           rotate: show ? [0, 240, 0] : 0,
           scale: show ? [1, 1.2, 1] : 1,
           opacity: show ? [0, 1] : 0,
