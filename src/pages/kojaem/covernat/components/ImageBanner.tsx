@@ -50,31 +50,31 @@ export const ImageBanner = () => {
       >
         <SlideImage
           className="keen-slider__slide number-slide1"
-          src="/koJaem/img/covernat/roll_01.jpg"
+          src="/koJaem/img/covernat/slide_01.jpg"
           setPause={setPause}
           text="현석&예나 커플이 선택한 커버낫 맨투맨 스타일링"
         />
         <SlideImage
           className="keen-slider__slide number-slide2"
-          src="/koJaem/img/covernat/roll_02.jpg"
+          src="/koJaem/img/covernat/slide_02.jpg"
           setPause={setPause}
           text="Covernat ECO CAPSULE COLLECTION"
         />
         <SlideImage
           className="keen-slider__slide number-slide3"
-          src="/koJaem/img/covernat/roll_03.jpg"
+          src="/koJaem/img/covernat/slide_03.jpg"
           setPause={setPause}
           text="편안함 속 스타일리시한 커버낫 맨투맨세트"
         />
         <SlideImage
           className="keen-slider__slide number-slide4"
-          src="/koJaem/img/covernat/roll_04.jpg"
+          src="/koJaem/img/covernat/slide_04.jpg"
           setPause={setPause}
           text="가벼우면서도 따뜻한 커버낫 패딩"
         />
         <SlideImage
           className="keen-slider__slide number-slide5"
-          src="/koJaem/img/covernat/roll_05.jpg"
+          src="/koJaem/img/covernat/slide_05.jpg"
           setPause={setPause}
           text="21FW Covernat Fleece Collection"
         />

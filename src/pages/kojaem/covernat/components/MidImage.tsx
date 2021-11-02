@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { motion, MotionStyle } from "framer-motion";
-import { Ref, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { Ref, useRef, useState } from "react";
 
 type Props = {
     src:string,

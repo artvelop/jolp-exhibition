@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Doughnut } from "react-chartjs-2";
 
 type Props = {
   show: boolean;
@@ -13,7 +11,7 @@ const textArray = text.split("");
 // 성별에 상관없이 즐겨 입을 수 있는 브랜드입니다.
 export const ChartDescription = ({ show }: Props) => {
   const makeText = (item: string, index: number) => {
-    if (index == 29) return <p key={index}></p>;
+    if (index === 29) return <p key={index}></p>;
 
     return (
       <Text

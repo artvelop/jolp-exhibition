@@ -9,22 +9,12 @@ type Props = {
   setSelected: (link: string) => void;
 };
 const Covernat = ({ selected, setSelected }: Props) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [onLoading, setOnLoading] = useState(true);
   return (
     <LayoutContainer selected={selected} setSelected={setSelected}>
-      {isLoading ? (
-        <CovernatWrapper>
-          <CovernatMain />
-        </CovernatWrapper>
-      ) : (
-        <Loading setIsLoading={setIsLoading} />
-      )}
+      {onLoading ? <Loading setOnLoading={setOnLoading} /> : <CovernatMain /> }
     </LayoutContainer>
   );
 };
 
 export default Covernat;
-
-const CovernatWrapper = styled.div`
-  display: flex;
-`;

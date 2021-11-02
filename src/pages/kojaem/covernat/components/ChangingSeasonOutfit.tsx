@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { GenderChart } from './GenderChart';
 import { MidImage } from './MidImage';
 
 const options = {threshold: [0.2,0.3,0.4]};

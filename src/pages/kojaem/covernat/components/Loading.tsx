@@ -3,23 +3,16 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 type Props = {
-  setIsLoading: (loading: boolean) => void;
+  setOnLoading: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
-export const Loading = ({ setIsLoading }: Props) => {
+export const Loading = ({ setOnLoading: setOnLoading }: Props) => {
   const loadingRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  useEffect(() => {
-    const tick = setTimeout(() => {
-      loadingRef.current!.style.opacity = "0";
-      imageRef.current!.style.opacity = "0";
-    }, 3000);
-    return () => clearTimeout(tick);
-  });
 
   useEffect(() => {
     const tick = setTimeout(() => {
-      setIsLoading(true);
+      setOnLoading(false);
     }, 4000);
     return () => clearTimeout(tick);
   });
@@ -28,7 +21,16 @@ export const Loading = ({ setIsLoading }: Props) => {
     <LoadingWrapper>
       <Colored
         initial={{ height: 0 }}
-        animate={{ height: 68 }}
+        animate={{ 
+          height: 68,
+          transition: {
+            duration:2.5,
+            ease: 'easeOut'
+          },
+          transitionEnd: {
+            opacity:0,
+          }          
+        }}
         exit={{ opacity: 0 }}
         ref={loadingRef}
       />
@@ -57,7 +59,7 @@ const Colored = styled(motion.span)`
     left: 50vw;
     bottom: 50vh;
     transform: translate(-120px, -34px);
-    transition: height 2000ms, opacity 300ms linear;
+    transition: opacity 500ms linear;
     background-color: #37664d;
 }
 `;
@@ -69,5 +71,4 @@ const LoadingImage = styled(motion.img)`
   bottom: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  transition: opacity 1500ms linear;
 `;
