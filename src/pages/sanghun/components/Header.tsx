@@ -8,6 +8,11 @@ import { motion } from "framer-motion";
 
 export const Header: React.FC = () => {
   const [show, setShow] = useState(false);
+  const bookAnimate = {
+    x: show ? [-1000, 0] : [0, -1000],
+    opacity: show ? 1 : 0,
+    transition: { duration: 1.6, ease: "easeOut" },
+  };
   return (
     <Head>
       <HomeLogo
@@ -38,59 +43,36 @@ export const Header: React.FC = () => {
         <Link to="/sanghun/PhilosophyBook">
           <Img
             src={philosophy.imgSrc}
-            animate={{
-              x: show ? [-1000, 0] : [0, -1000],
-              opacity: show ? 1 : 0,
-              transition: { duration: 1.6, ease: "easeOut" },
-            }}
-            whileHover={{ scale: 1.3 }}
+            animate={bookAnimate}
+            whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
         <Link to="/sanghun/MyselfBook">
           <Img
             src={myself.imgSrc}
-            animate={{
-              x: show ? [-1000, 0] : [0, -1000],
-              opacity: show ? 1 : 0,
-              transition: { duration: 1.6, ease: "easeOut" },
-            }}
-            whileHover={{ scale: 1.3 }}
+            animate={bookAnimate}
+            whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
         <Link to="/sanghun/HarvardBook">
           <Img
             src={harvard.imgSrc}
-            animate={{
-              x: show ? [-1000, 0] : [0, -1000],
-              opacity: show ? 1 : 0,
-              transition: { duration: 1.6, ease: "easeOut" },
-            }}
-            whileHover={{ scale: 1.3 }}
+            animate={bookAnimate}
+            whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
         <Link to="/sanghun/LiveBook">
           <Img
             src={live.imgSrc}
-            animate={{
-              x: show ? [-1000, 0] : [0, -1000],
-              opacity: show ? 1 : 0,
-              transition: {
-                duration: 1.6,
-                ease: "easeOut",
-              },
-            }}
-            whileHover={{ scale: 1.3 }}
+            animate={bookAnimate}
+            whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
         <Link to="/sanghun/TalkGodBook">
           <Img
             src={talkGod.imgSrc}
-            animate={{
-              x: show ? [-1000, 0] : [0, -1000],
-              opacity: show ? 1 : 0,
-              transition: { duration: 1.6, ease: "easeOut" },
-            }}
-            whileHover={{ scale: 1.3 }}
+            animate={bookAnimate}
+            whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
       </ImgBox>
