@@ -43,9 +43,8 @@ export const Loading = ({ setOnLoading }: Props) => {
         exit={{ opacity: 0 }}
         ref={loadingRef}
       />
-
       <LoadingImage
-        src="/koJaem/img/covernat/Covernat_logo.png"
+        src="/koJaem/img/lmc/test2.png"
         ref={imageRef}
       />
     </LoadingWrapper>
@@ -58,7 +57,7 @@ const LoadingWrapper = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: #d7d7d5;
+  background-color: #706e85;
 `;
 
 const Colored = styled(motion.span)`
@@ -69,7 +68,7 @@ const Colored = styled(motion.span)`
     bottom: 50vh;
     transform: translate(-120px, -34px);
     transition: opacity 500ms linear;
-    background-color: #37664d;
+    background-color: #ffc4ff;
 }
 `;
 

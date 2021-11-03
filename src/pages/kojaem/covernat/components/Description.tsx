@@ -2,24 +2,28 @@ import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }
 export const Description = ({setFirst}:Props) => {
   const nextButtonIcon = <FontAwesomeIcon icon={faArrowRight} />;
   const [show, setShow] = useState(true);
+
   const showNext = () => {
     setShow(false);
     setTimeout(() => {
       setFirst(false);
     },4000)
   }
+  useEffect(() => {
+    return () => setFirst(false);
+  }, [setFirst])
 
   return (
     <Wrapper>
       <BrandImage
-        src={`/koJaem/img/covernat/covernat1.jpg`}
+        src={`/koJaem/img/covernat/CovernatDescription.jpg`}
         alt="brand"
         animate={{
           display: show ? 'flex' : undefined,

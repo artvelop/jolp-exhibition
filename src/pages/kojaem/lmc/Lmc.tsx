@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutContainer } from '../components/LayoutContainer';
+import { Loading } from './components/Loading';
 
 type Props = {
   selected: string;
@@ -7,14 +8,12 @@ type Props = {
 }
 
 const Lmc = ({selected, setSelected}:Props) => {
+  const [onLoading, setOnLoading] = useState(true);
   return (
-  <LayoutContainer
-    selected={selected}
-    setSelected={setSelected}
-  >
-    <div>엘엠씨</div>
-    <div>엘엠씨2</div>
-    <div>엘엠씨3</div>
+    <LayoutContainer selected={selected} setSelected={setSelected}>
+    {/* {onLoading ? <Loading setOnLoading={setOnLoading} /> : <LmcMain /> } */}
+    {onLoading ? <Loading setOnLoading={setOnLoading} /> : null }
+
   </LayoutContainer>
   );
 };
