@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { useState } from "react";
 import { LayoutContainer } from "../components/LayoutContainer";
 import { Loading } from "./components/Loading";

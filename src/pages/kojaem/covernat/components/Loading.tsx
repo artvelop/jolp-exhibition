@@ -9,13 +9,22 @@ type Props = {
 export const Loading = ({ setOnLoading: setOnLoading }: Props) => {
   const loadingRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  function delay(time: number) {
+    return new Promise((res) => {
+      setTimeout(() => {
+        res(null)
+      }, time)
+    })
+  }
 
   useEffect(() => {
-    const tick = setTimeout(() => {
+    const tick = async () => {
+      await delay(4000);
       setOnLoading(false);
-    }, 4000);
-    return () => clearTimeout(tick);
-  });
+    }
+    tick();
+    return () => setOnLoading(false)
+  }, [setOnLoading]);
 
   return (
     <LoadingWrapper>
