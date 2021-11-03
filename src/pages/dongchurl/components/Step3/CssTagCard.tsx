@@ -59,9 +59,7 @@ export const CssTagCard: React.FC<Props> = ({
       top={top || false}
       right={right || false}
       bottom={bottom || false}
-      center={center || false}
-      whileHover={{ scale: 1.5 }}
-      whileTap={{ scale: 0.95 }}>
+      center={center || false}>
       <Box
         animate={{
           opacity: visible ? [0, 1, 0] : [1, 0],
@@ -70,7 +68,10 @@ export const CssTagCard: React.FC<Props> = ({
           y: visible ? moveY : [1, 1],
         }}
         variants={variants}
-        transition={{ delay: visible ? visibleDelay : 0 }}>
+        transition={{
+          delay: visible ? visibleDelay : 0,
+          duration: visible ? 1.5 : 0,
+        }}>
         <TyphoGraphy type="h3" color="#3f3f3f">
           {title.split('<br />').map((text, index) => (
             <span key={index.toString()}>
