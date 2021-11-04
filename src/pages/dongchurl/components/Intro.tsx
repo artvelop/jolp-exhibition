@@ -81,25 +81,28 @@ export const Intro = () => {
 };
 
 const Wrapper = styled.div`
+  min-width: 100vw;
   max-width: 100vw;
-  min-width: 90vw;
-  min-height: 92vh;
-  height: 100vh;
-  padding: 40px;
-  display: flex;
-
-  @media all and (max-width: 1500px) and (orientation: landscape) {
-    min-height: 84vh;
-    height: 84vh;
+  width: 100vw;
+  min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    min-height: 89vh;
   }
+  display: flex;
 `;
 
 const LayoutWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 40px;
   padding: 24px;
   border: 24px solid #000;
+  /* min-height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  min-width: calc(100vw - 80px);
+  max-width: calc(100vw - 80px); */
+
   /* @media all and (max-width: 1500px) and (orientation: landscape) {
     border: 24px solid #000 !important;
   } */
