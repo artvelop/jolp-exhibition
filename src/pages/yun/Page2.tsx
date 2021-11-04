@@ -3,7 +3,7 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
-import { NumberPlus } from './components/page2';
+import { NumberPlus } from './components';
 type Props = { handlePage: () => void };
 export const Page2: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);

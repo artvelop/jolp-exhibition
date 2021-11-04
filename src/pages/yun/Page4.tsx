@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { Doughnut } from 'react-chartjs-2';
-import { NumberPlus } from './components/page2';
+import { NumberPlus } from './components';
 const options: object = {
   legend: {
     display: false, // label 숨기기
