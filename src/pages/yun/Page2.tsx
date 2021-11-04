@@ -3,7 +3,7 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
-
+import { NumberPlus } from './components/page2';
 type Props = { handlePage: () => void };
 export const Page2: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
@@ -20,7 +20,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
   };
   useEffect(() => {
     const wait2 = async () => {
-      await timeout(3000);
+      await timeout(5000);
       setNextButton(1);
     };
     wait2();
@@ -170,30 +170,17 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
               <SecondTitle
                 animate={{
                   opacity: curState === 1 ? [0, 1] : 0,
-                  y: '-20px',
                 }}
                 transition={{
                   duration: 1,
                   ease: 'easeOut',
-                  delay: curState === 1 ? 2.5 : 0,
+                  delay: curState === 1 ? 2 : 0,
                 }}
               >
-                <Emphasis
-                  animate={{
-                    fontSize: '80px',
-                  }}
-                  transition={{
-                    duration: 1,
-                    ease: 'easeOut',
-                    delay: curState === 1 ? 2.5 : 0,
-                  }}
-                >
-                  150년
-                </Emphasis>
+                <NumberPlus number={150} fontSize={'90px'} delayTime={2000} />
                 <NomalFont
                   animate={{
                     opacity: curState === 1 ? [0, 1] : 0,
-                    y: '-20px',
                   }}
                   transition={{
                     duration: 1,
@@ -201,7 +188,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                     delay: curState === 1 ? 3.5 : 0,
                   }}
                 >
-                  의 역사
+                  년의 역사
                 </NomalFont>
               </SecondTitle>
               <SecondSubTitle
@@ -212,7 +199,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                 transition={{
                   duration: 1,
                   ease: 'easeOut',
-                  delay: curState === 1 ? 4 : 0,
+                  delay: curState === 1 ? 4.0 : 0,
                 }}
               >
                 시간이 증명한 완벽한 맛
@@ -392,10 +379,7 @@ const SecondTitle = styled(motion.div)`
   margin-bottom: 70px;
   font-weight: bold;
 `;
-const Emphasis = styled(motion.div)``;
-const NomalFont = styled(motion.div)`
-  line-height: 45px;
-`;
+const NomalFont = styled(motion.div)``;
 const SecondSubTitle = styled(motion.div)`
   position: relative;
   font-size: 40px;
