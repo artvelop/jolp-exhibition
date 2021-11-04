@@ -39,7 +39,7 @@ export const IntroBox: React.FC<Props> = ({
       onHoverStart={(e) => setBoxHover(true)}
       onHoverEnd={(e) => setBoxHover(false)}>
       <TyphoGraphy type="Title" color={boxHover ? '#fff' : '#000'}>
-        {content}
+        <ResponsiveText>{content}</ResponsiveText>
       </TyphoGraphy>
     </Wrapper>
   );
@@ -48,12 +48,30 @@ export const IntroBox: React.FC<Props> = ({
 const Wrapper = styled(motion.div)`
   position: absolute;
   left: 0;
-  top: 0;
+  right: 0;
   background-color: #fff;
-  width: 1272px;
+  /* width: 100%; */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  /* height: 15rem; */
+
+  /* width: 1272px; */
   height: 240px;
   border: 4px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    top: 32px;
+    width: 70%;
+    height: 200px;
+  }
+`;
+
+const ResponsiveText = styled.div`
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    font-size: 80px;
+  }
 `;
