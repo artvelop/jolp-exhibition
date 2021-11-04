@@ -82,6 +82,6 @@ const TyphoGraphyText = styled.div<StyledTyphoGraphyProps>`
 
   @media (min-width: 1200px) and (max-width: 1400px) {
     font-size: ${(props) =>
-      props.type >= '32' ? `calc(${props.type}px - 36px)` : `${props.type}px`};
+      props.type > '32' ? `calc(${props.type}px - 36px)` : `${props.type}px`};
   }
 `;
