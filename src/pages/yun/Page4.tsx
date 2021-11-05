@@ -9,6 +9,7 @@ const options: object = {
   plugins: {
     legend: {
       display: false, // label 숨기기
+      reverse: true,
     },
   },
   maintainAspectRatio: false, // false로 설정 시 사용자 정의 크기에 따라 그래프 크기가 결정됨.
@@ -18,9 +19,9 @@ type Props = { handlePage: () => void };
 export const Page4: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
-  const ChartColor = ['#ffc81b', '#1ca392'];
+  const ChartColor = ['#1ca392', ' #ffc81b'];
   const data = {
-    labels: ['옥수수', '맥아, 밀, 기타등등'],
+    labels: ['맥아, 밀, 기타등등', '옥수수'],
     datasets: [
       {
         backgroundColor: ChartColor,
@@ -28,7 +29,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
         borderWidth: 3,
         hoverBackgroundColor: ChartColor,
         hoverBorderColor: ['grey', 'grey'],
-        data: [51, 49],
+        data: [49, 51],
       },
     ],
   };
@@ -98,7 +99,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
               delay: curState === 0 ? 3 : 0,
             }}
           >
-            <ColorText color={ChartColor[0]}>
+            <ColorText color={ChartColor[1]}>
               옥수수{'\u00A0'}
               <strong>
                 <NumberPlus number={51} fontSize={'70px'} delayTime={3300} />
@@ -106,7 +107,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
               %,{'\u00A0'}
             </ColorText>
             {'\u00A0'}
-            <ColorText color={ChartColor[1]}>맥아, 밀, 기타등등.</ColorText>
+            <ColorText color={ChartColor[0]}>맥아, 밀, 기타등등.</ColorText>
           </SubTitle>
         </TitleSection>
 
