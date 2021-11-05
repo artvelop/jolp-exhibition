@@ -19,7 +19,12 @@ export const TopContent: React.FC<TopContentType> = ({
   summary,
 }) => {
   return (
-    <Wrap>
+    <Wrap
+      animate={{
+        opacity: [0, 1, 0, 1, 0, 1],
+        transition: { duration: 2 },
+      }}
+    >
       <Content>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           제목 : {name}
@@ -52,7 +57,7 @@ export const TopContent: React.FC<TopContentType> = ({
   );
 };
 
-const Wrap = styled.div`
+const Wrap = styled(motion.div)`
   flex: 2;
   padding: 2%;
   margin-top: -2%;

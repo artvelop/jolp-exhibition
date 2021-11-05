@@ -12,6 +12,8 @@ export const BodyContent: React.FC<TopContentType> = ({
   MyOpinionChapter,
   MyOpinionDetail,
 }) => {
+  const regExp = /!$/;
+
   return (
     <Wrap>
       {MyOpinionChapter.map((item, i) => {
@@ -23,7 +25,22 @@ export const BodyContent: React.FC<TopContentType> = ({
               </TypoGraphy>
               <Gap />
               {MyOpinionDetail[i].map((item) => {
-                return (
+                return regExp.test(item) ? (
+                  <Special
+                    animate={{
+                      opacity: [1, 0, 1, 0, 1, 0, 1],
+                      transition: { duration: 3, delay: 1 },
+                    }}
+                  >
+                    <TypoGraphy
+                      type="h3"
+                      fontHeight="34px"
+                      color={color.gold_dark}
+                    >
+                      <li> {item}</li>
+                    </TypoGraphy>
+                  </Special>
+                ) : (
                   <TypoGraphy type="h3" fontHeight="34px" color={color.gray}>
                     <li> {item}</li>
                   </TypoGraphy>
@@ -59,3 +76,5 @@ const Box = styled(motion.div)`
 const Gap = styled.div`
   margin-top: 1%;
 `;
+
+const Special = styled(motion.div)``;

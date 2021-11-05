@@ -4,9 +4,9 @@ import { TypoGraphy, SanghunModal } from "./components";
 import { harvard, myself, philosophy, live, talkGod } from "./dummy/books";
 import { randomWisdom } from "./dummy/wiseSaying";
 import backImg from "../sanghun/img/mikolaj-DCzpr09cTXY-unsplash.jpg";
-// import backImg from "../sanghun/img/olga-tutunaru-JMATuFkXeHU-unsplash.jpg";
 import "animate.css";
 import { useHistory } from "react-router";
+
 const Menu: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [adress, setAdress] = useState<string>("");
