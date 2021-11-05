@@ -19,7 +19,7 @@ export const Loading = ({ setOnLoading }: Props) => {
 
   useEffect(() => {
     const tick = async () => {
-      await delay(4000);
+      await delay(5000);
       setOnLoading(false);
     }
     tick();
@@ -29,22 +29,21 @@ export const Loading = ({ setOnLoading }: Props) => {
   return (
     <LoadingWrapper>
       <Colored
-        initial={{ height: 0 }}
+        initial={{ width: 0 }}
         animate={{ 
-          height: 68,
+          width: 240,
           transition: {
-            duration:2.5,
+            duration:3.5,
             ease: 'easeOut'
           },
           transitionEnd: {
             opacity:0,
           }          
         }}
-        exit={{ opacity: 0 }}
         ref={loadingRef}
       />
       <LoadingImage
-        src="/koJaem/img/lmc/test2.png"
+        src="/koJaem/img/lmc/Lmc_logo.png"
         ref={imageRef}
       />
     </LoadingWrapper>
@@ -57,13 +56,13 @@ const LoadingWrapper = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: #706e85;
+  background-color: #716e84;
 `;
 
 const Colored = styled(motion.span)`
     position: absolute;
-    width: 240px;
-    height: 0px;
+    width: 0px;
+    height: 68px;
     left: 50vw;
     bottom: 50vh;
     transform: translate(-120px, -34px);

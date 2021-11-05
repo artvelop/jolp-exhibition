@@ -22,7 +22,7 @@ export const MidImage = ({src,show}:Props) => {
       imageRef.current!.src = imageSrc;
       setClick(!click);
     }
-    // const imgSrc = imageRef.current!.src.slice(-9,-4)
+    // const imgSrc = imageRef.src.slice(-9,-4)
     // if(imgSrc!="Click") {
     //   const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
     //   imageRef.current!.src = imageClickSrc;

@@ -17,66 +17,70 @@ export const Loading = ({ setOnLoading }: Props) => {
     })
   }
 
-  useEffect(() => {
-    const tick = async () => {
-      await delay(4000);
-      setOnLoading(false);
-    }
-    tick();
-    return () => setOnLoading(false)
-  }, [setOnLoading]);
+  // useEffect(() => {
+  //   const tick = async () => {
+  //     await delay(5000);
+  //     setOnLoading(false);
+  //   }
+  //   tick();
+  //   return () => setOnLoading(false)
+  // }, [setOnLoading]);
 
   return (
-    <LoadingWrapper>
-      <Colored
-        initial={{ height: 0 }}
-        animate={{ 
-          height: 68,
+    <LoadingWrapper
+    animate={{
+      backgroundColor : ['#ddc4f5','#f5c4dc'],
+      transition:{duration:3}
+    }}
+    >
+      
+      <LoadingImage
+        ref={imageRef}
+      >
+        <Colored
+        initial={{ height: '0%' }}
+        animate={{
+          height: '70%',
           transition: {
-            duration:2.5,
+            duration: 3.5,
             ease: 'easeOut'
           },
-          transitionEnd: {
-            opacity:0,
-          }          
         }}
         ref={loadingRef}
       />
-
-      <LoadingImage
-        src="/koJaem/img/covernat/Covernat_logo.png"
-        ref={imageRef}
-      />
+      </LoadingImage>
     </LoadingWrapper>
   );
 };
 
-const LoadingWrapper = styled.div`
+const LoadingWrapper = styled(motion.div)`
   position: relative;
   height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: #d7d7d5;
 `;
 
 const Colored = styled(motion.span)`
     position: absolute;
-    width: 240px;
-    height: 0px;
-    left: 50vw;
-    bottom: 50vh;
-    transform: translate(-120px, -34px);
+    width: 120px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
     transition: opacity 500ms linear;
-    background-color: #37664d;
+    background: no-repeat url('../koJaem/img/kirsh/logo_filled.png') 0 100%;
+    background-size: 100% auto;
 }
 `;
 
-const LoadingImage = styled(motion.img)`
-  width: 240px;
-  height: 68px;
+const LoadingImage = styled(motion.div)`
+  width: 120px;
+  height: 130px;
   position: absolute;
   bottom: 50vh;
   left: 50vw;
+  background: no-repeat center url('../koJaem/img/kirsh/kirsh_logo.png');
   transform: translate(-50%, -50%);
+  background-size: 100% auto;
 `;

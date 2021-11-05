@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutContainer } from '../components/LayoutContainer';
+import { Loading } from './components/Loading';
 
 type Props = {
   selected: string;
@@ -7,17 +8,12 @@ type Props = {
 }
 
 const Kirsh = ({selected, setSelected}:Props) => {
-  return(
-  <LayoutContainer
-    selected={selected}
-    setSelected={setSelected}
-  >
-    <div>키르시</div>
-    <div>키르시2
-    <div>키르시2-1</div>
+  const [onLoading, setOnLoading] = useState(true);
+  return (
+    <LayoutContainer selected={selected} setSelected={setSelected}>
+    {/* {onLoading ? <Loading setOnLoading={setOnLoading} /> : <KirshMain /> } */}
+    {onLoading ? <Loading setOnLoading={setOnLoading} /> : null }
 
-    </div>
-    <div>키르시3</div>
   </LayoutContainer>
   );
 };

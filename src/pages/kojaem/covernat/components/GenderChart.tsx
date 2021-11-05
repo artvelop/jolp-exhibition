@@ -19,6 +19,7 @@ const data = {
 const chartOptions = {
   plugins: {
     legend: {
+      // display: false,
       reverse:true,
       labels: {
         color:'#FFFFFF',
