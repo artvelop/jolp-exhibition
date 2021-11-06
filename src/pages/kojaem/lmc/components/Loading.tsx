@@ -19,7 +19,7 @@ export const Loading = ({ setOnLoading }: Props) => {
 
   useEffect(() => {
     const tick = async () => {
-      await delay(5000);
+      await delay(4000);
       setOnLoading(false);
     }
     tick();
@@ -29,11 +29,11 @@ export const Loading = ({ setOnLoading }: Props) => {
   return (
     <LoadingWrapper>
       <Colored
-        initial={{ width: 0 }}
+      initial={{ width: 0 }}
         animate={{ 
           width: 240,
           transition: {
-            duration:3.5,
+            duration:2.5,
             ease: 'easeOut'
           },
           transitionEnd: {
@@ -42,6 +42,7 @@ export const Loading = ({ setOnLoading }: Props) => {
         }}
         ref={loadingRef}
       />
+
       <LoadingImage
         src="/koJaem/img/lmc/Lmc_logo.png"
         ref={imageRef}
