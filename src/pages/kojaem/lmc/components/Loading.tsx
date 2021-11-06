@@ -73,7 +73,6 @@ const LoadingImage = styled(motion.span)`
 }
 `;
 
-
 const LoadingImageWrapper = styled(motion.div)`
   width: 200px;
   height: 69px;
@@ -81,5 +80,4 @@ const LoadingImageWrapper = styled(motion.div)`
   bottom: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  background-size: 100% auto;
 `;
