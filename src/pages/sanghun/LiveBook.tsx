@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {
   DetailLayout,
   TopContent,
-  BodyContent,
+  Chapter,
   ScrollBtn,
   Header,
   Img,
@@ -28,10 +28,12 @@ const LiveBook: React.FC = () => {
             />
           </TopBox>
         </Box>
-        <BodyContent
-          MyOpinionChapter={live.MyOpinionChapter}
-          MyOpinionDetail={live.MyOpinionDetail}
-        />
+        {live.MyOpinionChapter.map((item, index) => (
+          <Chapter
+            MyOpinionChapter={item}
+            MyOpinionDetail={live.MyOpinionDetail[index]}
+          />
+        ))}
       </Wrapper>
     </DetailLayout>
   );
@@ -50,6 +52,6 @@ const TopBox = styled.div`
 const Box = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 100vw; */
 `;
+
 export default LiveBook;

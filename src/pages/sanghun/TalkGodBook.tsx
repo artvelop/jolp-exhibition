@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {
   DetailLayout,
   TopContent,
-  BodyContent,
+  Chapter,
   ScrollBtn,
   Header,
   Img,
@@ -28,10 +28,12 @@ const TalkGodBook: React.FC = () => {
             />
           </TopBox>
         </Box>
-        <BodyContent
-          MyOpinionChapter={talkGod.MyOpinionChapter}
-          MyOpinionDetail={talkGod.MyOpinionDetail}
-        />
+        {talkGod.MyOpinionChapter.map((item, index) => (
+          <Chapter
+            MyOpinionChapter={item}
+            MyOpinionDetail={talkGod.MyOpinionDetail[index]}
+          />
+        ))}
       </Wrapper>
     </DetailLayout>
   );

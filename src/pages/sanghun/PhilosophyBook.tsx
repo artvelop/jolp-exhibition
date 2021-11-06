@@ -4,9 +4,10 @@ import styled from "@emotion/styled";
 import {
   DetailLayout,
   TopContent,
-  BodyContent,
+  Chapter,
   ScrollBtn,
-  Header,Img,
+  Header,
+  Img,
 } from "./components";
 import { philosophy } from "./dummy/books";
 
@@ -28,10 +29,12 @@ const PhilosophyBook: React.FC = () => {
             />
           </TopBox>
         </Box>
-        <BodyContent
-          MyOpinionChapter={philosophy.MyOpinionChapter}
-          MyOpinionDetail={philosophy.MyOpinionDetail}
-        />
+        {philosophy.MyOpinionChapter.map((item, index) => (
+          <Chapter
+            MyOpinionChapter={item}
+            MyOpinionDetail={philosophy.MyOpinionDetail[index]}
+          />
+        ))}
       </Wrapper>
     </DetailLayout>
   );
