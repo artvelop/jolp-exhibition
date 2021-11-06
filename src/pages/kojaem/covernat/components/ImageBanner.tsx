@@ -84,6 +84,7 @@ export const ImageBanner = () => {
 };
 
 const Wrapper = styled(motion.div)`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -92,7 +93,7 @@ const Wrapper = styled(motion.div)`
 
 const BrandName = styled(motion.h1)`
   position: absolute;
-  top: 7%;
+  top: 0%;
   left: 50%;
   font-size: 30px;
   transform: translateX(-50%) scale(1.5);;

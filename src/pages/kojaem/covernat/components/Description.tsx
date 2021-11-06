@@ -26,25 +26,27 @@ export const Description = ({setFirst}:Props) => {
         src={`/koJaem/img/covernat/CovernatDescription.jpg`}
         alt="brand"
         animate={{
+          width: show ? '40%' : '0%',
           display: show ? 'flex' : undefined,
           x: show ? [-20 ,0] : 0,
           opacity: show ? [0,1] : 0,
-          transition: show ? {duration:1} : {duration:0.5},
+          transition: show ? {duration:1} : {duration:2},
           transitionEnd: show ? {display:'flex'} : {display:'none'}
         }}
         
       />
       <RightWrapper animate={show ? undefined : { width: "100%" }}>
         <BrandName
+          initial={{
+            translateX: "-50%"
+          }}
           animate={{
             opacity: show ? [0, 1] : 1,
-            top: show ? "20%" : "7%",
-            left: show ? "62%" : "50%",
-            translateX: show ? undefined : "-50%",
+            top: show ? "10%" : "0%",
             y: show ? [50, 0] : 0,
             scale: show ? undefined : [1, 2, 1.5],
             rotate: show ? undefined : [0, 360],
-            transition: show ? { delay: 1 } : { delay: 1.5, duration: 1.5 },
+            transition: show ? { delay: 1 } : { delay: 1, duration: 1.5 },
           }}
         >
           COVERNAT
@@ -90,9 +92,21 @@ const Wrapper = styled(motion.div)`
     justify-content: center;
   }
 `;
+const BrandImage = styled(motion.img)`
+  width: 40%;
+  max-width: 800px;
+  overflow: hidden;
+  @media screen and (max-width: 600px) {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+`;
 
 const RightWrapper = styled(motion.div)`
-  width: 100%;
+  position: relative;
+  width: 60%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -100,8 +114,7 @@ const RightWrapper = styled(motion.div)`
 
 const BrandName = styled(motion.h1)`
   position: absolute;
-  left: 62%;
-  top: 20%;
+  left: 50%;
   font-size: 30px;
   color: white;
   display: flex;
@@ -158,14 +171,3 @@ const NextButton = styled(motion.div)`
   cursor: pointer;
 `;
 
-const BrandImage = styled(motion.img)`
-  width: 100%;
-  max-width: 800px;
-  overflow: hidden;
-  @media screen and (max-width: 600px) {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
-`;
