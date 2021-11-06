@@ -8,7 +8,6 @@ type Props = {
 
 export const Loading = ({ setOnLoading }: Props) => {
   const loadingRef = useRef<HTMLSpanElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
   function delay(time: number) {
     return new Promise((res) => {
       setTimeout(() => {
@@ -34,7 +33,6 @@ export const Loading = ({ setOnLoading }: Props) => {
       }}
     >
       <LoadingImage
-        ref={imageRef}
         animate={{
           opacity: 0,
           transition: { duration: 1, delay: 3.5 },
