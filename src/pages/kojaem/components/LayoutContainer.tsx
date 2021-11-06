@@ -40,8 +40,8 @@ export const LayoutContainer = ({ selected, setSelected, children }: Props) => {
 };
 
 const RootWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;
 
 const LayoutWrapper = styled.div`

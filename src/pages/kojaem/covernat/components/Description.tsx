@@ -34,11 +34,11 @@ export const Description = ({setFirst}:Props) => {
         }}
         
       />
-      <RightWrapper animate={show ? undefined : { width: "100vw" }}>
+      <RightWrapper animate={show ? undefined : { width: "100%" }}>
         <BrandName
           animate={{
             opacity: show ? [0, 1] : 1,
-            top: show ? "15%" : "7%",
+            top: show ? "20%" : "7%",
             left: show ? "62%" : "50%",
             translateX: show ? undefined : "-50%",
             y: show ? [50, 0] : 0,
@@ -47,7 +47,7 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 1 } : { delay: 1.5, duration: 1.5 },
           }}
         >
-          Covernat
+          COVERNAT
         </BrandName>
         <Intro
           animate={{
@@ -83,7 +83,7 @@ export const Description = ({setFirst}:Props) => {
 
 const Wrapper = styled(motion.div)`
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   @media screen and (max-width: 600px) {
     flex-direction: column;
@@ -92,7 +92,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const RightWrapper = styled(motion.div)`
-  width: 50vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -101,6 +101,7 @@ const RightWrapper = styled(motion.div)`
 const BrandName = styled(motion.h1)`
   position: absolute;
   left: 62%;
+  top: 20%;
   font-size: 30px;
   color: white;
   display: flex;
@@ -109,7 +110,7 @@ const BrandName = styled(motion.h1)`
   @media screen and (max-width: 600px) {
     position: absolute;
     font-size: 40px;
-    width: 100vw;
+    width: 100%;
   }
 
   @media screen and (min-width: 600px) {
@@ -151,18 +152,19 @@ const Intro = styled(motion.h1)`
 const NextButton = styled(motion.div)`
   display: flex;
   margin-left: auto;
+  margin-right: 5vw;
   color: darkolivegreen;
   font-size: 70px;
   cursor: pointer;
 `;
 
 const BrandImage = styled(motion.img)`
-  width: 50vw;
+  width: 100%;
   max-width: 800px;
   overflow: hidden;
   @media screen and (max-width: 600px) {
     margin-top: 20px;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     z-index: 1;
   }

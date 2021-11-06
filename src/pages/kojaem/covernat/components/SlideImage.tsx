@@ -66,7 +66,7 @@ const Background = styled(motion.img)`
   background-color: white;
   position: fixed;
   top: 0px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: fixed;
   overflow: hidden;

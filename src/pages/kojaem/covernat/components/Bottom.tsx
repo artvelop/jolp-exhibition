@@ -52,7 +52,7 @@ export const Bottom = () => {
 
 const Wrapper = styled(motion.div)`
   background-color : #413f47;
-  width: 100vw;
+  width: 100%;
   height: 150vh;
   display:flex;
   flex-direction: column;

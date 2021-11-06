@@ -89,7 +89,7 @@ export const View3D = () => {
 };
 
 const Wrapper = styled(motion.div)`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;

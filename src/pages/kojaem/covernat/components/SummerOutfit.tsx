@@ -65,7 +65,7 @@ export const SummerOutfit = () => {
   return (
     <Wrapper ref={seasonRef}
     animate={{
-      rotate: show? [1,0]: 0,
+      rotate: show? [5,0]: 0,
       opacity: show? [0,1]: 0,
     }}
     >

@@ -38,7 +38,7 @@ export const ImageBanner = () => {
 
   return (
     <Wrapper>
-      <BrandName>Covernat</BrandName>
+      <BrandName>COVERNAT</BrandName>
       <ImageUl
         ref={sliderRef}
         className="keen-slider"
@@ -84,7 +84,7 @@ export const ImageBanner = () => {
 };
 
 const Wrapper = styled(motion.div)`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -103,7 +103,7 @@ const BrandName = styled(motion.h1)`
   @media screen and (max-width: 600px) {
     position: absolute;
     font-size: 40px;
-    width: 100vw;
+    width: 100%;
   }
 
   @media screen and (min-width: 600px) {
@@ -120,7 +120,7 @@ const BrandName = styled(motion.h1)`
 
 const ImageUl = styled(motion.div)`
   margin-top: 200px;
-  width: 100vw;
+  width: 100%;
 `;
 
 

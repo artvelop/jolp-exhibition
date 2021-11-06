@@ -43,7 +43,7 @@ export const Mid = () => {
 const Wrapper = styled(motion.div)`
   position: relative;
   background-color: white;
-  width: 100vw;
+  width: 100%;
   height: 200vh;
   display:flex;
   flex-direction: column;

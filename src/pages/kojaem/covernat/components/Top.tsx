@@ -16,7 +16,7 @@ export const Top = () => {
 const Wrapper = styled(motion.div)`
   display: flex;
   background-color: #d7d7d5;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   @media screen and (max-width: 600px) {
     flex-direction: column;
