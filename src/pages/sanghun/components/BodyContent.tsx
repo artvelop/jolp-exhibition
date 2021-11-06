@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { TypoGraphy } from "./index";
 import { color } from "../constants";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 type TopContentType = {
   MyOpinionChapter: string[];
@@ -13,13 +13,20 @@ export const BodyContent: React.FC<TopContentType> = ({
   MyOpinionDetail,
 }) => {
   const regExp = /!$/;
-
+  const { scrollYProgress } = useViewportScroll();
+  const scaleAnim = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 1.5]);
+  const yPosAnim = useTransform(scrollYProgress, [0, 0.4, 1], [0, -250, -100]);
   return (
     <Wrap>
       {MyOpinionChapter.map((item, i) => {
         return (
           <ViewPort>
-            <Box>
+            <Box
+              animate={{
+                opacity: [0, 1],
+                transition: { duration: 3 },
+              }}
+            >
               <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
                 {item}
               </TypoGraphy>
@@ -29,7 +36,7 @@ export const BodyContent: React.FC<TopContentType> = ({
                   <Special
                     animate={{
                       opacity: [1, 0, 1, 0, 1, 0, 1],
-                      transition: { duration: 3, delay: 1 },
+                      transition: { duration: 3, delay: 2 },
                     }}
                   >
                     <TypoGraphy

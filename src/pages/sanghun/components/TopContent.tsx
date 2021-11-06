@@ -19,12 +19,7 @@ export const TopContent: React.FC<TopContentType> = ({
   summary,
 }) => {
   return (
-    <Wrap
-      animate={{
-        opacity: [0, 1, 0, 1, 0, 1],
-        transition: { duration: 2 },
-      }}
-    >
+    <Wrap>
       <Content>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           제목 : {name}
