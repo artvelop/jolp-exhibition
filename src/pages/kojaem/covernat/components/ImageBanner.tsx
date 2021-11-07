@@ -64,13 +64,11 @@ export const ImageBanner = () => {
           className="keen-slider__slide number-slide3"
           src="/koJaem/img/covernat/slide_03.jpg"
           setPause={setPause}
-          text="편안함 속 스타일리시한 커버낫 맨투맨세트"
         />
         <SlideImage
           className="keen-slider__slide number-slide4"
           src="/koJaem/img/covernat/slide_04.jpg"
           setPause={setPause}
-          text="가벼우면서도 따뜻한 커버낫 패딩"
         />
         <SlideImage
           className="keen-slider__slide number-slide5"
