@@ -28,7 +28,7 @@ export const Chapter: React.FC<BodyContentType> = ({
     textBlingBling.start({
       opacity: [1, 0, 1, 0, 1, 0, 1],
       transition: { duration: 3, delay: 1 },
-      translateX: 40,
+      translateX: 30,
       scale: 1.05,
     });
   }

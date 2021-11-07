@@ -8,9 +8,10 @@ import { motion } from "framer-motion";
 
 export const Header: React.FC = () => {
   const [show, setShow] = useState(false);
+
   const bookAnimate = {
-    x: show ? [-1000, 0] : [0, -1000],
     opacity: show ? 1 : 0,
+    x: show ? [-1000, 0] : [0, -1800],
     transition: { duration: 1.6, ease: "easeOut" },
   };
   return (
@@ -43,6 +44,7 @@ export const Header: React.FC = () => {
         <Link to="/sanghun/PhilosophyBook">
           <Img
             src={philosophy.imgSrc}
+            initial={{ opacity: 0 }}
             animate={bookAnimate}
             whileHover={{ scale: 2, translateY: 100 }}
           />
@@ -51,6 +53,7 @@ export const Header: React.FC = () => {
           <Img
             src={myself.imgSrc}
             animate={bookAnimate}
+            initial={{ opacity: 0 }}
             whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
@@ -58,6 +61,7 @@ export const Header: React.FC = () => {
           <Img
             src={harvard.imgSrc}
             animate={bookAnimate}
+            initial={{ opacity: 0 }}
             whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
@@ -65,6 +69,7 @@ export const Header: React.FC = () => {
           <Img
             src={live.imgSrc}
             animate={bookAnimate}
+            initial={{ opacity: 0 }}
             whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
@@ -72,6 +77,7 @@ export const Header: React.FC = () => {
           <Img
             src={talkGod.imgSrc}
             animate={bookAnimate}
+            initial={{ opacity: 0 }}
             whileHover={{ scale: 2, translateY: 100 }}
           />
         </Link>
@@ -102,17 +108,22 @@ const ImgBox = styled(motion.div)`
   gap: 20%;
   user-select: none;
   margin-right: 400px;
+  flex: 2 1 0;
 `;
 const HomeLogo = styled(motion.span)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 30px;
   font-size: 70px;
   color: ${color.gray};
   cursor: pointer;
+  flex: 0.2 1 0;
 `;
 const Menu = styled(motion.span)`
-  margin-left: -500px;
-  font-size: 40px;
+  font-size: 30px;
+  margin-right: 10px;
   color: ${color.gray};
   cursor: pointer;
-  user-select: none;
+  flex: 2 1 0;
 `;
