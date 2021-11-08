@@ -63,6 +63,10 @@ export const TagCard: React.FC<Props> = ({
     } else {
       setColorChange(false);
     }
+
+    return () => {
+      setColorChange(false);
+    };
   }, [visible]);
 
   return (
@@ -75,8 +79,8 @@ export const TagCard: React.FC<Props> = ({
       <Box
         animate={{
           opacity: visible ? [0, 1] : [1, 0],
-          backgroundColor: colorChange ? color : ['#fff', '#fff'],
-          scale: tagScale && colorChange ? [1, 1.5, 1.2] : [1, 1],
+          backgroundColor: colorChange ? color : '#fff',
+          scale: tagScale && colorChange ? [1, 1.5, 1.2] : 1,
         }}
         variants={variants}
         transition={{ delay: visible ? visibleDelay : 0 }}>
