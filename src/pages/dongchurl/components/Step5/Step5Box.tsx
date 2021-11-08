@@ -42,7 +42,32 @@ export const Step5Box = () => {
             <CircleButton color="#FEBB34" />
             <CircleButton color="#5CBA73" />
           </WindowTop>
-          <Box top={true}>HELLO</Box>
+          <Box top={true}>
+            <div
+              style={{
+                backgroundColor: '#1b2431',
+                fontSize: 16,
+                display: 'flex',
+                height: 360,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderBottomLeftRadius: 4,
+                borderBottomRightRadius: 4,
+              }}>
+              <h2 style={{ color: '#ff7400' }}>ARTVELOP</h2>
+              <ul
+                style={{
+                  border: '1px solid #fff',
+                  padding: 12,
+                  marginLeft: 48,
+                }}>
+                <li style={{ color: '#fff' }}>⸜(*ˊᗜˋ*)⸝</li>
+                <li style={{ color: '#fff' }}>BROSWER</li>
+                <li style={{ color: '#fff' }}>RENDERING</li>
+                <li style={{ color: '#fff' }}>PROCESS</li>
+              </ul>
+            </div>
+          </Box>
         </Wrap>
       </Content>
     </Wrapper>
@@ -94,6 +119,5 @@ const Box = styled.div<BoxStyleProps>`
     props.top && 'border-top-left-radius: 0px; border-top-right-radius: 0px;'}
   background-color: #fff;
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.5);
-  padding: 16px;
   min-height: 360px;
 `;
