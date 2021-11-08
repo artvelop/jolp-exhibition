@@ -12,6 +12,9 @@ type BoxStyleProps = {
   top: boolean;
 };
 
+const WIDTH = 640;
+const HEIGHT = 360;
+
 export const Step4Box = () => {
   const [visible, setVisible] = useState(false);
   const target = useRef<HTMLDivElement>(null);
@@ -43,22 +46,76 @@ export const Step4Box = () => {
             <CircleButton color="#5CBA73" />
           </WindowTop>
           <Box top={true}>
-            <div
-              style={{
-                fontSize: 16,
-                display: 'flex',
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <div style={{ color: '#3f3f3f' }}>HELLO</div>
-              <ul style={{ marginTop: 24 }}>
-                <li style={{ color: '#333' }}>WOW1</li>
-                <li style={{ color: '#333' }}>WOW2</li>
-                <li style={{ color: '#333' }}>WOW3</li>
-                <li style={{ color: '#333' }}>WOW4</li>
-              </ul>
-            </div>
+            <BoxContent>
+              <Body
+                animate={{
+                  opacity: visible ? [0, 1] : [1, 0],
+                  width: visible ? [0, WIDTH - 36] : [0, 0],
+                  height: visible ? [0, HEIGHT - 36] : [0, 0],
+                }}
+                transition={{ delay: visible ? 1 : 0 }}>
+                <BodyTag
+                  animate={{ opacity: visible ? [0, 1] : [1, 0] }}
+                  transition={{ delay: visible ? 1.5 : 0 }}>
+                  body
+                </BodyTag>
+              </Body>
+              <H2Tag
+                animate={{
+                  opacity: visible ? [0, 1] : [1, 0],
+                  x: visible ? [0, 180] : [1, 0],
+                  y: visible ? [0, 150] : [1, 0],
+                  width: visible ? [0, 0, 0, 80] : [1, 0],
+                }}
+                transition={{ delay: visible ? 2 : 0 }}>
+                h2
+              </H2Tag>
+              <Ul
+                animate={{
+                  opacity: visible ? [0, 1] : [1, 0],
+                  x: visible ? [0, 320] : [1, 0],
+                  y: visible ? [0, 105] : [1, 0],
+                  width: visible ? [0, 0, 80] : [1, 0],
+                }}
+                transition={{ delay: visible ? 2.5 : 0 }}>
+                ul
+                <UlTag
+                  animate={{
+                    opacity: visible ? [0, 1] : [1, 0],
+                    height: visible ? [0, 0, 72] : [1, 0],
+                  }}
+                  transition={{ delay: visible ? 3 : 0 }}>
+                  <Li
+                    animate={{
+                      opacity: visible ? [0, 1] : [1, 0],
+                    }}
+                    transition={{ delay: visible ? 3.5 : 0 }}>
+                    li
+                  </Li>
+                  <Li
+                    animate={{
+                      opacity: visible ? [0, 1] : [1, 0],
+                    }}
+                    transition={{ delay: visible ? 4 : 0 }}>
+                    li
+                  </Li>
+                  <Li
+                    animate={{
+                      opacity: visible ? [0, 1] : [1, 0],
+                    }}
+                    transition={{ delay: visible ? 4.5 : 0 }}>
+                    li
+                  </Li>
+                  <Li
+                    animate={{
+                      opacity: visible ? [0, 1] : [1, 0],
+                    }}
+                    transition={{ delay: visible ? 5 : 0 }}>
+                    li
+                  </Li>
+                </UlTag>
+              </Ul>
+            </BoxContent>
           </Box>
         </Wrap>
       </Content>
@@ -76,7 +133,7 @@ const Content = styled.div`
 `;
 
 const Wrap = styled(motion.div)`
-  width: 640px;
+  width: ${WIDTH}px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -111,5 +168,45 @@ const Box = styled.div<BoxStyleProps>`
     props.top && 'border-top-left-radius: 0px; border-top-right-radius: 0px;'}
   background-color: #fff;
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.5);
-  min-height: 360px;
+  min-height: ${HEIGHT}px;
+  max-height: ${HEIGHT}px;
+  height: ${HEIGHT}px;
 `;
+
+const BoxContent = styled.div`
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+`;
+
+const Body = styled(motion.div)`
+  position: absolute;
+  border: 2px solid #000;
+`;
+const BodyTag = styled(motion.div)`
+  padding: 8px;
+`;
+
+const H2Tag = styled(motion.div)`
+  display: flex;
+  border: 2px solid #000;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Ul = styled(motion.div)`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  padding: 8px;
+`;
+const UlTag = styled(motion.div)`
+  border: 2px solid #000;
+  padding: 8px;
+`;
+
+const Li = styled(motion.div)``;
