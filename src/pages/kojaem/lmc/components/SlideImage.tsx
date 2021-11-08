@@ -6,7 +6,7 @@ type Props = {
   className: string;
   src: string;
   setPause: Dispatch<React.SetStateAction<boolean>>;
-  text: string;
+  text?: string;
 };
 export const SlideImage = ({ className, src, setPause, text }: Props) => {
   const [isClick, setIsClick] = useState(false);
@@ -29,7 +29,7 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
         transition={{ duration: 0.6 }}
       ></Image>
       <Background
-        src={`/koJaem/img/covernat/background_${slideNumber}.jpg`}
+        src={`/koJaem/img/lmc/background_${slideNumber}.jpg`}
         animate={{
           display: isClick ? "flex" : undefined,
           zIndex: isClick ? 999 : 0,
@@ -42,18 +42,20 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
         }}
         onClick={() => clickEvent()}
       />
-      <Text
-        animate={{
-          display: isClick ? "flex" : "none",
-          top: "80vh",
-          left: "50vw",
-          height: "100px",
-          zIndex: isClick ? 1001 : 0,
-        }}
-        transition={{ delay: 0.1 }}
-      >
-        {text}
-      </Text>
+      {text ? (
+        <Text
+          animate={{
+            display: isClick ? "flex" : "none",
+            top: "80vh",
+            left: "50vw",
+            height: "100px",
+            zIndex: isClick ? 1001 : 0,
+          }}
+          transition={{ delay: 0.1 }}
+        >
+          {text}
+        </Text>
+      ) : null}
     </>
   );
 };
