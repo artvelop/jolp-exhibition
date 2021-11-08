@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import React from 'react';
+import styled from '@emotion/styled';
 import { Intro, LayoutContainer, StepLayout } from './components';
 import { Step1 } from './components/Step1';
 import { Step2 } from './components/Step2';
