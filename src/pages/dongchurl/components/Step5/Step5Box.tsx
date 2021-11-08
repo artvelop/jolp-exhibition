@@ -43,30 +43,61 @@ export const Step5Box = () => {
             <CircleButton color="#5CBA73" />
           </WindowTop>
           <Box top={true}>
-            <div
-              style={{
-                backgroundColor: '#1b2431',
-                fontSize: 16,
-                display: 'flex',
-                height: 360,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderBottomLeftRadius: 4,
-                borderBottomRightRadius: 4,
-              }}>
-              <h2 style={{ color: '#ff7400' }}>ARTVELOP</h2>
-              <ul
-                style={{
-                  border: '1px solid #fff',
-                  padding: 12,
-                  marginLeft: 48,
-                }}>
-                <li style={{ color: '#fff' }}>⸜(*ˊᗜˋ*)⸝</li>
-                <li style={{ color: '#fff' }}>BROSWER</li>
-                <li style={{ color: '#fff' }}>RENDERING</li>
-                <li style={{ color: '#fff' }}>PROCESS</li>
-              </ul>
-            </div>
+            <Body
+              animate={{
+                backgroundColor: visible
+                  ? ['#fff', '#1b2431']
+                  : ['#fff', '#fff'],
+              }}
+              transition={{ delay: visible ? 1 : 0 }}>
+              <H2
+                animate={{
+                  opacity: visible ? [0, 1] : [0, 0],
+                  color: visible ? ['#000', '#ff7400'] : ['#000', '#000'],
+                }}
+                transition={{ delay: visible ? 2 : 0 }}>
+                ARTVELOP
+              </H2>
+              <Ul
+                animate={{
+                  opacity: visible ? [0, 1] : [0, 0],
+                  borderColor: visible ? ['#000', '#fff'] : ['#000', '#000'],
+                }}
+                transition={{ delay: visible ? 2.5 : 0 }}>
+                <Li
+                  animate={{
+                    opacity: visible ? [0, 1] : [0, 0],
+                    color: visible ? ['#000', '#fff'] : ['#000', '#000'],
+                  }}
+                  transition={{ delay: visible ? 3 : 0 }}>
+                  ⸜(*ˊᗜˋ*)⸝
+                </Li>
+                <Li
+                  animate={{
+                    opacity: visible ? [0, 1] : [0, 0],
+                    color: visible ? ['#000', '#fff'] : ['#000', '#000'],
+                  }}
+                  transition={{ delay: visible ? 3.5 : 0 }}>
+                  BROSWER
+                </Li>
+                <Li
+                  animate={{
+                    opacity: visible ? [0, 1] : [0, 0],
+                    color: visible ? ['#000', '#fff'] : ['#000', '#000'],
+                  }}
+                  transition={{ delay: visible ? 4 : 0 }}>
+                  RENDERING
+                </Li>
+                <Li
+                  animate={{
+                    opacity: visible ? [0, 1] : [0, 0],
+                    color: visible ? ['#000', '#fff'] : ['#000', '#000'],
+                  }}
+                  transition={{ delay: visible ? 4.5 : 0 }}>
+                  PROCESS
+                </Li>
+              </Ul>
+            </Body>
           </Box>
         </Wrap>
       </Content>
@@ -120,4 +151,28 @@ const Box = styled.div<BoxStyleProps>`
   background-color: #fff;
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.5);
   min-height: 360px;
+`;
+
+const Body = styled(motion.div)`
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+`;
+
+const H2 = styled(motion.h2)`
+  color: #ff7400;
+`;
+
+const Ul = styled(motion.ul)`
+  border: 1px solid #fff;
+  padding: 12px;
+  margin-left: 48px;
+`;
+
+const Li = styled(motion.li)`
+  color: #fff;
 `;
