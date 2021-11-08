@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LayoutContainer } from '../components/LayoutContainer';
+import { KirshMain } from './components/KirshMain';
 import { Loading } from './components/Loading';
 
 type Props = {
@@ -11,8 +12,7 @@ const Kirsh = ({selected, setSelected}:Props) => {
   const [onLoading, setOnLoading] = useState(true);
   return (
     <LayoutContainer selected={selected} setSelected={setSelected}>
-    {/* {onLoading ? <Loading setOnLoading={setOnLoading} /> : <KirshMain /> } */}
-    {onLoading ? <Loading setOnLoading={setOnLoading} /> : null }
+    {onLoading ? <Loading setOnLoading={setOnLoading} /> : <KirshMain /> }
 
   </LayoutContainer>
   );
