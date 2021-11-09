@@ -62,14 +62,32 @@ export const Step5Box = () => {
                 animate={{
                   opacity: visible ? [0, 1] : [0, 0],
                   borderColor: visible ? ['#000', '#fff'] : ['#000', '#000'],
-                }}
-                transition={{ delay: visible ? 2.5 : 0 }}>
+                }}>
+                <Item>
+                  <motion.path
+                    d="M0 0 L0 100 L111 100 L111 0 L-1 0"
+                    style={{ stroke: '#fff', x: -12, y: -10 }}
+                    animate={{
+                      opacity: visible ? 1 : 0,
+                      pathLength: visible ? 1 : 0,
+                      fill: 'transparent',
+                    }}
+                    transition={{
+                      default: visible
+                        ? { delay: 3, duration: 2, ease: 'easeInOut' }
+                        : {},
+                      fill: visible
+                        ? { delay: 3, duration: 2, ease: [1, 0, 0.8, 1] }
+                        : {},
+                    }}
+                  />
+                </Item>
                 <Li
                   animate={{
                     opacity: visible ? [0, 1] : [0, 0],
                     color: visible ? ['#000', '#fff'] : ['#000', '#000'],
                   }}
-                  transition={{ delay: visible ? 3 : 0 }}>
+                  transition={{ delay: visible ? 5 : 0 }}>
                   ⸜(*ˊᗜˋ*)⸝
                 </Li>
                 <Li
@@ -77,7 +95,7 @@ export const Step5Box = () => {
                     opacity: visible ? [0, 1] : [0, 0],
                     color: visible ? ['#000', '#fff'] : ['#000', '#000'],
                   }}
-                  transition={{ delay: visible ? 3.5 : 0 }}>
+                  transition={{ delay: visible ? 5.5 : 0 }}>
                   BROSWER
                 </Li>
                 <Li
@@ -85,7 +103,7 @@ export const Step5Box = () => {
                     opacity: visible ? [0, 1] : [0, 0],
                     color: visible ? ['#000', '#fff'] : ['#000', '#000'],
                   }}
-                  transition={{ delay: visible ? 4 : 0 }}>
+                  transition={{ delay: visible ? 6 : 0 }}>
                   RENDERING
                 </Li>
                 <Li
@@ -93,7 +111,7 @@ export const Step5Box = () => {
                     opacity: visible ? [0, 1] : [0, 0],
                     color: visible ? ['#000', '#fff'] : ['#000', '#000'],
                   }}
-                  transition={{ delay: visible ? 4.5 : 0 }}>
+                  transition={{ delay: visible ? 6.5 : 0 }}>
                   PROCESS
                 </Li>
               </Ul>
@@ -168,11 +186,18 @@ const H2 = styled(motion.h2)`
 `;
 
 const Ul = styled(motion.ul)`
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   padding: 12px;
   margin-left: 48px;
 `;
 
 const Li = styled(motion.li)`
   color: #fff;
+`;
+
+const Item = styled(motion.svg)`
+  position: absolute;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 2;
 `;

@@ -82,7 +82,7 @@ export const Step4Box = () => {
                 <UlTag
                   animate={{
                     opacity: visible ? [0, 1] : [1, 0],
-                    height: visible ? [0, 0, 72] : [1, 0],
+                    height: visible ? [0, 0, 80] : [1, 0],
                   }}
                   transition={{ delay: visible ? 3 : 0 }}>
                   <Li
@@ -207,6 +207,9 @@ const Ul = styled(motion.div)`
 const UlTag = styled(motion.div)`
   border: 2px solid #000;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Li = styled(motion.div)``;
