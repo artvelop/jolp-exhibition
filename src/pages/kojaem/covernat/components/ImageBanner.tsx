@@ -95,7 +95,8 @@ const BrandName = styled(motion.h1)`
   left: 50%;
   font-size: 30px;
   transform: translateX(-50%) scale(1.5);;
-  color: white;
+  color: #3b5e3d;
+  text-shadow: 1px 1px 5px #524f4f;
   display: flex;
   justify-content: center;
 

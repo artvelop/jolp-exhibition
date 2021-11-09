@@ -115,7 +115,8 @@ const BrandName = styled(motion.h1)`
   position: absolute;
   left: 50%;
   font-size: 30px;
-  color: white;
+  color: #c08bc7;
+  text-shadow: 1px 1px 5px #0c0c4f;
   display: flex;
   justify-content: center;
 
@@ -165,7 +166,7 @@ const NextButton = styled(motion.div)`
   display: flex;
   margin-left: auto;
   margin-right: 5vw;
-  color: darkolivegreen;
+  color: #84618f;
   font-size: 70px;
   cursor: pointer;
 `;
