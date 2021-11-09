@@ -10,6 +10,7 @@ import {
   Img,
 } from "./components";
 import { philosophy } from "./dummy/books";
+import { motion } from "framer-motion";
 
 const PhilosophyBook: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const PhilosophyBook: React.FC = () => {
         <ScrollBtn />
         <Box>
           <Header />
-          <TopBox>
+          <TopBox animate={{ opacity: [0, 1] }}>
             <Img src={philosophy.imgSrc} />
             <TopContent
               name={philosophy.name}
@@ -44,7 +45,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const TopBox = styled.div`
+const TopBox = styled(motion.div)`
   display: flex;
   gap: 2%;
   height: 80vh;

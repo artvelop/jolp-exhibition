@@ -28,13 +28,16 @@ export const ScrollBtn: React.FC = () => {
   };
 
   return (
-    <>
+    <BtnBox>
       <UpUpBtn onClick={pageUpUp} />
       <UpBtn onClick={pageUp} />
       <DownBtn onClick={pageDown} />
-    </>
+    </BtnBox>
   );
 };
+const BtnBox = styled.div`
+  z-index: 2;
+`;
 
 const UpUpBtn = styled(BsCaretUpSquareFill)`
   width: 50px;

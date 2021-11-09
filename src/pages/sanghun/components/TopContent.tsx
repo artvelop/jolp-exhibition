@@ -20,17 +20,17 @@ export const TopContent: React.FC<TopContentType> = ({
 }) => {
   return (
     <Wrap>
-      <Content>
+      <Content whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           제목 : {name}
         </TypoGraphy>
       </Content>
-      <Content>
+      <Content whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           주제 : {subject}
         </TypoGraphy>
       </Content>
-      <Content>
+      <Content whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           저자 소개 : {author}
         </TypoGraphy>
@@ -39,7 +39,7 @@ export const TopContent: React.FC<TopContentType> = ({
           {authorInfo}
         </TypoGraphy>
       </Content>
-      <Content>
+      <Content whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
         <TypoGraphy type="h1" fontWeight="bold" color="white">
           줄거리
         </TypoGraphy>

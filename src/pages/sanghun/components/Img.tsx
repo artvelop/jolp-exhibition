@@ -7,13 +7,7 @@ type TopContentType = {
 };
 
 export const Img: React.FC<TopContentType> = ({ src }) => {
-  return (
-    <ImgWrap
-      src={src}
-      animate={{ opacity: 1 }}
-      whileHover={{ rotateY: 360, transition: { duration: 5 } }}
-    ></ImgWrap>
-  );
+  return <ImgWrap src={src}></ImgWrap>;
 };
 
 const ImgWrap = styled(motion.img)`

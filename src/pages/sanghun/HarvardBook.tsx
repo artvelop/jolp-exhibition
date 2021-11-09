@@ -9,6 +9,7 @@ import {
   Img,
 } from "./components";
 import { harvard } from "./dummy/books";
+import { motion } from "framer-motion";
 
 const HarvardBook: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const HarvardBook: React.FC = () => {
         <ScrollBtn />
         <Box>
           <Header />
-          <TopBox>
+          <TopBox animate={{ opacity: [0, 1] }}>
             <Img src={harvard.imgSrc} />
             <TopContent
               name={harvard.name}
@@ -43,7 +44,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const TopBox = styled.div`
+const TopBox = styled(motion.div)`
   display: flex;
   gap: 2%;
   height: 80vh;
