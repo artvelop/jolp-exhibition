@@ -36,7 +36,9 @@ export const ChartDescription = ({ show }: Props) => {
   );
 };
 
-const Wrapper = styled(motion.div)``;
+const Wrapper = styled(motion.div)`
+  margin-left : 10vw;
+`;
 const Text = styled(motion.span)`
   color: white;
   font-size: 3vh;
