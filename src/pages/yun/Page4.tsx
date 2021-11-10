@@ -19,7 +19,7 @@ type Props = { handlePage: () => void };
 export const Page4: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
-  const ChartColor = ['#1ca392', ' #ffc81b'];
+  const ChartColor = ['#E05D5D', ' #FFB344'];
   const data = {
     labels: ['맥아, 밀, 기타등등', '옥수수'],
     datasets: [
@@ -121,7 +121,7 @@ const Background = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 248, 229);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +150,6 @@ const Title = styled(motion.div)`
   align-items: flex-end;
   font-size: 50px;
   font-weight: bold;
-
   opacity: 0;
 `;
 const SubTitle = styled(motion.div)`
@@ -173,5 +172,6 @@ const ColorText = styled(motion.div)<ColorTextProps>`
 const SizeText = styled(motion.div)`
   font-size: 80px;
 
+  color: rgb(0, 161, 157);
   opacity: 0;
 `;
