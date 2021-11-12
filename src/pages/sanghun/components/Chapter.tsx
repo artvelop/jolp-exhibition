@@ -40,16 +40,17 @@ export const Chapter: React.FC<BodyContentType> = ({
           <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
             {MyOpinionChapter}
           </TypoGraphy>
-          {MyOpinionDetail.map((item) => {
+          <Gap />
+          {MyOpinionDetail.map((item, index) => {
             return regExp.test(item) ? (
               <Special animate={textBlingBling}>
                 <TypoGraphy type="h3" fontHeight="34px" color={color.gold_dark}>
-                  <li> {item}</li>
+                  <li key={index.toString()}> {item}</li>
                 </TypoGraphy>
               </Special>
             ) : (
               <TypoGraphy type="h3" fontHeight="34px" color={color.gray}>
-                <li> {item}</li>
+                <li key={index.toString()}> {item}</li>
               </TypoGraphy>
             );
           })}

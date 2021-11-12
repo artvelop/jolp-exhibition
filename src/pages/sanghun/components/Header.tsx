@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { harvard, philosophy, talkGod, live, myself } from "../dummy/books";
-import { GiBurningBook } from "react-icons/gi";
+import { GiBurningBook, GiHamburgerMenu } from "react-icons/gi";
 import { color } from "../constants";
 import { motion } from "framer-motion";
 
@@ -37,7 +37,8 @@ export const Header: React.FC = () => {
           }}
           whileHover={{ color: color.gold_light }}
         >
-          MENU
+          <GiHamburgerMenu />
+          {/* 여기 들어갈 이모티콘 */}
         </Menu>
       </Link>
       <ImgBox>
@@ -121,8 +122,7 @@ const HomeLogo = styled(motion.span)`
   flex: 0.2 1 0;
 `;
 const Menu = styled(motion.span)`
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 50px;
   color: ${color.gray};
   cursor: pointer;
   flex: 2 1 0;
