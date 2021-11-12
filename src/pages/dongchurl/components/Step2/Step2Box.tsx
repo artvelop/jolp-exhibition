@@ -66,7 +66,7 @@ export const Step2Box = () => {
           visible={visible}
           left="51%"
           top="320px"
-          title="h1"
+          title="h2"
         />
         <TagCard
           visibleDelay={1.0}
@@ -105,49 +105,49 @@ export const Step2Box = () => {
         />
         <CssTagCard
           visibleDelay={2.2}
-          title="<br />font-size: 16px; <br /> display: flex; <br /> justify-content: center; <br /> align-items: center;"
+          title="<br />background-color: #1b2431; <br />font-size: 16px; <br /> display: flex; <br /> justify-content: center; <br /> align-items: center;"
           visible={visible}
           left="71%"
           top="155px"
         />
         <CssTagCard
           visibleDelay={2.25}
-          title="color: #3f3f3f;"
+          title="color: #ff7400;"
           visible={visible}
           left="58%"
           top="320px"
         />
         <CssTagCard
           visibleDelay={2.25}
-          title="margin-top: 24px;"
+          title="border: 1px soild #fff; <br /> padding: 12px; <br /> margin-left:48px;"
           visible={visible}
           left="79.5%"
           top="320px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="color: #333;"
+          title="color: #fff;"
           visible={visible}
           left="70.2%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="color: #333;"
+          title="color: #fff;"
           visible={visible}
           left="58%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="color: #333;"
+          title="color: #fff;"
           visible={visible}
           left="46.2%"
           top="510px"
         />
         <CssTagCard
           visibleDelay={2.3}
-          title="color: #333;"
+          title="color: #fff;"
           visible={visible}
           left="34.2%"
           top="510px"

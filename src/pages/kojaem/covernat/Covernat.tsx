@@ -1,21 +1,18 @@
-import React from 'react';
-import LayoutContainer from '../components/LayoutContainer';
+import { useState } from "react";
+import { LayoutContainer } from "../components/LayoutContainer";
+import { Loading } from "./components/Loading";
+import { CovernatMain } from "./components/CovernatMain";
 
 type Props = {
   selected: string;
-  setSelected: (link:string) => void;
-}
-
-const Covernat = ({selected, setSelected}:Props) => {
+  setSelected: (link: string) => void;
+};
+const Covernat = ({ selected, setSelected }: Props) => {
+  const [onLoading, setOnLoading] = useState(true);
   return (
-  <LayoutContainer
-    selected={selected}
-    setSelected={setSelected}
-  >
-    <div>커버낫</div>
-    <div>커버낫2</div>
-    <div>커버낫3</div>
-  </LayoutContainer>
+    <LayoutContainer selected={selected} setSelected={setSelected}>
+      {onLoading ? <Loading setOnLoading={setOnLoading} /> : <CovernatMain /> }
+    </LayoutContainer>
   );
 };
 
