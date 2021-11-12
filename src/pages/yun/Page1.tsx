@@ -1,27 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
-export const Page1: React.FC = () => {
+type Props = { handlePage: () => void };
+export const Page1: React.FC<Props> = ({ handlePage }) => {
+  const [PageLock, setPageLock] = useState(0);
+  const [curState, setCurState] = useState(0);
+
+  function timeout(delay: number) {
+    return new Promise((res) => setTimeout(res, delay));
+  }
+
+  const NextPage = async () => {
+    if (PageLock === 0) {
+      setPageLock(1);
+      setCurState(1);
+      await timeout(1000);
+      handlePage();
+    }
+  };
   return (
     <LayoutContainer>
-      <BackgroundImg>
-        <Wrapper>
-          <TitleImg></TitleImg>
+      <BackgroundImg
+        animate={{
+          opacity: curState === 0 ? 1 : 0,
+          translateX: curState === 0 ? 0 : -100,
+        }}
+        transition={{
+          duration: curState === 0 ? 1 : 1,
+          ease: 'easeOut',
+        }}
+      >
+        <Wrapper
+          animate={{
+            opacity: curState === 0 ? 1 : 0,
+            x: curState === 0 ? 0 : '200px',
+          }}
+          transition={{
+            duration: 1,
+            ease: 'easeOut',
+          }}
+        >
+          <TitleImg
+            animate={{
+              opacity: curState === 0 ? 1 : 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+            }}
+          />
           <Start
             animate={{
-              opacity: [1, 0, 1],
+              opacity: curState === 0 ? [1, 0, 1] : 0,
+              cursor: PageLock === 1 ? 'default' : 'pointer',
             }}
             transition={{
               duration: 3,
-              ease: 'linear',
-              repeat: Infinity,
+              ease: 'easeOut',
+              repeat: curState === 0 ? Infinity : undefined,
+            }}
+            onClick={NextPage}
+          >
+            잭다니엘 알아보기
+          </Start>
+          <Exit
+            animate={{
+              opacity: curState === 0 ? 1 : 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
             }}
           >
-            Touch To Start
-          </Start>
-          <Exit>Exit</Exit>
+            Exit
+          </Exit>
         </Wrapper>
       </BackgroundImg>
     </LayoutContainer>
@@ -29,13 +83,13 @@ export const Page1: React.FC = () => {
 };
 
 const BackgroundImg = styled(motion.div)`
-  background: url('/yun/img/background.jpg');
+  background: url('${process.env.PUBLIC_URL}/yun/img/background.jpg');
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 `;
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   margin-right: 80px;
   height: 100%;
   display: flex;
@@ -45,7 +99,7 @@ const Wrapper = styled.div`
 `;
 
 const TitleImg = styled(motion.div)`
-  background: url('/yun/img/logo.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/logo.png');
   width: 320px;
   height: 250px;
   background-repeat: no-repeat;
