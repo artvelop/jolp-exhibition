@@ -2,6 +2,7 @@
   "name": "jolp-exhibition",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://artvelop.github.io/jolp-exhibition/",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-modal": "^3.12.1"
+    "@types/react-modal": "^3.12.1",
+    "gh-pages": "^3.2.3"
   }
 }
