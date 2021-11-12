@@ -1,7 +1,16 @@
+<<<<<<< HEAD
+import React from "react";
+import { Page1, Page2 } from "./index";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
+type Props = { disabled: boolean; onCilck: (e: any) => void };
+=======
 import React, { useState } from 'react';
 import { Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9 } from './index';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
+>>>>>>> master
 
 export default function Main() {
   const [pageNumber, setPageNumber] = useState(7);
@@ -9,6 +18,36 @@ export default function Main() {
     pageNumber === 9 ? setPageNumber((pageNumber) => (pageNumber = 1)) : setPageNumber((pageNumber) => pageNumber + 1);
   };
   return (
+<<<<<<< HEAD
+    <div>
+      <div ref={ref} className="keen-slider">
+        <Page1 />
+        <Page2 />
+      </div>
+      {slider && (
+        <ArrowLeft
+          onCilck={(e: any) => e.stopPropagation() || slider.prev()}
+          disabled={currentSlide === 0}
+        />
+      )}
+    </div>
+  );
+}
+
+const ArrowLeft: React.FC<Props> = (props) => {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onCilck}
+      className={"arrow arrow--left" + disabeld}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+    </svg>
+  );
+};
+=======
     <Section
       animate={{
         background: pageNumber === 2 || pageNumber === 5 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgba(253, 224, 223, 1)' : 'black',
@@ -31,3 +70,4 @@ export default function Main() {
 const Section = styled(motion.div)`
   background: black;
 `;
+>>>>>>> master
