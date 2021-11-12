@@ -24,12 +24,13 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
     <LayoutContainer>
       <BackgroundImg
         animate={{
-          opacity: curState === 0 ? 1 : 0,
-          translateX: curState === 0 ? 0 : -100,
+          opacity: curState === 0 ? [0, 1] : 0,
+          translateX: curState === 0 ? 0 : '-100px',
         }}
         transition={{
-          duration: curState === 0 ? 1 : 1,
+          duration: 1,
           ease: 'easeOut',
+          delay: 0,
         }}
       >
         <Wrapper
@@ -40,6 +41,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           transition={{
             duration: 1,
             ease: 'easeOut',
+            delay: 0,
           }}
         >
           <TitleImg
@@ -49,6 +51,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
             transition={{
               duration: 1,
               ease: 'easeOut',
+              delay: 0,
             }}
           />
           <Start
@@ -60,6 +63,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
               duration: 3,
               ease: 'easeOut',
               repeat: curState === 0 ? Infinity : undefined,
+              delay: 0,
             }}
             onClick={NextPage}
           >
@@ -72,6 +76,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
             transition={{
               duration: 1,
               ease: 'easeOut',
+              delay: 0,
             }}
           >
             Exit
@@ -88,6 +93,8 @@ const BackgroundImg = styled(motion.div)`
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+
+  overflow: hidden;
 `;
 const Wrapper = styled(motion.div)`
   margin-right: 80px;

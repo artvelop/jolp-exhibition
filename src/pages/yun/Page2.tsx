@@ -3,7 +3,7 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
-
+import { NumberPlus } from './components';
 type Props = { handlePage: () => void };
 export const Page2: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
@@ -20,7 +20,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
   };
   useEffect(() => {
     const wait2 = async () => {
-      await timeout(3000);
+      await timeout(5000);
       setNextButton(1);
     };
     wait2();
@@ -170,15 +170,26 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
               <SecondTitle
                 animate={{
                   opacity: curState === 1 ? [0, 1] : 0,
-                  y: '-20px',
                 }}
                 transition={{
                   duration: 1,
                   ease: 'easeOut',
-                  delay: curState === 1 ? 2.5 : 0,
+                  delay: curState === 1 ? 2 : 0,
                 }}
               >
-                150년의 역사
+                <NumberPlus number={150} fontSize={'90px'} delayTime={2000} />
+                <NomalFont
+                  animate={{
+                    opacity: curState === 1 ? [0, 1] : 0,
+                  }}
+                  transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                    delay: curState === 1 ? 3.5 : 0,
+                  }}
+                >
+                  년의 역사
+                </NomalFont>
               </SecondTitle>
               <SecondSubTitle
                 animate={{
@@ -188,7 +199,7 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
                 transition={{
                   duration: 1,
                   ease: 'easeOut',
-                  delay: curState === 1 ? 2.5 : 0,
+                  delay: curState === 1 ? 4.0 : 0,
                 }}
               >
                 시간이 증명한 완벽한 맛
@@ -213,6 +224,7 @@ const Background = styled(motion.div)`
   justify-content: center;
   align-items: center;
 
+  overflow: hidden;
   opacity: 0;
 `;
 
@@ -362,12 +374,12 @@ const SecondTitle = styled(motion.div)`
   color: black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   opacity: 0;
   margin-bottom: 70px;
   font-weight: bold;
 `;
-
+const NomalFont = styled(motion.div)``;
 const SecondSubTitle = styled(motion.div)`
   position: relative;
   font-size: 40px;

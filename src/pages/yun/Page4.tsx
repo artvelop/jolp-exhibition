@@ -3,11 +3,36 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
+import { Doughnut } from 'react-chartjs-2';
+import { NumberPlus } from './components';
+const options: object = {
+  plugins: {
+    legend: {
+      display: false, // label 숨기기
+      reverse: true,
+    },
+  },
+  maintainAspectRatio: false, // false로 설정 시 사용자 정의 크기에 따라 그래프 크기가 결정됨.
+};
 
 type Props = { handlePage: () => void };
 export const Page4: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  const ChartColor = ['#E05D5D', ' #FFB344'];
+  const data = {
+    labels: ['맥아, 밀, 기타등등', '옥수수'],
+    datasets: [
+      {
+        backgroundColor: ChartColor,
+        borderColor: ChartColor,
+        borderWidth: 3,
+        hoverBackgroundColor: ChartColor,
+        hoverBorderColor: ['grey', 'grey'],
+        data: [49, 51],
+      },
+    ],
+  };
 
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
@@ -41,132 +66,49 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
-        <ImgSection>
-          <JackImg
-            animate={{
-              opacity: curState === 0 ? [0, 1] : 1,
-              y: '-160px',
-            }}
+        <ChartWrapper>
+          <Chart data={data} options={options} />
+        </ChartWrapper>
+
+        <TitleSection>
+          <Title
+            animate={{ opacity: curState === 0 ? [0, 1] : 0, y: '-50px ' }}
             transition={{
               duration: 1,
               ease: 'easeOut',
-              delay: curState === 0 ? 1 : 0,
+              delay: curState === 0 ? 1.5 : 0,
             }}
-          />
-          <BarWrapper>
-            <WidthBar
-              animate={{
-                opacity: curState === 0 ? [0, 1] : 0,
-                width: '180px',
-              }}
+          >
+            자신있는 완벽한 {'\u00A0'}
+            <SizeText
+              animate={{ opacity: curState === 0 ? [0, 1] : 0 }}
               transition={{
                 duration: 1,
                 ease: 'easeOut',
                 delay: curState === 0 ? 2 : 0,
               }}
-            />
-            <HeightBar
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                height: '80px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
-            />
-            <ImgText
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                marginTop: '20px',
-                marginBottom: '20px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
             >
-              맥아, 밀
-            </ImgText>
-
-            <MiddleWidthBar
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                width: '50px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
-            />
-            <MiddleHeightBar
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                height: '180px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
-            />
-            <ImgText
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                marginTop: '20px',
-                marginBottom: '20px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
-            >
-              옥수수
-            </ImgText>
-            <HeightBar
-              animate={{
-                display: 'flex',
-                opacity: curState === 0 ? [0, 1] : 0,
-                height: '80px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 3 : 0,
-              }}
-            />
-            <WidthBar
-              animate={{
-                opacity: curState === 0 ? [0, 1] : 0,
-                width: '180px',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeOut',
-                delay: curState === 0 ? 2 : 0,
-              }}
-            />
-          </BarWrapper>
-        </ImgSection>
-        <TitleSection
-          animate={{ opacity: curState === 0 ? [0, 1] : 0, y: '-50px ' }}
-          transition={{
-            duration: 1,
-            ease: 'easeOut',
-            delay: curState === 0 ? 4 : 0,
-          }}
-        >
-          <Title>자신있는 완벽한 비율</Title>
-          <SubTitle>옥수수 51% 맥아, 밀...</SubTitle>
+              비율
+            </SizeText>
+          </Title>
+          <SubTitle
+            animate={{ opacity: curState === 0 ? [0, 1] : 0 }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+              delay: curState === 0 ? 3 : 0,
+            }}
+          >
+            <ColorText color={ChartColor[1]}>
+              옥수수{'\u00A0'}
+              <strong>
+                <NumberPlus number={51} fontSize={'70px'} delayTime={3300} />
+              </strong>
+              %,{'\u00A0'}
+            </ColorText>
+            {'\u00A0'}
+            <ColorText color={ChartColor[0]}>맥아, 밀, 기타등등.</ColorText>
+          </SubTitle>
         </TitleSection>
 
         <ArrowNext NextPage={NextPage} Color={'black'} Display={nextButton} />
@@ -179,82 +121,18 @@ const Background = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(253, 224, 223, 1);
+  background-color: rgb(255, 248, 229);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
 `;
-const ImgSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
+const ChartWrapper = styled(motion.div)`
+  width: 40%;
+  height: 100%;
 `;
+const Chart = styled(Doughnut)``;
 
-const JackImg = styled(motion.div)`
-  background: url('${process.env.PUBLIC_URL}/yun/img/jack.png');
-  object-fit: cover;
-  width: 315px;
-  height: 870px;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  filter: drop-shadow(16px 16px 10px);
-  opacity: 0;
-`;
-const BarWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-direction: column;
-`;
-const WidthBar = styled(motion.hr)`
-  width: 0px;
-  border: 2px solid black;
-  opacity: 0;
-  background-color: black;
-  margin: 0;
-`;
-const HeightBar = styled(motion.hr)`
-  display: none;
-  margin: 0;
-  width: 1px;
-  height: 0;
-  border: 1px solid black;
-  opacity: 0;
-  background-color: black;
-  margin-right: 50px;
-`;
-const MiddleWidthBar = styled(motion.hr)`
-  display: none;
-  position: absolute;
-  margin: 0;
-  width: 0px;
-  border: 1px solid black;
-  opacity: 0;
-  background-color: black;
-  margin-right: 25px;
-  transform: rotate(0deg);
-`;
-const MiddleHeightBar = styled(motion.hr)`
-  display: none;
-  margin: 0;
-  width: 1px;
-  height: 0px;
-  border: 1px solid black;
-  opacity: 0;
-  background-color: black;
-  margin-right: 50px;
-`;
-
-const ImgText = styled(motion.div)`
-  display: none;
-  font-size: 40px;
-  font-weight: bold;
-
-  opacity: 0;
-`;
 ///////////// title //////////////
 const TitleSection = styled(motion.div)`
   display: flex;
@@ -262,14 +140,38 @@ const TitleSection = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   width: 50%;
-  opacity: 0;
+
+  margin-top: 50px;
 `;
 
 const Title = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   font-size: 50px;
   font-weight: bold;
+  opacity: 0;
 `;
 const SubTitle = styled(motion.div)`
-  margin-top: 30px;
-  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 45px;
+
+  opacity: 0;
+`;
+
+type ColorTextProps = { color: String };
+const ColorText = styled(motion.div)<ColorTextProps>`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: ${({ color }) => color};
+`;
+
+const SizeText = styled(motion.div)`
+  font-size: 80px;
+
+  color: rgb(0, 161, 157);
+  opacity: 0;
 `;

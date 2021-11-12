@@ -8,7 +8,16 @@ type Props = { handlePage: () => void };
 export const Page6: React.FC<Props> = ({ handlePage }) => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
-
+  const title = [
+    { text: '기', dTime: 1.5 },
+    { text: '본', dTime: 1.6 },
+    { text: '부', dTime: 1.7 },
+    { text: '터', dTime: 1.8 },
+    { text: '\u00A0', dTime: 1.9 },
+    { text: '다', dTime: 2.0 },
+    { text: '르', dTime: 2.1 },
+    { text: '다', dTime: 2.2 },
+  ];
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
@@ -34,7 +43,7 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
       <Background
         animate={{
           opacity: curState === 0 ? [0, 1] : 0,
-          // y: '0%',
+
           backgroundPosition: '50% 50%',
         }}
         transition={{
@@ -43,21 +52,36 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
           delay: curState === 0 ? 0 : 0,
         }}
       >
-        <TitleSection
-          animate={{
-            opacity: curState === 0 ? [0, 1] : 0,
-            y: '20px',
-          }}
-          transition={{
-            duration: 1,
-            ease: 'easeOut',
-            delay: curState === 0 ? 1 : 0,
-          }}
-        >
-          <MainTitle>기본부터 다르다</MainTitle>
-          <SubTitle>
+        <TitleSection>
+          <MainWrapper>
+            {title.map(({ text, dTime }) => (
+              <MainTitle
+                key={dTime}
+                animate={{
+                  opacity: curState === 0 ? [0, 1] : 0,
+                  y: '20px',
+                }}
+                transition={{
+                  delay: dTime,
+                }}
+              >
+                {text}
+              </MainTitle>
+            ))}
+          </MainWrapper>
+          <SubTitle
+            animate={{
+              opacity: curState === 0 ? [0, 1] : 0,
+              y: '20px',
+            }}
+            transition={{
+              duration: 1,
+              ease: 'easeOut',
+              delay: curState === 0 ? 2.5 : 0,
+            }}
+          >
             철분이 함유되어 있지 않고 <br />
-            일년내내 13도를 유지하고 있는 동굴 속 샘물을 이용
+            일년내내 <strong>13</strong>도를 유지하고 있는 동굴 속 샘물을 이용
           </SubTitle>
         </TitleSection>
         <ArrowNext NextPage={NextPage} Color={'white'} Display={nextButton} />
@@ -78,6 +102,8 @@ const Background = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   opacity: 0;
+
+  overflow: hidden;
 `;
 
 const TitleSection = styled(motion.div)`
@@ -86,6 +112,11 @@ const TitleSection = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   color: rgba(0, 66, 165, 1);
+`;
+const MainWrapper = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const MainTitle = styled(motion.div)`
   font-size: 50px;

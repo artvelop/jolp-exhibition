@@ -4,14 +4,14 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 export default function Main() {
-  const [pageNumber, setPageNumber] = useState(7);
+  const [pageNumber, setPageNumber] = useState(1);
   const handlePage = () => {
     pageNumber === 9 ? setPageNumber((pageNumber) => (pageNumber = 1)) : setPageNumber((pageNumber) => pageNumber + 1);
   };
   return (
     <Section
       animate={{
-        background: pageNumber === 2 || pageNumber === 5 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgba(253, 224, 223, 1)' : 'black',
+        background: pageNumber === 2 || pageNumber === 5 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgb(240, 240, 240)' : 'black',
       }}
       transition={{ delay: 2 }}
     >
@@ -30,4 +30,8 @@ export default function Main() {
 
 const Section = styled(motion.div)`
   background: black;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
 `;

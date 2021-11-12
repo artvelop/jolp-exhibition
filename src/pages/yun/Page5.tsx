@@ -94,6 +94,7 @@ const Background = styled(motion.div)`
   background-repeat: no-repeat;
   background-size: cover;
 
+  overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
