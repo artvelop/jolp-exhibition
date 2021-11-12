@@ -3,24 +3,27 @@ import { motion } from "framer-motion";
 import { Ref, useRef, useState } from "react";
 
 type Props = {
-    src:string,
-    show:boolean
+    show:boolean,
+    index:number,
+    season:string
 }
-export const MidImage = ({src,show}:Props) => {
+export const MidImage = ({show, index, season}:Props) => {
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
   const imageRef:Ref<HTMLImageElement> = useRef(null);
-  
+
   const onClickEvent = () => {
     if(!click) {
-      const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
+      const imageClickSrc = require(`assets/img/KoJaem/covernat/${season}Image${index}Click.jpg`).default;
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
+
     }
     else {
-      const imageSrc = imageRef.current!.src.replace(/Click.jpg/gi,"") + ".jpg";
+      const imageSrc = require(`assets/img/KoJaem/covernat/${season}Image${index}.jpg`).default;
       imageRef.current!.src = imageSrc;
       setClick(!click);
+
     }
     // const imgSrc = imageRef.src.slice(-9,-4)
     // if(imgSrc!="Click") {
@@ -43,7 +46,7 @@ export const MidImage = ({src,show}:Props) => {
     onMouseOut={() => setHover(false)}
     onClick={onClickEvent}
     >
-      <Image src={src}
+      <Image src={require(`assets/img/KoJaem/covernat/${season}Image${index}.jpg`).default}
         ref={imageRef}
         animate={{
           y: show? [100,0] : [0,100],
