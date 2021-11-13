@@ -35,7 +35,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
     <LayoutContainer>
       <Background
         animate={{
-          opacity: curState === 0 ? [0, 1] : 0,
+          opacity: curState === 0 ? 1 : 0,
         }}
         transition={{
           duration: 1,
@@ -48,7 +48,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
           transition={{
             duration: 1.5,
             ease: 'easeOut',
-            delay: curState === 0 ? 0.5 : 0,
+            delay: curState === 0 ? 0 : 0,
           }}
         />
         <TitleWrapper

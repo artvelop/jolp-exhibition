@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { BsCaretUpSquareFill, BsCaretDownSquareFill } from "react-icons/bs";
-import { color } from "../constants";
+import React from 'react';
+import styled from '@emotion/styled';
+import { BsCaretUpSquareFill, BsCaretDownSquareFill } from 'react-icons/bs';
+import { color } from '../constants';
 // import { motion } from "framer-motion";
 
 export const ScrollBtn: React.FC = () => {
@@ -9,21 +9,21 @@ export const ScrollBtn: React.FC = () => {
     window.scrollBy({
       top: 950,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   const pageUp = () => {
     window.scrollBy({
       top: -950,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   const pageUpUp = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
