@@ -22,7 +22,7 @@ export const Chapter: React.FC<BodyContentType> = ({
   if (inView) {
     boxAni.start({
       opacity: 1,
-      transition: { duration: 1.5 },
+      transition: { duration: 2.5 },
     });
 
     textBlingBling.start({
@@ -30,6 +30,7 @@ export const Chapter: React.FC<BodyContentType> = ({
       transition: { duration: 3, delay: 1 },
       translateX: 30,
       scale: 1.05,
+      textShadow: "0px 0px 6px yellow",
     });
   }
 
@@ -37,9 +38,11 @@ export const Chapter: React.FC<BodyContentType> = ({
     <Wrap>
       <ViewPort>
         <Box ref={ref} initial={{ opacity: 0 }} animate={boxAni}>
-          <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
-            {MyOpinionChapter}
-          </TypoGraphy>
+          <Special2>
+            <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
+              {MyOpinionChapter}
+            </TypoGraphy>
+          </Special2>
           <Gap />
           {MyOpinionDetail.map((item, index) => {
             return regExp.test(item) ? (
@@ -85,3 +88,6 @@ const Gap = styled.div`
 `;
 
 const Special = styled(motion.div)``;
+const Special2 = styled(motion.div)`
+  text-shadow: 0px 0px 10px ${color.gold_light};
+`;

@@ -34,9 +34,6 @@ export const TopContent: React.FC<TopContentType> = ({
         </TypoGraphy>
       </Content>
       <Content
-        animate={{
-          textShadow: `1px 1px 5px yellow`,
-        }}
         whileHover={{
           scale: 1.1,
           transition: { duration: 1 },
