@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import kirshLogo from "assets/img/KoJaem/kirsh/Kirsh_logo.png"
+import logoFilled from "assets/img/KoJaem/kirsh/logo_filled.png"
 
 type Props = {
   setOnLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,7 +28,7 @@ export const Loading = ({ setOnLoading }: Props) => {
   }, [setOnLoading]);
 
   return (
-    <LoadingWrapper
+    <Wrapper
       animate={{
         backgroundColor: ["#ddc4f5", "#f5c4dc"],
         transition: { duration: 3 },
@@ -50,11 +52,11 @@ export const Loading = ({ setOnLoading }: Props) => {
           ref={loadingRef}
         />
       </LoadingImage>
-    </LoadingWrapper>
+    </Wrapper>
   );
 };
 
-const LoadingWrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)`
   position: relative;
   height: 100vh;
   text-align: center;
@@ -70,7 +72,9 @@ const Colored = styled(motion.span)`
     bottom: 0;
     right: 0;
     transition: opacity 500ms linear;
-    background: no-repeat url('../koJaem/img/kirsh/logo_filled.png') 0 100%;
+    background: no-repeat url(${logoFilled}) 0 100%;
+
+    // background: no-repeat url('../koJaem/img/kirsh/logo_filled.png') 0 100%;
     // background-position: 0 100%;
     background-size: 100% auto;
 }
@@ -82,7 +86,8 @@ const LoadingImage = styled(motion.div)`
   position: absolute;
   bottom: 50vh;
   left: 50vw;
-  background: no-repeat center url("../koJaem/img/kirsh/kirsh_logo.png");
+  background: no-repeat center url(${kirshLogo});
+  // background: no-repeat center url("../koJaem/img/kirsh/kirsh_logo.png");
   transform: translate(-50%, -50%);
   background-size: 100% auto;
 `;

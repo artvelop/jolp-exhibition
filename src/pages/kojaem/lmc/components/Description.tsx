@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import LmcDescription from 'assets/img/KoJaem/lmc/LmcDescription.jpg'
+
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }
@@ -23,7 +25,7 @@ export const Description = ({setFirst}:Props) => {
   return (
     <Wrapper>
       <BrandImage
-        src={`/koJaem/img/lmc/LmcDescription.jpg`}
+        src={LmcDescription}
         alt="brand"
         animate={{
           width: show ? '40%' : '0%',

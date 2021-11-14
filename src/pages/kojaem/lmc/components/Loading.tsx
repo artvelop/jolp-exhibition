@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import lmcLogo from "assets/img/KoJaem/lmc/Lmc_logo.png"
 
 type Props = {
   setOnLoading: React.Dispatch<React.SetStateAction<boolean>>,
@@ -67,7 +68,8 @@ const LoadingImage = styled(motion.span)`
     bottom: 0;
     right: 0;
     transition: opacity 500ms linear;
-    background: no-repeat url('../koJaem/img/lmc/lmc_logo.png') 0 100%;
+    background: no-repeat url(${lmcLogo}) 0 100%;
+    // background: no-repeat url('../koJaem/img/lmc/lmc_logo.png') 0 100%;
     // background-position: 0 100%;
     background-size: auto 100%;
 }
