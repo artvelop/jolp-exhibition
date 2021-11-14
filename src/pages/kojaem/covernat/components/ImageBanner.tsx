@@ -99,7 +99,7 @@ const BrandName = styled(motion.h1)`
   top: 0%;
   left: 50%;
   font-size: 30px;
-  transform: translateX(-50%) scale(1.5);;
+  transform: translateX(-50%) scale(1.5);
   color: #3b5e3d;
   text-shadow: 1px 1px 5px #524f4f;
   display: flex;
@@ -124,6 +124,7 @@ const BrandName = styled(motion.h1)`
 `;
 
 const ImageUl = styled(motion.div)`
+  display: flex;
   margin-top: 200px;
   width: 100%;
 `;
