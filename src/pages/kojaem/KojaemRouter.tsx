@@ -23,7 +23,7 @@ const KojaemRouter = () => {
             >
           </Route>
           <Route exact path="/kojaem/musinsa"
-            render={() => <Musinsa selected={selected} setSelected={setSelected}/>}        
+            render={() => <Musinsa selected={selected} setSelected={setSelected}/>}
           />
           <Route exact path="/kojaem/covernat" 
             render={() => <Covernat selected={selected} setSelected={setSelected}/>}   
