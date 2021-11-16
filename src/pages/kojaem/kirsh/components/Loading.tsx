@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import kirshLogo from "assets/img/KoJaem/kirsh/Kirsh_logo.png"
-import logoFilled from "assets/img/KoJaem/kirsh/logo_filled.png"
+import styled from '@emotion/styled';
+import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import kirshLogo from 'assets/img/KoJaem/kirsh/kirsh_logo.png';
+import logoFilled from 'assets/img/KoJaem/kirsh/logo_filled.png';
 
 type Props = {
   setOnLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,23 +30,21 @@ export const Loading = ({ setOnLoading }: Props) => {
   return (
     <Wrapper
       animate={{
-        backgroundColor: ["#ddc4f5", "#f5c4dc"],
+        backgroundColor: ['#ddc4f5', '#f5c4dc'],
         transition: { duration: 3 },
-      }}
-    >
+      }}>
       <LoadingImage
         animate={{
           opacity: 0,
           transition: { duration: 1, delay: 3.5 },
-        }}
-      >
+        }}>
         <Colored
-          initial={{ height: "0%" }}
+          initial={{ height: '0%' }}
           animate={{
-            height: "70%",
+            height: '70%',
             transition: {
               duration: 3,
-              ease: "easeOut",
+              ease: 'easeOut',
             },
           }}
           ref={loadingRef}
