@@ -1,24 +1,26 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { Ref, useRef, useState } from "react";
 
 type Props = {
-    src:string,
-    show:boolean
-}
-export const MidImage = ({src,show}:Props) => {
+  show: boolean;
+  index: number;
+  season: string;
+};
+export const MidImage = ({ show, index, season }: Props) => {
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
-  const imageRef:Ref<HTMLImageElement> = useRef(null);
-  
+  const imageRef: Ref<HTMLImageElement> = useRef(null);
+
   const onClickEvent = () => {
-    if(!click) {
-      const imageClickSrc = imageRef.current!.src.replace(/.jpg/gi,"") + "Click.jpg";
+    if (!click) {
+      const imageClickSrc =
+        require(`assets/img/KoJaem/covernat/${season}Image${index}Click.jpg`).default;
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
-    }
-    else {
-      const imageSrc = imageRef.current!.src.replace(/Click.jpg/gi,"") + ".jpg";
+    } else {
+      const imageSrc =
+        require(`assets/img/KoJaem/covernat/${season}Image${index}.jpg`).default;
       imageRef.current!.src = imageSrc;
       setClick(!click);
     }
@@ -35,33 +37,36 @@ export const MidImage = ({src,show}:Props) => {
     //   setClick(!click);
     //   console.log(imageSrc)
     // }
-  }
+  };
 
   return (
     <Wrapper
-    onMouseOver={() => setHover(true)}
-    onMouseOut={() => setHover(false)}
-    onClick={onClickEvent}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+      onClick={onClickEvent}
     >
-      <Image src={src}
+      <Image
+        src={
+          require(`assets/img/KoJaem/covernat/${season}Image${index}.jpg`)
+            .default
+        }
         ref={imageRef}
         animate={{
-          y: show? [100,0] : [0,100],
-          opacity: show? [0,1] : 0,
-          transition: {duration:1},
-          rotateY: hover ? 180 : 0
+          y: show ? [100, 0] : [0, 100],
+          opacity: show ? [0, 1] : 0,
+          transition: { duration: 1 },
+          rotateY: hover ? 180 : 0,
         }}
-        />
-      </Wrapper>
+      />
+    </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 const Image = styled(motion.img)`
-  width:30vw;
-  height:60vh;
-  opacity:0;
-  y:100;
+  width: 30vw;
+  height: 60vh;
+  opacity: 0;
+  y: 100;
   pointer-events: none;
 `;

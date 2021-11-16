@@ -14,7 +14,7 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
     setPause(!isClick);
     setIsClick(!isClick);
   };
-  const slideNumber = className.charAt(className.length - 1);
+  const index = className.charAt(className.length - 1);
 
   return (
     <>
@@ -29,7 +29,7 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
         transition={{ duration: 0.6 }}
       ></Image>
       <Background
-        src={`/koJaem/img/lmc/background_${slideNumber}.jpg`}
+        src={require(`assets/img/KoJaem/lmc/background_${index}.jpg`).default}
         animate={{
           display: isClick ? "flex" : undefined,
           zIndex: isClick ? 999 : 0,

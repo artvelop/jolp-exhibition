@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import covernatLogo from "assets/img/KoJaem/covernat/Covernat_logo.png"
 
 type Props = {
   setOnLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -64,9 +65,10 @@ const LoadingImage = styled(motion.span)`
     bottom: 0;
     right: 0;
     transition: opacity 500ms linear;
-    background: no-repeat url('../koJaem/img/covernat/covernat_logo.png') 0 100%;
+    background: no-repeat url(${covernatLogo}) 0 100%;
     // background-position: 0 100%;
     background-size: 100% auto;
+    // background: no-repeat url('../koJaem/img/covernat/covernat_logo.png') 0 100%;
 }
 `;
 

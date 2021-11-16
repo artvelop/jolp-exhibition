@@ -72,11 +72,11 @@ return (
         {titleArray.map((item, index) => makeText(item, index))}
       </TitleWrapper>
         <MidImageContainer>
-        <MidImage src={`/kojaem/img/lmc/${season}Image1.jpg`} show = {showImg1}
+        <MidImage season={season} show = {showImg1} index={1}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image2.jpg`} show = {showImg2}
+        <MidImage season={season} show = {showImg2} index={2}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image3.jpg`} show = {showImg3}
+        <MidImage season={season} show = {showImg3} index={3}
         />
         </MidImageContainer>
     </Wrapper>

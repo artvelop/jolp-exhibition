@@ -4,9 +4,9 @@ import { LayoutContainer } from "../components/LayoutContainer";
 import { Thumbnail } from "./components/Thumbnail";
 
 const images: string[] = [
-  "MUSINSA.jpg",
-  "COVERNAT.jpg",
-  "KIRSH.jpg",
+  "Musinsa.jpg",
+  "Covernat.jpg",
+  "Kirsh.jpg",
   "LMC.jpg",
 ];
 

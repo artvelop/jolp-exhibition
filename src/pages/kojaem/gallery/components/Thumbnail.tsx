@@ -43,7 +43,7 @@ export const Thumbnail = ({ name, imageName, setSelected }: Props) => {
           }}
         >
           <ThumbnailImage
-            src={`/koJaem/img/${name}`}
+            src={require(`assets/img/KoJaem/${name}`).default}
             alt="brand"
             variants={imageVariants}
             transition={transition}
