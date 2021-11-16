@@ -43,7 +43,7 @@ export const Bottom = () => {
           opacity: show ? [0,1] : 0,
           transition:{duration: 1.2}
         }}
-        >커버낫 구매자 남여 비율</Title>
+        >무신사 스탠다드 구매자 남여 비율</Title>
         <GenderChart />
       </Wrapper>
   );

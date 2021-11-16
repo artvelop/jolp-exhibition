@@ -5,7 +5,7 @@ import { MidImage } from './MidImage';
 
 const options = {threshold: [0.2,0.3,0.4]};
 const season = "Summer";
-const seasonTitle = "커버낫의 시원한 여름 코디";
+const seasonTitle = "무신사의 시원한 여름 코디";
 const titleArray = seasonTitle.split("");
 export const SummerOutfit = () => {
   const [show, setShow] = useState(false);
