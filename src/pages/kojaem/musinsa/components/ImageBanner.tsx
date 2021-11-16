@@ -57,13 +57,11 @@ export const ImageBanner = () => {
           className="keen-slider__slide number-slide1"
           src={slide1}
           setPause={setPause}
-          text="현석&예나 커플이 선택한 커버낫 맨투맨 스타일링"
         />
         <SlideImage
           className="keen-slider__slide number-slide2"
           src={slide2}
           setPause={setPause}
-          text="Covernat ECO CAPSULE COLLECTION"
         />
         <SlideImage
           className="keen-slider__slide number-slide3"
@@ -79,7 +77,7 @@ export const ImageBanner = () => {
           className="keen-slider__slide number-slide5"
           src={slide5}
           setPause={setPause}
-          text="21FW Covernat Fleece Collection"
+          text="홍대에 위치한 MUSINSA 매장"
         />
       </ImageUl>
     </Wrapper>
