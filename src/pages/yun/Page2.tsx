@@ -248,6 +248,8 @@ const LeftTitle = styled(motion.div)`
   opacity: 0;
   top: -20px;
   font-weight: bold;
+
+  cursor: default;
 `;
 
 const RightTitle = styled(motion.div)`
@@ -262,6 +264,8 @@ const RightTitle = styled(motion.div)`
   width: 40%;
   top: 20px;
   opacity: 0;
+
+  cursor: default;
 `;
 
 const JackImg = styled(motion.div)`
@@ -306,6 +310,8 @@ const StartNumber = styled(motion.div)`
   align-items: center;
   opacity: 0;
   font-weight: bold;
+
+  cursor: default;
 `;
 const EndNumber = styled(motion.div)`
   font-size: 30px;
@@ -316,6 +322,8 @@ const EndNumber = styled(motion.div)`
   opacity: 0;
   font-weight: bold;
   margin-right: 50px;
+
+  cursor: default;
 `;
 const LineWrapper = styled.div`
   display: flex;
@@ -367,6 +375,8 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   width: 500px;
+
+  cursor: default;
 `;
 const SecondTitle = styled(motion.div)`
   position: relative;

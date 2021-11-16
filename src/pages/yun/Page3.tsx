@@ -122,6 +122,8 @@ const TitleWrapper = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  cursor: default;
 `;
 const MainTitle = styled(motion.div)`
   font-size: 50px;

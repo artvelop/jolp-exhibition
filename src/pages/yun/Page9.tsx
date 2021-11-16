@@ -30,15 +30,14 @@ export const Page9: React.FC<Props> = ({ handlePage }) => {
     }
   };
   const NextPageHandle = () => {
-    if (PageLock === 0 && curState === 1) {
+    if (PageLock === 0) {
       setPageLock(1);
       NextPage();
-    } else if (PageLock === 0 && curState === 0) {
-      NextPage();
+      setTimeout(() => setPageLock(0), 1500);
     }
   };
   const NextPageHandle2 = () => {
-    if (PageLock === 1 && curState === 2) {
+    if (PageLock === 0 && curState === 2) {
       setPageLock(0);
       NextPage();
     }
@@ -259,7 +258,7 @@ const Section2 = styled(motion.div)`
 const Logo = styled(motion.div)`
   background: url('${process.env.PUBLIC_URL}/yun/img/logo.png');
   object-fit: cover;
-  width: 405px;
+  width: 525px;
   height: 305px;
   background-repeat: no-repeat;
   background-size: cover;

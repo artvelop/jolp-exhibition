@@ -67,7 +67,7 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
             }}
             onClick={NextPage}
           >
-            잭다니엘 알아보기
+            Enter
           </Start>
           <Exit
             animate={{
@@ -106,7 +106,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const TitleImg = styled(motion.div)`
-  background: url('${process.env.PUBLIC_URL}/yun/img/logo.png');
+  background: url('${process.env.PUBLIC_URL}/yun/img/logo2.png');
   width: 320px;
   height: 250px;
   background-repeat: no-repeat;
