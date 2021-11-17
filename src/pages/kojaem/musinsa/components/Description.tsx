@@ -165,7 +165,7 @@ const NextButton = styled(motion.div)`
   display: flex;
   margin-left: auto;
   margin-right: 5vw;
-  color: #6da37e;
+  color: #6d80a3;
   font-size: 70px;
   cursor: pointer;
 `;

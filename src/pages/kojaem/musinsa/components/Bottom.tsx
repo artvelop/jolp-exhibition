@@ -59,10 +59,9 @@ const Wrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color:white;
-  text-shadow: 1px 1px 5px black;
   font-size: 4vw;
   opacity: 0;
   margin-top: 20vh;
   align-self: center;
-  text-shadow: white 1px 1px 5px;
+  text-shadow: 1px 1px 5px white;
 `;

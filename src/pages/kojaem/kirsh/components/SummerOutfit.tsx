@@ -5,7 +5,7 @@ import { MidImage } from './MidImage';
 
 const options = {threshold: [0.2,0.3,0.4]};
 const season = "Summer";
-const seasonTitle = "키르시의 시원한 여름 코디";
+const seasonTitle = "키르시의 귀여운 여름 코디";
 const titleArray = seasonTitle.split("");
 export const SummerOutfit = () => {
   const [show, setShow] = useState(false);
@@ -44,6 +44,7 @@ export const SummerOutfit = () => {
   const makeText = (item: string, index: number) => (
       <Title
         key={index}
+        initial={{opacity: 0}}
         animate={{
           opacity: show ? [0, 1] : 0,
           y: show ? [50,-50,0] : 0,
@@ -51,7 +52,7 @@ export const SummerOutfit = () => {
           rotateZ: show? [0,20,0] : 0,
           textShadow: show
             ? "1px 1px 5px #5025db"
-            : "text-shadow:0px 0px 0px #5025db",
+            : "0px 0px 0px #5025db",
         }}
         transition={{
           duration: show ? 1 : undefined,
@@ -86,7 +87,7 @@ export const SummerOutfit = () => {
 
 
 const Wrapper = styled(motion.div)`
-  background: linear-gradient(to right, #3f87d9, #8afffb);
+  background: linear-gradient(to right, #72a3db, #e8ebc3);
   width: 100%;
   height: 100%;
   display:flex;
@@ -101,7 +102,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color:white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

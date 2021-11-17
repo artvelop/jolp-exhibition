@@ -43,6 +43,7 @@ export const ChangingSeasonOutfit = () => {
   const makeText = (item: string, index: number) => (
     <Title
       key={index}
+      initial={{opacity: 0}}
       animate={{
         opacity: show ? [0, 1] : 0,
         y: show ? [50,-50,0] : 0,
@@ -50,7 +51,7 @@ export const ChangingSeasonOutfit = () => {
         rotateZ: show? [0,20,0] : 0,
         textShadow: show
           ? "1px 1px 5px #18d4ed"
-          : "text-shadow: 0px 0px 0px #18d4ed",
+          : "0px 0px 0px #18d4ed",
       }}
       transition={{
         duration: show ? 1 : undefined,
@@ -101,7 +102,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color: white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

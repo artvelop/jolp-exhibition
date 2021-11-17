@@ -27,7 +27,12 @@ export const Loading = ({ setOnLoading }: Props) => {
   }, [setOnLoading]);
 
   return (
-    <Wrapper>
+    <Wrapper
+      animate={{
+        backgroundColor: ['#b3b39d', '#d7d7d5'],
+        transition: { duration: 2.5 }
+      }}
+    >
       <LoadingImageWrapper>
         <LoadingImage
           initial={{ height: "0%" }}
@@ -48,13 +53,12 @@ export const Loading = ({ setOnLoading }: Props) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   position: relative;
   height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: #d7d7d5;
 `;
 
 const LoadingImage = styled(motion.span)`

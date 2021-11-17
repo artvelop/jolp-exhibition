@@ -5,13 +5,14 @@ type Props = {
   show: boolean;
 };
 const text =
-  "수정중...";
+  "무신사 스탠다드의 남여 구매자 비율은 80 : 20으로 남성 위주의 브랜드이지만, 무신사에서는 우신사스토어 라는 여성분들을 위한 스토어도 같이 론칭중입니다.";
 const textArray = text.split("");
-// 커버낫 브랜드의 남여 구매자 비율은 57 : 43으로
-// 성별에 상관없이 즐겨 입을 수 있는 브랜드입니다.
+// 무신사 스탠다드의 남여 구매자 비율은 80 : 20으로
+// 남성 위주의 브랜드이지만,
+// 무신사에서는 우신사스토어 라는 여성분들을 위한 스토어도 같이 론칭중입니다.
 export const ChartDescription = ({ show }: Props) => {
   const makeText = (item: string, index: number) => {
-    if (index === 29) return <p key={index}></p>;
+    if (index === 30 || index === 44) return <p key={index}></p>;
 
     return (
       <Text
@@ -20,7 +21,7 @@ export const ChartDescription = ({ show }: Props) => {
           opacity: show ? [0, 1] : 0,
           textShadow: show
             ? "white 1px 1px 5px"
-            : "text-shadow: white 0px 0px 0px",
+            : "white 0px 0px 0px",
         }}
         transition={{
           duration: show ? 1 : undefined,
