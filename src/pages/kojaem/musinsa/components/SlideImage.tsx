@@ -10,9 +10,13 @@ type Props = {
 };
 export const SlideImage = ({ className, src, setPause, text }: Props) => {
   const [isClick, setIsClick] = useState(false);
+  const [dragging, setDragging] = useState(false);
   const clickEvent = () => {
-    setPause(!isClick);
-    setIsClick(!isClick);
+    if(!dragging)
+    {
+      setPause(!isClick);
+      setIsClick(!isClick);
+    }
   };
   const index = className.charAt(className.length - 1);
   return (
@@ -20,11 +24,13 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
       <Image
         className={className}
         src={src}
-        onClick={() => clickEvent()}
         animate={{
           zIndex: isClick ? 1000 : 0,
           opacity: isClick ? 0 : 1,
         }}
+        onMouseMove={() => {setDragging(true)}}
+        onClick={() => clickEvent()}
+        onMouseDown={()=>{setDragging(false)}}
         transition={{ duration: 0.6 }}
       ></Image>
       <Background
