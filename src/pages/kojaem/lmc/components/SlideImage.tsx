@@ -25,14 +25,9 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
       <Image
         className={className}
         src={src}
-        animate={{
-          zIndex: isClick ? 1000 : 0,
-          opacity: isClick ? 0 : 1,
-        }}
         onMouseMove={() => {setDragging(true)}}
         onClick={() => showBackground()}
         onMouseDown={()=>{setDragging(false)}}
-        transition={{ duration: 0.6 }}
       ></Image>
       <Background
         src={require(`assets/img/KoJaem/lmc/background_${index}.jpg`).default}
@@ -76,7 +71,6 @@ const Background = styled(motion.img)`
   top: 0px;
   width: 100%;
   height: 100vh;
-  position: fixed;
   overflow: hidden;
 `;
 
