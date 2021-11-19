@@ -130,7 +130,6 @@ const TitleAnimation = styled.span`
   animation-duration: 3s;
 `;
 const Layout = styled.div`
-  padding: 0.54%;
   background-size: cover;
   background-image: url(${backImg});
   height: 100vh;
