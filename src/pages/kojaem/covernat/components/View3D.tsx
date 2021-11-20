@@ -3,16 +3,22 @@ import { motion } from "framer-motion";
 import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
-import { SlideImage } from "./SlideImage";
+import { SlideImage3D } from "./SlideImage3D";
+import item1 from "assets/img/KoJaem/covernat/item1.jpg"
+import item2 from "assets/img/KoJaem/covernat/item2.jpg"
+import item3 from "assets/img/KoJaem/covernat/item3.jpg"
+import item4 from "assets/img/KoJaem/covernat/item4.jpg"
+import item5 from "assets/img/KoJaem/covernat/item5.jpg"
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const View3D = () => {
   const [pause, setPause] = useState(false);
-
+  const [url, setUrl] = useState("");
+  const [showCody, setShowCody] = useState(false);
   const timer = useRef<NodeJS.Timeout>();
 
   const [sliderRef, slider]: sliderType = useKeenSlider({
-    slidesPerView: 4,
+    slidesPerView: 3,
     spacing: 10,
     loop: true,
     duration: 5000,
@@ -36,9 +42,21 @@ export const View3D = () => {
     };
   }, [pause, slider]);
 
+  const changingUrl = (url:string) => {
+      setUrl(url)
+  }
+
   return (
     <Wrapper>
-      {/* <BrandName>Covernat</BrandName> */}
+      <ClickContent
+      src={url}
+      animate={{
+        opacity : showCody ? [0,1] : [1,0]
+      }}
+      onClick={() => setShowCody(false)}
+      >
+
+      </ClickContent>
       <ImageUl
         ref={sliderRef}
         className="keen-slider"
@@ -46,42 +64,42 @@ export const View3D = () => {
         animate={{ 
           opacity: 1, 
           y: 0 ,
-          rotateY: 20,
+          rotateX: 20,
           transformPerspective:300
         }}
         transition={{
           duration: 1,
         }}
       >
-        <SlideImage
+        <SlideImage3D
           className="keen-slider__slide number-slide1"
-          src="/koJaem/img/covernat/roll_01.jpg"
-          setPause={setPause}
-          text="현석&예나 커플이 선택한 커버낫 맨투맨 스타일링"
+          src={item1}
+          changingUrl={changingUrl}
+          setShowCody={setShowCody}
         />
-        <SlideImage
+        <SlideImage3D
           className="keen-slider__slide number-slide2"
-          src="/koJaem/img/covernat/roll_02.jpg"
-          setPause={setPause}
-          text="Covernat ECO CAPSULE COLLECTION"
+          src={item2}
+          changingUrl={changingUrl}
+          setShowCody={setShowCody}
         />
-        <SlideImage
+        <SlideImage3D
           className="keen-slider__slide number-slide3"
-          src="/koJaem/img/covernat/roll_03.jpg"
-          setPause={setPause}
-          text="편안함 속 스타일리시한 커버낫 맨투맨세트"
+          src={item3}
+          changingUrl={changingUrl}
+          setShowCody={setShowCody}
         />
-        <SlideImage
+        <SlideImage3D
           className="keen-slider__slide number-slide4"
-          src="/koJaem/img/covernat/roll_04.jpg"
-          setPause={setPause}
-          text="가벼우면서도 따뜻한 커버낫 패딩"
+          src={item4}
+          changingUrl={changingUrl}
+          setShowCody={setShowCody}
         />
-        <SlideImage
+        <SlideImage3D
           className="keen-slider__slide number-slide5"
-          src="/koJaem/img/covernat/roll_05.jpg"
-          setPause={setPause}
-          text="21FW Covernat Fleece Collection"
+          src={item5}
+          changingUrl={changingUrl}
+          setShowCody={setShowCody}
         />
       </ImageUl>
     </Wrapper>
@@ -89,16 +107,24 @@ export const View3D = () => {
 };
 
 const Wrapper = styled(motion.div)`
+  position: relative;
+  background-color: black;
   width: 100%;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 100vh 0 100vh 0;
 `;
-
 const ImageUl = styled(motion.div)`
-  margin-top: 200px;
-  width: 50vw;
+  display: flex;
+  background-color: black;
 `;
 
-
+const ClickContent = styled(motion.img)`
+  margin-top: 70vh;
+  align-self: center;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  overflow: hidden;
+`;
