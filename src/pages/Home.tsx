@@ -36,7 +36,7 @@ const pageList: Array<Page> = [
     header: 'Fashion brand\nExhibition',
     subHeader:
       '평소 패션에 관심없던 분들도\n여러 사진들과 함께 편하고 친근하게 다가갈 수 있도록 만든 작품입니다.\n당신도 오늘부터 패션피플!',
-    link: '/kojaem',
+    link: '/kojaem/HOME',
   },
 ];
 
