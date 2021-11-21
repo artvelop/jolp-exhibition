@@ -54,18 +54,20 @@ export const View3D = () => {
         opacity : showCody ? [0,1] : [1,0]
       }}
       onClick={() => setShowCody(false)}
-      >
-
-      </ClickContent>
+      />
       <ImageUl
         ref={sliderRef}
         className="keen-slider"
         initial={{ opacity: 0, y: 50 }}
         animate={{ 
-          opacity: 1, 
+          display: showCody ? undefined : 'flex',
+          opacity: showCody ? [1,0] : [0,1],
           y: 0 ,
           rotateX: 20,
-          transformPerspective:300
+          transformPerspective:300,
+          transitionEnd: {
+            display: showCody ? 'none' : undefined
+          }
         }}
         transition={{
           duration: 1,
