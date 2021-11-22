@@ -10,14 +10,15 @@ const images: string[] = [
   "LMC.jpg",
 ];
 
+
 type Props = {
   selected: string;
   setSelected: (link: string) => void;
 };
 
 const Gallery = ({ selected, setSelected }: Props) => {
-  const getImageName = (image: string) =>
-    image.replace(/.jpg|.jpeg|.png|.gif/gi, "");
+  const getLinkName = (image: string) =>
+    image.replace(/.jpg|.jpeg|.png|.gif/gi, "").toUpperCase();
 
   return (
     <LayoutContainer selected={selected} setSelected={setSelected}>
@@ -37,7 +38,7 @@ const Gallery = ({ selected, setSelected }: Props) => {
             <Thumbnail
               key={name}
               name={name}
-              imageName={getImageName(name)}
+              linkName={getLinkName(name)}
               setSelected={setSelected}
             />
           ))}
