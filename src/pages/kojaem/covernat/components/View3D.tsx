@@ -9,6 +9,7 @@ import item2 from "assets/img/KoJaem/covernat/item2.jpg"
 import item3 from "assets/img/KoJaem/covernat/item3.jpg"
 import item4 from "assets/img/KoJaem/covernat/item4.jpg"
 import item5 from "assets/img/KoJaem/covernat/item5.jpg"
+import flash from "assets/img/KoJaem/flash.png"
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const View3D = () => {
@@ -48,13 +49,27 @@ export const View3D = () => {
 
   return (
     <Wrapper>
-      <ClickContent
+      <CodyWrapper>
+      <CodyImage
       src={url}
       animate={{
-        opacity : showCody ? [0,1] : [1,0]
+        opacity : showCody ? [0,1] : [1,0],
+        transition : {
+          delay : showCody ? 0.5 : 0,
+        }
       }}
       onClick={() => setShowCody(false)}
       />
+      <Flash 
+      src={flash}
+      animate={{
+        opacity : showCody ? [0,0.5,0] : 0,
+        transition: {
+          duration : showCody ? 1.2 : undefined,
+        }
+      }}
+      />
+      </CodyWrapper>
       <ImageUl
         ref={sliderRef}
         className="keen-slider"
@@ -64,9 +79,12 @@ export const View3D = () => {
           opacity: showCody ? [1,0] : [0,1],
           y: 0 ,
           rotateX: 20,
+          transition: {
+            delay: showCody ? 0 : 0.5
+          },
           transformPerspective:300,
           transitionEnd: {
-            display: showCody ? 'none' : undefined
+            display: showCody ? 'none' : undefined,
           }
         }}
         transition={{
@@ -122,11 +140,23 @@ const ImageUl = styled(motion.div)`
   background-color: black;
 `;
 
-const ClickContent = styled(motion.img)`
+const CodyWrapper = styled(motion.div)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+const CodyImage = styled(motion.img)`
   margin-top: 70vh;
-  align-self: center;
-  width: 500px;
-  height: 500px;
+  width: 50vh;
+  height: 50vh;
   background-color: white;
   overflow: hidden;
+`;
+
+const Flash = styled(motion.img)`
+  position: absolute;
+  margin-top:20vh;
+  width: 100%;
+  height: 150vh;
+  pointer-events: none;
 `;
