@@ -4,11 +4,11 @@ import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { SlideImage3D } from "./SlideImage3D";
-import item1 from "assets/img/KoJaem/covernat/item1.jpg"
-import item2 from "assets/img/KoJaem/covernat/item2.jpg"
-import item3 from "assets/img/KoJaem/covernat/item3.jpg"
-import item4 from "assets/img/KoJaem/covernat/item4.jpg"
-import item5 from "assets/img/KoJaem/covernat/item5.jpg"
+import item1 from "assets/img/KoJaem/covernat/item1.png"
+import item2 from "assets/img/KoJaem/covernat/item2.png"
+import item3 from "assets/img/KoJaem/covernat/item3.png"
+import item4 from "assets/img/KoJaem/covernat/item4.png"
+import item5 from "assets/img/KoJaem/covernat/item5.png"
 import flash from "assets/img/KoJaem/flash.png"
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
@@ -64,9 +64,6 @@ export const View3D = () => {
       src={flash}
       animate={{
         opacity : showCody ? [0,0.5,0] : 0,
-        transition: {
-          duration : showCody ? 1.2 : undefined,
-        }
       }}
       />
       </CodyWrapper>
@@ -88,7 +85,7 @@ export const View3D = () => {
           }
         }}
         transition={{
-          duration: 1,
+          duration: 0.5,
         }}
       >
         <SlideImage3D
@@ -128,7 +125,7 @@ export const View3D = () => {
 
 const Wrapper = styled(motion.div)`
   position: relative;
-  background-color: black;
+  background-color: green;
   width: 100%;
   height: 200vh;
   display: flex;
@@ -137,7 +134,7 @@ const Wrapper = styled(motion.div)`
 `;
 const ImageUl = styled(motion.div)`
   display: flex;
-  background-color: black;
+  // background-color: black;
 `;
 
 const CodyWrapper = styled(motion.div)`
@@ -149,7 +146,6 @@ const CodyImage = styled(motion.img)`
   margin-top: 70vh;
   width: 50vh;
   height: 50vh;
-  background-color: white;
   overflow: hidden;
 `;
 

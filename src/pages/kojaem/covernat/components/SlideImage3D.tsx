@@ -16,7 +16,7 @@ export const SlideImage3D = ({ className, src, changingUrl, setShowCody }: Props
     if(!dragging)
     {
       clickEvent();
-      changingUrl(require(`assets/img/KoJaem/covernat/cody${index}.jpg`).default);
+      changingUrl(require(`assets/img/KoJaem/covernat/cody${index}.png`).default);
       setShowCody(true);
     }
   };
@@ -37,6 +37,6 @@ export const SlideImage3D = ({ className, src, changingUrl, setShowCody }: Props
 };
 
 const Image = styled(motion.img)`
-  background-color: white;
+  // background-color: white;
   height: 35vh;
 `;
