@@ -56,6 +56,7 @@ const Wrapper = styled(motion.div)`
   height: 150vh;
   display:flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 const Title = styled(motion.div)`
   color:white;

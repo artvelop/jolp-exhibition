@@ -28,7 +28,7 @@ type Props = {
   setSelected: (link: string) => void;
 };
 
-export const Thumbnail = ({ name, linkName: linkName, setSelected }: Props) => {
+export const Thumbnail = ({ name, linkName, setSelected }: Props) => {
   return (
     <Wrapper variants={thumbnailVariants}>
       <Frame

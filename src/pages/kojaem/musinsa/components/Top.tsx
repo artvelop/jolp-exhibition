@@ -18,6 +18,7 @@ const Wrapper = styled(motion.div)`
   background-color: #abb7ba;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   @media screen and (max-width: 600px) {
     flex-direction: column;
     justify-content: center;

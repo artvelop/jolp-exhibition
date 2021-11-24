@@ -127,6 +127,7 @@ const ImageUl = styled(motion.div)`
   display: flex;
   margin-top: 200px;
   width: 100%;
+  // overflow: hidden;
 `;
 
 

@@ -75,11 +75,11 @@ export const View3D = () => {
           display: showCody ? undefined : 'flex',
           opacity: showCody ? [1,0] : [0,1],
           y: 0 ,
-          rotateX: 20,
+          // rotateX: 20,
           transition: {
             delay: showCody ? 0 : 0.5
           },
-          transformPerspective:300,
+          // transformPerspective:300,
           transitionEnd: {
             display: showCody ? 'none' : undefined,
           }
@@ -134,6 +134,7 @@ const Wrapper = styled(motion.div)`
 `;
 const ImageUl = styled(motion.div)`
   display: flex;
+  overflow: hidden;
   // background-color: black;
 `;
 
