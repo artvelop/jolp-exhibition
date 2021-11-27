@@ -88,21 +88,11 @@ const Wrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 100vh;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    justify-content: center;
-  }
 `;
 const BrandImage = styled(motion.img)`
   width: 40%;
   max-width: 800px;
   overflow: hidden;
-  @media screen and (max-width: 600px) {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
 `;
 
 const RightWrapper = styled(motion.div)`
@@ -146,22 +136,6 @@ const Intro = styled(motion.h1)`
   text-align: left;
   padding: 20px 35px 35px 90px;
   margin-top: 320px;
-
-  @media screen and (max-width: 600px) {
-    margin-top: 10px;
-    width: 90vw;
-    padding: 0px 25px 35px 25px;
-  }
-  @media screen and (min-width: 800px) {
-    font-size: 20px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    font-size: 23px;
-  }
-  @media screen and (min-width: 1200px) {
-    font-size: 25px;
-  }
 `;
 
 const NextButton = styled(motion.div)`
