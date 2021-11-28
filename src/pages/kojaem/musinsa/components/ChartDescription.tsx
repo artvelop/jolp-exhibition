@@ -42,7 +42,7 @@ const Wrapper = styled(motion.div)`
 `;
 const Text = styled(motion.span)`
   color: white;
-  font-size: 3vh;
+  font-size: 2vw;
   font-weight: bold;
   opacity: 0;
 `;

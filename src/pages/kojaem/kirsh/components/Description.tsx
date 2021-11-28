@@ -131,9 +131,9 @@ const BrandName = styled(motion.h1)`
 
 const Intro = styled(motion.h1)`
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  padding: 20px 35px 35px 90px;
+  padding: 20px 35px 20px 35px;
   margin-top: 320px;
 `;
 

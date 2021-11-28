@@ -80,7 +80,6 @@ export const GenderChart = () => {
 
 const Wrapper = styled(motion.div)`
   display: flex;
-  justify-content: space-between;
   margin-top: 30vh;
 `;
 const ChartWrapper = styled(motion.div)`
@@ -89,6 +88,6 @@ const ChartWrapper = styled(motion.div)`
 `;
 
 const ChartDescriptionWrapper = styled(motion.div)`
-  margin-right: 20vw;
+  margin-right: 10vw;
   align-self: center;
 `;

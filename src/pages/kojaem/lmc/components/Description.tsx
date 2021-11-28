@@ -61,9 +61,9 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
-          Lost Manegement Cities. LMC는 Lost Manegement Cities라는 뜻이다.<br />
-          그 의미처럼 LMC는 통제를 잃은 도시를 표현하려고 항상 노력해왔다.<br />
-          도시 안에서 발생하는 불안함과 자유로움의 괴리에서 나오는 사회적인 문화를 옷에 표현하고자한다.
+          LMC는 Lost Manegement Cities라는 뜻입니다.<br />
+          그 의미처럼 LMC는 통제를 잃은 도시를 표현하려고 항상 노력해왔고,<br />
+          도시 안에서 발생하는 불안함과 자유로움의 괴리에서 나오는 사회적인 문화를 옷에 표현하고자 합니다.
         </Intro>
         <NextButton
           initial={{ opacity: 0 }}
@@ -132,9 +132,9 @@ const BrandName = styled(motion.h1)`
 
 const Intro = styled(motion.h1)`
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  padding: 20px 35px 35px 90px;
+  padding: 20px 35px 20px 35px;
   margin-top: 320px;
 `;
 

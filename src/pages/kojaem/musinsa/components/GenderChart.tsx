@@ -9,7 +9,7 @@ const data = {
   datasets: [
     {
       label: "구매자 남여 비율",
-      data: [57, 43],
+      data: [80, 20],
       backgroundColor: ["#2f2e61", "#f27272"],
       hoverBorderColor:"black",
       hoverBorderWidth:3,
@@ -80,7 +80,6 @@ export const GenderChart = () => {
 
 const Wrapper = styled(motion.div)`
   display: flex;
-  justify-content: space-between;
   margin-top: 30vh;
 `;
 const ChartWrapper = styled(motion.div)`
@@ -89,6 +88,6 @@ const ChartWrapper = styled(motion.div)`
 `;
 
 const ChartDescriptionWrapper = styled(motion.div)`
-  margin-right: 20vw;
+  margin-right: 10vw;
   align-self: center;
 `;

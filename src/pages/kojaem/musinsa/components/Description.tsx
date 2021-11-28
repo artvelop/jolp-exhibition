@@ -60,7 +60,7 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
-          무신사 스탠다드(MUSINSA STANDARD)는 대한민국을 대표하는 온라인 패션 스토어 무신사가 전개하는 자체상표(Private Brand)이며, 모던 베이식 캐주얼웨어를 지향합니다.
+          무신사 스탠다드는 대한민국을 대표하는 온라인 패션 스토어 무신사가 전개하는 자체상표이며,<br />모던 베이식 캐주얼웨어를 지향합니다.
         </Intro>
         <NextButton
           initial={{ opacity: 0 }}
@@ -129,9 +129,9 @@ const BrandName = styled(motion.h1)`
 
 const Intro = styled(motion.h1)`
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  padding: 20px 35px 35px 90px;
+  padding: 20px 35px 20px 35px;
   margin-top: 320px;
 `;
 

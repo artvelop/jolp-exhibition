@@ -5,7 +5,7 @@ type Props = {
   show: boolean;
 };
 const text =
-  "키르시 브랜드의 구매자 남여 비율은 26 : 74로 여성에게 인기가 더 많은 브랜드입니다. 하지만 커플룩으로도 인기가 많은만큼 남성분들이 입을만한 옷도 자주 출시하는 브랜드입니다.";
+  "키르시 브랜드의 구매자 남여 비율은 26 : 74로 여성에게 인기가 더 많은 브랜드입니다. 만약, 당신이 귀여운 이미지의 사람이라면 성별에 상관없이 키르시 브랜드를 추천합니다.";
 const textArray = text.split("");
 // 키르시 브랜드의 구매자 남여 비율은 26 : 74로 여성에게 인기가 더 많은 브랜드입니다.
 // 하지만 커플룩으로도 인기가 많은만큼 남성분들이 입을만한 옷도 자주 출시하는 브랜드입니다.
@@ -41,7 +41,7 @@ const Wrapper = styled(motion.div)`
 `;
 const Text = styled(motion.span)`
   color: white;
-  font-size: 3vh;
+  font-size: 2vw;
   font-weight: bold;
   opacity: 0;
 `;
