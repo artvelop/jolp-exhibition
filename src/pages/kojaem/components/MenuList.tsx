@@ -17,14 +17,13 @@ const spring: {
 type Props = {
   color: string;
   isSelected: boolean;
-  onClick: () => void;
   menuItem: string;
 };
 
-export const MenuList = ({ color, isSelected, onClick, menuItem }: Props) => {
+export const MenuList = ({ color, isSelected, menuItem }: Props) => {
   return (
     <>
-      <MenuItem onClick={onClick} style={{ backgroundColor: color }}>
+      <MenuItem style={{ backgroundColor: color }}>
         <MenuItemLink exact to={`/kojaem/${menuItem}`}>
           {menuItem}
         </MenuItemLink>

@@ -38,9 +38,6 @@ export const Thumbnail = ({ name, linkName, setSelected }: Props) => {
       >
         <Link
           to={`/kojaem/${linkName}`}
-          onClick={() => {
-            setSelected(linkName);
-          }}
         >
           <ThumbnailImage
             src={require(`assets/img/KoJaem/${name}`).default}

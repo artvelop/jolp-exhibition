@@ -17,7 +17,6 @@ const KojaemRouter = () => {
         <AnimateSharedLayout>
             <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          {setSelected(location.pathname.split("/")[2])}
           <Route exact path="/kojaem/HOME"
             render={() => <Gallery selected={selected} setSelected={setSelected}/>}
             >
