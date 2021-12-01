@@ -14,10 +14,9 @@ const Menu: React.FC = () => {
 
   function linkToDetail(): void {
     history.push(`/sanghun/${adress}`);
-    console.log("이동 할거야");
   }
   return (
-    <DDD>
+    <Layout>
       <Container>
         <Box
           onClick={() => {
@@ -90,7 +89,7 @@ const Menu: React.FC = () => {
         text={randomWisdom()}
         linkToDetail={linkToDetail}
       />
-    </DDD>
+    </Layout>
   );
 };
 
@@ -130,9 +129,9 @@ const TitleAnimation = styled.span`
   animation: flipInX;
   animation-duration: 3s;
 `;
-const DDD = styled.div`
-  padding: 0.54%;
+const Layout = styled.div`
   background-size: cover;
   background-image: url(${backImg});
+  height: 100vh;
 `;
 export default Menu;
