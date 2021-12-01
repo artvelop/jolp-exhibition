@@ -5,13 +5,14 @@ type Props = {
   show: boolean;
 };
 const text =
-  "커버낫 브랜드의 구매자 남여 비율은 57 : 43으로 성별에 상관없이 인기있는 유니섹스 브랜드입니다. 그에 걸맞게 커플룩으로도 매우 인기가 많습니다.";
+  "커버낫 브랜드의 구매자 남여 비율은 57 : 43으로 성별에 상관없이 즐겨 입을 수 있는 유니섹스 브랜드입니다. 또한, 커플룩으로도 인기가 많은 브랜드입니다.";
 const textArray = text.split("");
 // 커버낫 브랜드의 남여 구매자 비율은 57 : 43으로
-// 성별에 상관없이 즐겨 입을 수 있는 브랜드입니다.
+// 성별에 상관없이 즐겨 입을 수 있는 유니섹스 브랜드입니다.
+// 그에 걸맞게 커플룩으로도 인기가 많은 브랜드입니다.
 export const ChartDescription = ({ show }: Props) => {
   const makeText = (item: string, index: number) => {
-    if (index === 29 || index === 56) return <p key={index}></p>;
+    if (index === 29 || index === 62) return <p key={index}></p>;
 
     return (
       <Text
@@ -38,6 +39,7 @@ export const ChartDescription = ({ show }: Props) => {
 
 const Wrapper = styled(motion.div)`
   margin-left : 10vw;
+  width: 100%;
 `;
 const Text = styled(motion.span)`
   color: white;

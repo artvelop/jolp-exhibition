@@ -38,6 +38,7 @@ export const ChartDescription = ({ show }: Props) => {
 
 const Wrapper = styled(motion.div)`
   margin-left : 10vw;
+  width: 100%;
 `;
 const Text = styled(motion.span)`
   color: white;
