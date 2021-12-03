@@ -133,6 +133,7 @@ const Intro = styled(motion.h1)`
   text-align: left;
   padding: 20px 35px 20px 35px;
   margin-top: 320px;
+  text-shadow: 1px 1px 3px #754841;
 `;
 
 const NextButton = styled(motion.div)`
