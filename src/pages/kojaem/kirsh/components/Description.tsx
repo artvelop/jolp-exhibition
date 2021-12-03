@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import KirshDescription from 'assets/img/KoJaem/kirsh/KirshDescription.jpg'
+import KirshDescription from 'assets/img/KoJaem/kirsh/top/KirshDescription.jpg'
 
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,

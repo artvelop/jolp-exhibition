@@ -4,11 +4,11 @@ import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { SlideImage } from "./SlideImage";
-import slide1 from "assets/img/KoJaem/covernat/slide_01.jpg"
-import slide2 from "assets/img/KoJaem/covernat/slide_02.jpg"
-import slide3 from "assets/img/KoJaem/covernat/slide_03.jpg"
-import slide4 from "assets/img/KoJaem/covernat/slide_04.jpg"
-import slide5 from "assets/img/KoJaem/covernat/slide_05.jpg"
+import slide1 from "assets/img/KoJaem/covernat/top/slide_01.jpg"
+import slide2 from "assets/img/KoJaem/covernat/top/slide_02.jpg"
+import slide3 from "assets/img/KoJaem/covernat/top/slide_03.jpg"
+import slide4 from "assets/img/KoJaem/covernat/top/slide_04.jpg"
+import slide5 from "assets/img/KoJaem/covernat/top/slide_05.jpg"
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const ImageBanner = () => {

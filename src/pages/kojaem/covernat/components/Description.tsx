@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import CovernatDescription from 'assets/img/KoJaem/covernat/CovernatDescription.jpg'
+import CovernatDescription from 'assets/img/KoJaem/covernat/top/CovernatDescription.jpg'
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }

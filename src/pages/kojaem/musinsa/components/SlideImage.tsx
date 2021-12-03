@@ -30,7 +30,7 @@ export const SlideImage = ({ className, src, setPause, text }: Props) => {
         onMouseDown={()=>{setDragging(false)}}
       ></Image>
       <Background
-        src={require(`assets/img/KoJaem/musinsa/background_${index}.jpg`).default}
+        src={require(`assets/img/KoJaem/musinsa/top/background_${index}.jpg`).default}
         animate={{
           display: isClick ? "flex" : undefined,
           zIndex: isClick ? 999 : 0,

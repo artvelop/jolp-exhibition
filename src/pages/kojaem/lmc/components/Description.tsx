@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import LmcDescription from 'assets/img/KoJaem/lmc/LmcDescription.jpg'
+import LmcDescription from 'assets/img/KoJaem/lmc/top/LmcDescription.jpg'
 
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,

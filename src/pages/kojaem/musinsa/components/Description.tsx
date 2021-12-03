@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import MusinsaDescription from 'assets/img/KoJaem/musinsa/MusinsaDescription.jpg'
+import MusinsaDescription from 'assets/img/KoJaem/musinsa/top/MusinsaDescription.jpg'
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }
