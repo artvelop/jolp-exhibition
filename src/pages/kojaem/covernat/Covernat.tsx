@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { LayoutContainer } from "../components/LayoutContainer";
-import { Loading } from "./components/Loading";
-import { CovernatMain } from "./components/CovernatMain";
+import { LayoutContainer } from "../components";
+import { Loading, CovernatMain } from "./components";
 
 type Props = {
   selected: string;

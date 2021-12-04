@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from "react";
-import { MenuList } from "./MenuList";
+import { MenuList } from "./index";
 import styled from "@emotion/styled";
 
 const menuItems: string[] = ["HOME", "MUSINSA", "COVERNAT", "KIRSH", "LMC"];

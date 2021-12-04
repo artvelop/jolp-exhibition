@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Description } from './Description';
-import { ImageBanner } from './ImageBanner';
+import { Description, ImageBanner } from './index';
 
 export const Top = () => {
   const [first, setFirst] = useState(true);

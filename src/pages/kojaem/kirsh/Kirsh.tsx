@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { LayoutContainer } from '../components/LayoutContainer';
-import { KirshMain } from './components/KirshMain';
-import { Loading } from './components/Loading';
+import { LayoutContainer } from '../components';
+import { KirshMain, Loading } from './components';
 
 type Props = {
   selected: string;

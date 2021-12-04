@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { LayoutContainer } from "../components/LayoutContainer";
-import { Thumbnail } from "./components/Thumbnail";
+import { LayoutContainer } from "../components";
+import { Thumbnail } from "./components";
 
 const images: string[] = [
   "Musinsa.jpg",

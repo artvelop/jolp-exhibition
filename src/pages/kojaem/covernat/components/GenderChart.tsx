@@ -3,7 +3,7 @@ import { LayoutPosition } from 'chart.js';
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { ChartDescription } from './ChartDescription';
+import { ChartDescription } from './index';
 
 const data = {
   labels: ["여", "남"],

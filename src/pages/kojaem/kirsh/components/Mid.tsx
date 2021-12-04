@@ -3,9 +3,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChangingSeasonOutfit } from "./ChangingSeasonOutfit";
-import { WinterOutfit } from "./WinterOutfit";
-import { SummerOutfit } from './SummerOutfit';
+import { ChangingSeasonOutfit, WinterOutfit, SummerOutfit } from "./index";
 
 export const Mid = () => {
   const [order, setOrder] = useState(0);

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
-import { SlideImage } from "./SlideImage";
+import { SlideImage } from "./index";
 import slide1 from "assets/img/KoJaem/lmc/top/slide_01.jpg"
 import slide2 from "assets/img/KoJaem/lmc/top/slide_02.jpg"
 import slide3 from "assets/img/KoJaem/lmc/top/slide_03.jpg"
