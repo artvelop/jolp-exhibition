@@ -22,14 +22,15 @@ export const Chapter: React.FC<BodyContentType> = ({
   if (inView) {
     boxAni.start({
       opacity: 1,
-      transition: { duration: 1.5 },
+      transition: { duration: 2.5 },
     });
 
     textBlingBling.start({
       opacity: [1, 0, 1, 0, 1, 0, 1],
       transition: { duration: 3, delay: 1 },
-      translateX: 30,
+      translateX: 40,
       scale: 1.05,
+      textShadow: "0px 0px 6px yellow",
     });
   }
 
@@ -37,19 +38,22 @@ export const Chapter: React.FC<BodyContentType> = ({
     <Wrap>
       <ViewPort>
         <Box ref={ref} initial={{ opacity: 0 }} animate={boxAni}>
-          <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
-            {MyOpinionChapter}
-          </TypoGraphy>
-          {MyOpinionDetail.map((item) => {
+          <Special2>
+            <TypoGraphy type="h1" fontWeight="bold" color={color.gold_light}>
+              {MyOpinionChapter}
+            </TypoGraphy>
+          </Special2>
+          <Gap />
+          {MyOpinionDetail.map((item, index) => {
             return regExp.test(item) ? (
               <Special animate={textBlingBling}>
                 <TypoGraphy type="h3" fontHeight="34px" color={color.gold_dark}>
-                  <li> {item}</li>
+                  <ListItem key={index.toString()}> {item}</ListItem>
                 </TypoGraphy>
               </Special>
             ) : (
               <TypoGraphy type="h3" fontHeight="34px" color={color.gray}>
-                <li> {item}</li>
+                <ListItem key={index.toString()}> {item}</ListItem>
               </TypoGraphy>
             );
           })}
@@ -68,7 +72,6 @@ const ViewPort = styled.div`
   display: flex;
   align-items: center;
 `;
-
 const Box = styled(motion.div)`
   width: 80%;
   padding: 2%;
@@ -84,3 +87,10 @@ const Gap = styled.div`
 `;
 
 const Special = styled(motion.div)``;
+const Special2 = styled(motion.div)`
+  text-shadow: 0px 0px 10px ${color.gold_light};
+`;
+
+const ListItem = styled.li`
+  list-style: none;
+`;

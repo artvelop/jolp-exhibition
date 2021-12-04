@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { MenuList } from "./MenuList";
 import styled from "@emotion/styled";
 
@@ -19,6 +19,10 @@ type Props = {
 };
 
 export const LayoutContainer = ({ selected, setSelected, children }: Props) => {
+  useEffect(() => {
+    const link = window.location.pathname.split('/');
+    setSelected(link[link.length-1]);
+  }, [setSelected])
   return (
     <RootWrapper>
       <LayoutWrapper>
@@ -28,7 +32,6 @@ export const LayoutContainer = ({ selected, setSelected, children }: Props) => {
               key={menuItem}
               color={colors[index]}
               isSelected={selected === menuItem}
-              onClick={() => setSelected(menuItem)}
               menuItem={menuItem}
             />
           ))}

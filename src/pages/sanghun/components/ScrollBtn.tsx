@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BsCaretUpSquareFill, BsCaretDownSquareFill } from 'react-icons/bs';
+import { FaAngleDoubleUp, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+
 import { color } from '../constants';
-// import { motion } from "framer-motion";
 
 export const ScrollBtn: React.FC = () => {
   const pageDown = () => {
@@ -39,42 +39,51 @@ const BtnBox = styled.div`
   z-index: 2;
 `;
 
-const UpUpBtn = styled(BsCaretUpSquareFill)`
+const UpUpBtn = styled(FaAngleDoubleUp)`
   width: 50px;
   height: 50px;
-  color: ${color.gold_dark};
+  background-color: ${color.gold_dark};
+  border-radius: 10%;
   position: fixed;
   right: 170px;
   bottom: 10px;
   cursor: pointer;
   transition: transform 100ms ease-in;
+  opacity: 0.3;
   &:hover {
     transform: scale(1.1);
+    opacity: 0.6;
   }
 `;
-const UpBtn = styled(BsCaretUpSquareFill)`
+const UpBtn = styled(FaChevronUp)`
   width: 50px;
   height: 50px;
-  color: ${color.gold_dark};
+  background-color: ${color.gold_dark};
+  border-radius: 10%;
   position: fixed;
   right: 100px;
   bottom: 10px;
   cursor: pointer;
   transition: transform 100ms ease-in;
+  opacity: 0.3;
   &:hover {
     transform: scale(1.1);
+    opacity: 0.6;
   }
 `;
-const DownBtn = styled(BsCaretDownSquareFill)`
+const DownBtn = styled(FaChevronDown)`
   width: 50px;
   height: 50px;
-  color: ${color.gold_dark};
+  background-color: ${color.gold_dark};
+  border-radius: 10%;
   position: fixed;
   right: 30px;
   bottom: 10px;
   cursor: pointer;
   transition: transform 100ms ease-in;
+  opacity: 0.3;
   &:hover {
     transform: scale(1.1);
+    opacity: 0.6;
   }
 `;

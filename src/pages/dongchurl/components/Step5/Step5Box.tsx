@@ -191,7 +191,7 @@ const Ul = styled(motion.ul)`
   margin-left: 48px;
 `;
 
-const Li = styled(motion.li)`
+const Li = styled(motion.div)`
   color: #fff;
 `;
 

@@ -4,6 +4,11 @@ import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { SlideImage } from "./SlideImage";
+import slide1 from "assets/img/KoJaem/covernat/top/slide_01.jpg"
+import slide2 from "assets/img/KoJaem/covernat/top/slide_02.jpg"
+import slide3 from "assets/img/KoJaem/covernat/top/slide_03.jpg"
+import slide4 from "assets/img/KoJaem/covernat/top/slide_04.jpg"
+import slide5 from "assets/img/KoJaem/covernat/top/slide_05.jpg"
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 export const ImageBanner = () => {
@@ -50,29 +55,29 @@ export const ImageBanner = () => {
       >
         <SlideImage
           className="keen-slider__slide number-slide1"
-          src="/koJaem/img/covernat/slide_01.jpg"
+          src={slide1}
           setPause={setPause}
           text="현석&예나 커플이 선택한 커버낫 맨투맨 스타일링"
         />
         <SlideImage
           className="keen-slider__slide number-slide2"
-          src="/koJaem/img/covernat/slide_02.jpg"
+          src={slide2}
           setPause={setPause}
           text="Covernat ECO CAPSULE COLLECTION"
         />
         <SlideImage
           className="keen-slider__slide number-slide3"
-          src="/koJaem/img/covernat/slide_03.jpg"
+          src={slide3}
           setPause={setPause}
         />
         <SlideImage
           className="keen-slider__slide number-slide4"
-          src="/koJaem/img/covernat/slide_04.jpg"
+          src={slide4}
           setPause={setPause}
         />
         <SlideImage
           className="keen-slider__slide number-slide5"
-          src="/koJaem/img/covernat/slide_05.jpg"
+          src={slide5}
           setPause={setPause}
           text="21FW Covernat Fleece Collection"
         />
@@ -94,7 +99,7 @@ const BrandName = styled(motion.h1)`
   top: 0%;
   left: 50%;
   font-size: 30px;
-  transform: translateX(-50%) scale(1.5);;
+  transform: translateX(-50%) scale(1.5);
   color: #3b5e3d;
   text-shadow: 1px 1px 5px #524f4f;
   display: flex;
@@ -119,8 +124,10 @@ const BrandName = styled(motion.h1)`
 `;
 
 const ImageUl = styled(motion.div)`
+  display: flex;
   margin-top: 200px;
   width: 100%;
+  // overflow: hidden;
 `;
 
 

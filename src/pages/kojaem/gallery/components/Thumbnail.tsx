@@ -24,11 +24,11 @@ const imageVariants = {
 
 type Props = {
   name: string;
-  imageName: string;
+  linkName: string;
   setSelected: (link: string) => void;
 };
 
-export const Thumbnail = ({ name, imageName, setSelected }: Props) => {
+export const Thumbnail = ({ name, linkName, setSelected }: Props) => {
   return (
     <Wrapper variants={thumbnailVariants}>
       <Frame
@@ -37,13 +37,10 @@ export const Thumbnail = ({ name, imageName, setSelected }: Props) => {
         transition={transition}
       >
         <Link
-          to={`/kojaem/${imageName}`}
-          onClick={() => {
-            setSelected(imageName);
-          }}
+          to={`/kojaem/${linkName}`}
         >
           <ThumbnailImage
-            src={`/koJaem/img/${name}`}
+            src={require(`assets/img/KoJaem/${name}`).default}
             alt="brand"
             variants={imageVariants}
             transition={transition}

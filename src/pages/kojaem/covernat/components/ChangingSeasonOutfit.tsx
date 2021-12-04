@@ -43,6 +43,7 @@ export const ChangingSeasonOutfit = () => {
   const makeText = (item: string, index: number) => (
     <Title
       key={index}
+      initial={{opacity: 0}}
       animate={{
         opacity: show ? [0, 1] : 0,
         y: show ? [50,-50,0] : 0,
@@ -50,7 +51,7 @@ export const ChangingSeasonOutfit = () => {
         rotateZ: show? [0,20,0] : 0,
         textShadow: show
           ? "1px 1px 5px #18d4ed"
-          : "text-shadow: 0px 0px 0px #18d4ed",
+          : "0px 0px 0px #18d4ed",
       }}
       transition={{
         duration: show ? 1 : undefined,
@@ -72,11 +73,11 @@ return (
         {titleArray.map((item, index) => makeText(item, index))}
       </TitleWrapper>
         <MidImageContainer>
-        <MidImage src={`/kojaem/img/covernat/${season}Image1.jpg`} show = {showImg1}
+        <MidImage season={season} show = {showImg1} index={1}
         />
-        <MidImage src={`/kojaem/img/covernat/${season}Image2.jpg`} show = {showImg2}
+        <MidImage season={season} show = {showImg2} index={2}
         />
-        <MidImage src={`/kojaem/img/covernat/${season}Image3.jpg`} show = {showImg3}
+        <MidImage season={season} show = {showImg3} index={3}
         />
         </MidImageContainer>
     </Wrapper>
@@ -101,7 +102,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color: white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

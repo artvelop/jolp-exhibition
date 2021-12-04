@@ -2,83 +2,103 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { harvard, philosophy, talkGod, live, myself } from "../dummy/books";
-import { GiBurningBook } from "react-icons/gi";
+import { GiSecretBook, GiSpellBook } from "react-icons/gi";
+import { AiFillHome } from "react-icons/ai";
 import { color } from "../constants";
 import { motion } from "framer-motion";
 
 export const Header: React.FC = () => {
   const [show, setShow] = useState(false);
-
-  const bookAnimate = {
-    opacity: show ? 1 : 0,
-    x: show ? [-1000, 0] : [0, -1800],
-    transition: { duration: 1.6, ease: "easeOut" },
-  };
   return (
     <Head>
-      <HomeLogo
-        onClick={() => setShow(!show)}
-        whileTap={{ rotate: 1800, transition: { duration: 1 } }}
-        whileHover={{ scale: 1.3 }}
-      >
-        <GiBurningBook
-          style={{
-            backgroundColor: color.gold_dark,
-            color: "black",
-            borderRadius: "50%",
-          }}
-        />
-      </HomeLogo>
       <Link to="/sanghun/Menu">
-        <Menu
-          animate={{
-            opacity: show ? 0 : 1,
-            transition: { duration: 1, ease: "linear" },
-          }}
-          whileHover={{ color: color.gold_light }}
-        >
-          MENU
-        </Menu>
+        <HomeLogo whileHover={{ color: color.gold_light, scale: 1.3 }}>
+          <AiFillHome />
+        </HomeLogo>
       </Link>
+      <MenuLogo
+        onClick={() => setShow(!show)}
+        // whileTap={{ rotate: 1800, transition: { duration: 1 } }}
+        whileTap={{ translateY: 20, transition: { duration: 0.3 } }}
+        whileHover={{
+          scale: 1.3,
+        }}
+      >
+        {show ? (
+          <GiSpellBook
+            style={{
+              backgroundColor: "transparent",
+              color: "white",
+            }}
+          />
+        ) : (
+          <GiSecretBook
+            style={{
+              backgroundColor: "transparent",
+              color: "white",
+            }}
+          />
+        )}
+      </MenuLogo>
       <ImgBox>
         <Link to="/sanghun/PhilosophyBook">
           <Img
             src={philosophy.imgSrc}
             initial={{ opacity: 0 }}
-            animate={bookAnimate}
-            whileHover={{ scale: 2, translateY: 100 }}
+            animate={{
+              opacity: show ? 1 : 0,
+              x: show ? [-300, 0] : [0, -300],
+              transition: { duration: 1.6, ease: "easeOut" },
+            }}
+            whileHover={{ scale: 1.6, translateY: 50 }}
           />
         </Link>
         <Link to="/sanghun/MyselfBook">
           <Img
             src={myself.imgSrc}
-            animate={bookAnimate}
+            animate={{
+              opacity: show ? 1 : 0,
+              x: show ? [-600, 0] : [0, -600],
+              transition: { duration: 1.6, ease: "easeOut" },
+            }}
             initial={{ opacity: 0 }}
-            whileHover={{ scale: 2, translateY: 100 }}
+            whileHover={{ scale: 1.6, translateY: 50 }}
           />
         </Link>
         <Link to="/sanghun/HarvardBook">
           <Img
             src={harvard.imgSrc}
-            animate={bookAnimate}
+            animate={{
+              opacity: show ? 1 : 0,
+              x: show ? [-900, 0] : [0, -900],
+              transition: { duration: 1.6, ease: "easeOut" },
+            }}
             initial={{ opacity: 0 }}
-            whileHover={{ scale: 2, translateY: 100 }}
+            whileHover={{ scale: 1.6, translateY: 50 }}
           />
         </Link>
         <Link to="/sanghun/LiveBook">
           <Img
             src={live.imgSrc}
-            animate={bookAnimate}
+            animate={{
+              opacity: show ? 1 : 0,
+              x: show ? [-1200, 0] : [0, -1200],
+              transition: { duration: 1.6, ease: "easeOut" },
+            }}
             initial={{ opacity: 0 }}
-            whileHover={{ scale: 2, translateY: 100 }}
+            whileHover={{ scale: 1.6, translateY: 50 }}
           />
         </Link>
         <Link to="/sanghun/TalkGodBook">
           <Img
             src={talkGod.imgSrc}
-            animate={bookAnimate}
+            animate={{
+              opacity: show ? 1 : 0,
+              x: show ? [-1500, 0] : [0, -1500],
+              transition: { duration: 1.6, ease: "easeOut" },
+            }}
             initial={{ opacity: 0 }}
-            whileHover={{ scale: 2, translateY: 100 }}
+            whileHover={{ scale: 1.6, translateY: 50 }}
           />
         </Link>
       </ImgBox>
@@ -107,23 +127,27 @@ const ImgBox = styled(motion.div)`
   display: flex;
   gap: 20%;
   user-select: none;
-  margin-right: 400px;
+  margin-right: 200px;
+  margin-left: 200px;
   flex: 2 1 0;
 `;
-const HomeLogo = styled(motion.span)`
+const MenuLogo = styled(motion.span)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
-  font-size: 70px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 60px;
   color: ${color.gray};
   cursor: pointer;
   flex: 0.2 1 0;
+  z-index: 2;
 `;
-const Menu = styled(motion.span)`
-  font-size: 30px;
-  margin-right: 10px;
-  color: ${color.gray};
+const HomeLogo = styled(motion.div)`
+  font-size: 60px;
+  color: white;
   cursor: pointer;
   flex: 2 1 0;
+  margin-left: 30px;
+  z-index: 2;
 `;

@@ -5,7 +5,7 @@ import { MidImage } from './MidImage';
 
 const options = {threshold: [0.2,0.3,0.4]};
 const season = "ChangingSeason";
-const seasonTitle = "엘엠씨의 편안한 환절기 코디";
+const seasonTitle = "엘엠씨의 스트릿한 환절기 코디";
 const titleArray = seasonTitle.split("");
 export const ChangingSeasonOutfit = () => {
   const [show, setShow] = useState(false);
@@ -43,14 +43,15 @@ export const ChangingSeasonOutfit = () => {
   const makeText = (item: string, index: number) => (
     <Title
       key={index}
+      initial={{opacity: 0}}
       animate={{
         opacity: show ? [0, 1] : 0,
         y: show ? [50,-50,0] : 0,
         scale: show ? [1, 1.2, 1] : 1,
         rotateZ: show? [0,20,0] : 0,
         textShadow: show
-          ? "1px 1px 5px #18d4ed"
-          : "text-shadow: 0px 0px 0px #18d4ed",
+          ? "2px 2px 7px #d7e8cc"
+          : "0px 0px 0px #d7e8cc",
       }}
       transition={{
         duration: show ? 1 : undefined,
@@ -72,11 +73,11 @@ return (
         {titleArray.map((item, index) => makeText(item, index))}
       </TitleWrapper>
         <MidImageContainer>
-        <MidImage src={`/kojaem/img/lmc/${season}Image1.jpg`} show = {showImg1}
+        <MidImage season={season} show = {showImg1} index={1}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image2.jpg`} show = {showImg2}
+        <MidImage season={season} show = {showImg2} index={2}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image3.jpg`} show = {showImg3}
+        <MidImage season={season} show = {showImg3} index={3}
         />
         </MidImageContainer>
     </Wrapper>
@@ -86,7 +87,7 @@ return (
 
 
 const Wrapper = styled(motion.div)`
-  background-color: #f7ebcb;
+  background: linear-gradient(to right, #263985, #38393d);
   width: 100%;
   height: 100%;
   display:flex;
@@ -101,7 +102,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color: white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

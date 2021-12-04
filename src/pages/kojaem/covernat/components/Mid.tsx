@@ -47,6 +47,7 @@ const Wrapper = styled(motion.div)`
   height: 200vh;
   display:flex;
   flex-direction: column;
+  overflow:hidden;
 `;
 
 const NextButton = styled(motion.div)`

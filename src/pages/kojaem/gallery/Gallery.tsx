@@ -4,11 +4,12 @@ import { LayoutContainer } from "../components/LayoutContainer";
 import { Thumbnail } from "./components/Thumbnail";
 
 const images: string[] = [
-  "MUSINSA.jpg",
-  "COVERNAT.jpg",
-  "KIRSH.jpg",
+  "Musinsa.jpg",
+  "Covernat.jpg",
+  "Kirsh.jpg",
   "LMC.jpg",
 ];
+
 
 type Props = {
   selected: string;
@@ -16,12 +17,11 @@ type Props = {
 };
 
 const Gallery = ({ selected, setSelected }: Props) => {
-  const getImageName = (image: string) =>
-    image.replace(/.jpg|.jpeg|.png|.gif/gi, "");
+  const getLinkName = (image: string) =>
+    image.replace(/.jpg|.jpeg|.png|.gif/gi, "").toUpperCase();
 
   return (
     <LayoutContainer selected={selected} setSelected={setSelected}>
-      <Developer>KoJaem</Developer>
       <GalleryWrapper>
         <Thumbnails
           initial="initial"
@@ -38,7 +38,7 @@ const Gallery = ({ selected, setSelected }: Props) => {
             <Thumbnail
               key={name}
               name={name}
-              imageName={getImageName(name)}
+              linkName={getLinkName(name)}
               setSelected={setSelected}
             />
           ))}
@@ -63,35 +63,4 @@ const Thumbnails = styled(motion.div)`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-`;
-
-const Developer = styled.h1`
-  font-size: 100px;
-  text-align: center;
-  position: fixed;
-  bottom: -100px;
-  z-index: 1;
-  color: #f9fbf8;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-
-  @media screen and (min-width: 600px) {
-    font-size: 140px;
-    bottom: -130px;
-  }
-
-  @media screen and (min-width: 800px) {
-    font-size: 180px;
-    bottom: -170px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    font-size: 220px;
-    bottom: -200px;
-  }
-  @media screen and (min-width: 1200px) {
-    font-size: 280px;
-    bottom: -260px;
-  }
 `;

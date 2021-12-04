@@ -15,7 +15,7 @@ function Root() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path="/" component={Dongchurl} />
+        <Route exact path="/" component={Home} />
         <Route path="/dongchurl" component={Dongchurl} />
         <Route path="/sanghun/Menu" component={Menu} />
         <Route path="/sanghun/HarvardBook" component={HarvardBook} />

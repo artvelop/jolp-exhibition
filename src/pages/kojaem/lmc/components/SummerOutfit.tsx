@@ -5,7 +5,7 @@ import { MidImage } from './MidImage';
 
 const options = {threshold: [0.2,0.3,0.4]};
 const season = "Summer";
-const seasonTitle = "엘엠씨의 시원한 여름 코디";
+const seasonTitle = "엘엠씨의 세련된 여름 코디";
 const titleArray = seasonTitle.split("");
 export const SummerOutfit = () => {
   const [show, setShow] = useState(false);
@@ -44,14 +44,15 @@ export const SummerOutfit = () => {
   const makeText = (item: string, index: number) => (
       <Title
         key={index}
+        initial={{opacity: 0}}
         animate={{
           opacity: show ? [0, 1] : 0,
           y: show ? [50,-50,0] : 0,
           scale: show ? [1, 1.2, 1] : 1,
           rotateZ: show? [0,20,0] : 0,
           textShadow: show
-            ? "1px 1px 5px #5025db"
-            : "text-shadow:0px 0px 0px #5025db",
+            ? "1px 1px 5px #d8f2b1"
+            : "0px 0px 0px #d8f2b1",
         }}
         transition={{
           duration: show ? 1 : undefined,
@@ -73,11 +74,11 @@ export const SummerOutfit = () => {
           {titleArray.map((item, index) => makeText(item, index))}
         </TitleWrapper>
         <MidImageContainer>
-        <MidImage src={`/kojaem/img/lmc/${season}Image1.jpg`} show = {showImg1}
+        <MidImage season={season} show = {showImg1} index={1}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image2.jpg`} show = {showImg2}
+        <MidImage season={season} show = {showImg2} index={2}
         />
-        <MidImage src={`/kojaem/img/lmc/${season}Image3.jpg`} show = {showImg3}
+        <MidImage season={season} show = {showImg3} index={3}
         />
         </MidImageContainer>
     </Wrapper>
@@ -86,7 +87,7 @@ export const SummerOutfit = () => {
 
 
 const Wrapper = styled(motion.div)`
-  background: linear-gradient(to right, #3f87d9, #8afffb);
+  background: linear-gradient(to right, #b1e0f2, #cf7c9c);
   width: 100%;
   height: 100%;
   display:flex;
@@ -101,7 +102,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color:white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

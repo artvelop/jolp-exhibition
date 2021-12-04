@@ -1,32 +1,39 @@
 import styled from "@emotion/styled";
+import { LayoutPosition } from 'chart.js';
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { ChartDescription } from './ChartDescription';
 
 const data = {
-  labels: ["남", "여"],
+  labels: ["여", "남"],
   datasets: [
     {
-      label: "구매자 남여 비율",
-      data: [57, 43],
-      backgroundColor: ["#2f2e61", "#f27272"],
-      hoverBorderColor:"black",
+      data: [43, 57],
+      borderWidth: 2,
+      backgroundColor: ["#f27272", "#2f2e61"],
+      hoverBorderColor:"#000000",
       hoverBorderWidth:3,
     },
   ],
 };
+const legendPosition: LayoutPosition = "bottom";
 const chartOptions = {
   plugins: {
     legend: {
+      position: legendPosition,
       // display: false,
       reverse:true,
       labels: {
+        boxWidth: 50,
+        boxHeight: 20,
+        padding: 20,
         color:'#FFFFFF',
-      }
-    }
+        // usePointStyle:true,
+      },
+    },
   },
-  
+  // rotation: 0
 }
 
 const options = { threshold: 0.5 };
@@ -77,18 +84,25 @@ export const GenderChart = () => {
     </Wrapper>
   );
 };
-
 const Wrapper = styled(motion.div)`
   display: flex;
-  justify-content: space-between;
   margin-top: 30vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
 `;
 const ChartWrapper = styled(motion.div)`
-  width: 25vw;
+  height: 100%;
+  width: 30vw;
   margin-left: 10vw;
+  display: flex;
+  align-items: center;
 `;
 
 const ChartDescriptionWrapper = styled(motion.div)`
-  margin-right: 20vw;
-  align-self: center;
+  margin-right: 10vw;
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
