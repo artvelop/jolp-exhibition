@@ -54,8 +54,8 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
         <Section>
           <JackImgWrapper
             animate={{
-              opacity: curState === 0 ? [0, 1] : 1,
-              y: '80vh',
+              opacity: curState === 0 ? [0, 1] : 0,
+              rotate: 40,
             }}
             transition={{
               duration: 1,
@@ -65,7 +65,6 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
           >
             <JackImg
               animate={{
-                rotate: 180,
                 opacity: 1,
               }}
               transition={{
@@ -114,8 +113,8 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
 
           <CockImgWrapper
             animate={{
-              opacity: curState === 0 ? [0, 1] : 1,
-              y: '-70vh',
+              opacity: curState === 0 ? [0, 1] : 0,
+              rotate: -40,
             }}
             transition={{
               duration: 1,
@@ -125,7 +124,7 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
           >
             <CockImg
               animate={{
-                opacity: curState === 0 ? [0, 1] : 1,
+                opacity: curState === 0 ? [0, 1] : 0,
               }}
               transition={{
                 duration: 1,
@@ -181,19 +180,16 @@ const JackImgWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-
-  bottom: 110vh;
+  width: 20%;
 `;
 const JackImg = styled(motion.div)`
   position: relative;
   background: url('${process.env.PUBLIC_URL}/yun/img/jack.png');
   object-fit: cover;
-  width: 315px;
-  height: 870px;
+  width: 285px;
+  height: 850px;
   background-repeat: no-repeat;
   background-size: cover;
-
   opacity: 0;
 `;
 
@@ -203,7 +199,7 @@ const TitleSection = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   color: white;
-  width: 40%;
+  width: 60%;
 `;
 
 const MainTitle = styled(motion.div)`
@@ -219,9 +215,7 @@ const CockImgWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-
-  bottom: -100vh;
+  width: 20%;
 `;
 const CockImg = styled(motion.div)`
   position: relative;

@@ -11,7 +11,7 @@ export default function Main() {
   return (
     <Section
       animate={{
-        background: pageNumber === 2 || pageNumber === 5 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgb(240, 240, 240)' : 'black',
+        background: pageNumber === 2 || pageNumber === 5 || pageNumber === 4 || pageNumber === 6 ? 'white' : pageNumber === 3 ? 'rgb(240, 240, 240)' : 'black',
       }}
       transition={{ delay: 2 }}
     >
@@ -32,6 +32,6 @@ const Section = styled(motion.div)`
   background: black;
   width: 100vw;
   height: 100vh;
-
   overflow: hidden;
+  cursor: default;
 `;

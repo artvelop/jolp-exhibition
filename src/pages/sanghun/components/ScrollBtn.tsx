@@ -1,29 +1,29 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { FaAngleDoubleUp, FaChevronUp, FaChevronDown } from "react-icons/fa";
+import React from 'react';
+import styled from '@emotion/styled';
+import { FaAngleDoubleUp, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
-import { color } from "../constants";
+import { color } from '../constants';
 
 export const ScrollBtn: React.FC = () => {
   const pageDown = () => {
     window.scrollBy({
       top: 950,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   const pageUp = () => {
     window.scrollBy({
       top: -950,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   const pageUpUp = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
