@@ -69,18 +69,6 @@ export const Page1: React.FC<Props> = ({ handlePage }) => {
           >
             Enter
           </Start>
-          <Exit
-            animate={{
-              opacity: curState === 0 ? 1 : 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: 'easeOut',
-              delay: 0,
-            }}
-          >
-            Exit
-          </Exit>
         </Wrapper>
       </BackgroundImg>
     </LayoutContainer>
@@ -98,7 +86,7 @@ const BackgroundImg = styled(motion.div)`
 `;
 const Wrapper = styled(motion.div)`
   margin-right: 80px;
-  height: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -117,12 +105,5 @@ const TitleImg = styled(motion.div)`
 const Start = styled(motion.div)`
   color: white;
   font-size: 50px;
-  cursor: pointer;
-`;
-
-const Exit = styled(motion.div)`
-  color: white;
-  font-size: 40px;
-  margin-bottom: 50px;
   cursor: pointer;
 `;
