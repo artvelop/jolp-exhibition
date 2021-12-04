@@ -18,7 +18,4 @@ export const KirshMain = () => {
 
 const Wrapper = styled(motion.div)`
   width: 100%;
-  @media screen and (max-width: 600px) {
-    justify-content: center;
-  }
 `;

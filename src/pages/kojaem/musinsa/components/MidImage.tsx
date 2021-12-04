@@ -15,12 +15,12 @@ export const MidImage = ({ show, index, season }: Props) => {
   const onClickEvent = () => {
     if (!click) {
       const imageClickSrc =
-        require(`assets/img/KoJaem/musinsa/${season}Image${index}Click.jpg`).default;
+        require(`assets/img/KoJaem/musinsa/mid/${season}Image${index}Click.jpg`).default;
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
     } else {
       const imageSrc =
-        require(`assets/img/KoJaem/musinsa/${season}Image${index}.jpg`).default;
+        require(`assets/img/KoJaem/musinsa/mid/${season}Image${index}.jpg`).default;
       imageRef.current!.src = imageSrc;
       setClick(!click);
     }
@@ -47,7 +47,7 @@ export const MidImage = ({ show, index, season }: Props) => {
     >
       <Image
         src={
-          require(`assets/img/KoJaem/musinsa/${season}Image${index}.jpg`)
+          require(`assets/img/KoJaem/musinsa/mid/${season}Image${index}.jpg`)
             .default
         }
         ref={imageRef}

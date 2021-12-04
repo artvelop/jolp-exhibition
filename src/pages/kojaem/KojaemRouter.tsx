@@ -8,30 +8,29 @@ import { Route, Switch } from "react-router-dom";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const KojaemRouter = () => {
-  const [selected, setSelected] = useState("HOME");
-
+  const [selected, setSelected] = useState("");
 
   return (
     <>
       <Route
           render={({ location }) => (
         <AnimateSharedLayout>
-            <AnimatePresence exitBeforeEnter initial={false}>
+            <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route exact path="/kojaem/home"
+          <Route exact path="/kojaem/HOME"
             render={() => <Gallery selected={selected} setSelected={setSelected}/>}
             >
           </Route>
-          <Route exact path="/kojaem/musinsa"
+          <Route exact path="/kojaem/MUSINSA"
             render={() => <Musinsa selected={selected} setSelected={setSelected}/>}
           />
-          <Route exact path="/kojaem/covernat" 
+          <Route exact path="/kojaem/COVERNAT" 
             render={() => <Covernat selected={selected} setSelected={setSelected}/>}   
           />
-          <Route exact path="/kojaem/kirsh"
+          <Route exact path="/kojaem/KIRSH"
             render={() => <Kirsh selected={selected} setSelected={setSelected}/>}   
           />
-          <Route exact path="/kojaem/lmc"
+          <Route exact path="/kojaem/LMC"
             render={() => <Lmc selected={selected} setSelected={setSelected}/>}   
           />
           <Route path="/kojaem">Not Found</Route>

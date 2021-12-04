@@ -10,25 +10,27 @@ type Props = {
 };
 export const SlideImage = ({ className, src, setPause, text }: Props) => {
   const [isClick, setIsClick] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const showBackground = () => {
+    if(!dragging)
+      clickEvent();
+  };
   const clickEvent = () => {
     setPause(!isClick);
     setIsClick(!isClick);
-  };
+  }
   const index = className.charAt(className.length - 1);
   return (
     <>
       <Image
         className={className}
         src={src}
-        onClick={() => clickEvent()}
-        animate={{
-          zIndex: isClick ? 1000 : 0,
-          opacity: isClick ? 0 : 1,
-        }}
-        transition={{ duration: 0.6 }}
+        onMouseMove={() => {setDragging(true)}}
+        onClick={() => showBackground()}
+        onMouseDown={()=>{setDragging(false)}}
       ></Image>
       <Background
-        src={require(`assets/img/KoJaem/musinsa/background_${index}.jpg`).default}
+        src={require(`assets/img/KoJaem/musinsa/top/background_${index}.jpg`).default}
         animate={{
           display: isClick ? "flex" : undefined,
           zIndex: isClick ? 999 : 0,
@@ -69,7 +71,6 @@ const Background = styled(motion.img)`
   top: 0px;
   width: 100%;
   height: 100vh;
-  position: fixed;
   overflow: hidden;
 `;
 

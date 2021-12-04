@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import LmcDescription from 'assets/img/KoJaem/lmc/LmcDescription.jpg'
+import LmcDescription from 'assets/img/KoJaem/lmc/top/LmcDescription.jpg'
 
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
@@ -61,9 +61,9 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
-          Lost Manegement Cities. LMC는 Lost Manegement Cities라는 뜻이다.<br />
-          그 의미처럼 LMC는 통제를 잃은 도시를 표현하려고 항상 노력해왔다.<br />
-          도시 안에서 발생하는 불안함과 자유로움의 괴리에서 나오는 사회적인 문화를 옷에 표현하고자한다.
+          LMC는 Lost Manegement Cities라는 뜻입니다.<br />
+          그 의미처럼 LMC는 통제를 잃은 도시를 표현하려고 항상 노력해왔고,<br />
+          도시 안에서 발생하는 불안함과 자유로움의 괴리에서 나오는 사회적인 문화를 옷에 표현하고자 합니다.
         </Intro>
         <NextButton
           initial={{ opacity: 0 }}
@@ -88,21 +88,11 @@ const Wrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 100vh;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    justify-content: center;
-  }
 `;
 const BrandImage = styled(motion.img)`
   width: 40%;
   max-width: 800px;
   overflow: hidden;
-  @media screen and (max-width: 600px) {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
 `;
 
 const RightWrapper = styled(motion.div)`
@@ -142,26 +132,11 @@ const BrandName = styled(motion.h1)`
 
 const Intro = styled(motion.h1)`
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  padding: 20px 35px 35px 90px;
+  padding: 20px 35px 20px 35px;
   margin-top: 320px;
-
-  @media screen and (max-width: 600px) {
-    margin-top: 10px;
-    width: 90vw;
-    padding: 0px 25px 35px 25px;
-  }
-  @media screen and (min-width: 800px) {
-    font-size: 20px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    font-size: 23px;
-  }
-  @media screen and (min-width: 1200px) {
-    font-size: 25px;
-  }
+  text-shadow: 1px 1px 2px #0c0c4f;
 `;
 
 const NextButton = styled(motion.div)`

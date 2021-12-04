@@ -43,6 +43,7 @@ export const WinterOutfit = () => {
   const makeText = (item: string, index: number) => (
     <Title
       key={index}
+      initial={{opacity: 0}}
       animate={{
         opacity: show ? [0, 1] : 0,
         y: show ? [50,-50,0] : 0,
@@ -50,7 +51,7 @@ export const WinterOutfit = () => {
         rotateZ: show? [0,20,0] : 0,
         textShadow: show
           ? "1px 1px 5px #f59db9"
-          : "text-shadow: 0px 0px 0px #f59db9",
+          : "0px 0px 0px #f59db9",
       }}
       transition={{
         duration: show ? 1 : undefined,
@@ -100,7 +101,6 @@ const TitleWrapper = styled(motion.div)`
 `;
 const Title = styled(motion.div)`
   color:white;
-  opacity:0;
   font-size: 4vw;
   margin-top: 25vh;
   align-self: center;

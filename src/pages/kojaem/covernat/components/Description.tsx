@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import CovernatDescription from 'assets/img/KoJaem/covernat/CovernatDescription.jpg'
+import CovernatDescription from 'assets/img/KoJaem/covernat/top/CovernatDescription.jpg'
 type Props = {
   setFirst: React.Dispatch<React.SetStateAction<boolean>>,
 }
@@ -60,7 +60,7 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
-          커버낫(COVERNAT)은 COVER-(다루다) NAT-Needle And Thread-(바늘과 실)의
+          커버낫(COVERNAT)은 COVER Needle And Thread 의
           합성어로, 의복에 있어 기본 요소라 할수 있는 바늘과 실.
           <br />그 바늘과 실이라는 기본에서 시작하여 기본에 충실한 옷을
           다룬다라는 의미를 가지고 있습니다.
@@ -88,22 +88,12 @@ const Wrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 100vh;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    justify-content: center;
-  }
 `;
 const BrandImage = styled(motion.img)`
   width: 40%;
   max-width: 800px;
   overflow: hidden;
-  @media screen and (max-width: 600px) {
-    margin-top: 20px;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
-`;
+  `;
 
 const RightWrapper = styled(motion.div)`
   position: relative;
@@ -142,26 +132,11 @@ const BrandName = styled(motion.h1)`
 
 const Intro = styled(motion.h1)`
   margin: 0;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: left;
-  padding: 20px 35px 35px 90px;
+  padding: 20px 35px 20px 35px;
   margin-top: 320px;
-
-  @media screen and (max-width: 600px) {
-    margin-top: 10px;
-    width: 90vw;
-    padding: 0px 25px 35px 25px;
-  }
-  @media screen and (min-width: 800px) {
-    font-size: 20px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    font-size: 23px;
-  }
-  @media screen and (min-width: 1200px) {
-    font-size: 25px;
-  }
+  text-shadow: 1px 1px 4px #524f4f;
 `;
 
 const NextButton = styled(motion.div)`
