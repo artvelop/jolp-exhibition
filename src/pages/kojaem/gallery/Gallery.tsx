@@ -51,10 +51,9 @@ const Gallery = ({ selected, setSelected }: Props) => {
 export default Gallery;
 
 const GalleryWrapper = styled.div`
-  height: 100vh;
   background: linear-gradient(250deg, #6c7981, #aa94e6);
   padding: 40px;
-  min-height: 900px;
+  min-height: 100vh;
   position: relative;
   margin: 0;
 `;
