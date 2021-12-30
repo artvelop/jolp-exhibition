@@ -1,45 +1,49 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import covernatLogo from "assets/img/KoJaem/covernat/Covernat_logo.png"
-
 type Props = {
   setOnLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  LoadingSrc: string;
+  LoadingBackgroundColors: string[];
 };
-
-export const Loading = ({ setOnLoading }: Props) => {
+export const Loading = ({ setOnLoading, LoadingSrc, LoadingBackgroundColors }: Props) => {
   const loadingRef = useRef<HTMLSpanElement>(null);
   function delay(time: number) {
     return new Promise((res) => {
       setTimeout(() => {
-        res(null);
-      }, time);
-    });
+        res(null)
+      }, time)
+    })
   }
+  const imageUrl = require(`assets/img/KoJaem/${LoadingSrc}`).default;
 
   useEffect(() => {
     const tick = async () => {
-      await delay(4000);
+      await delay(4500);
       setOnLoading(false);
-    };
+    }
     tick();
-    return () => setOnLoading(false);
+    return () => setOnLoading(false)
   }, [setOnLoading]);
 
   return (
     <Wrapper
       animate={{
-        backgroundColor: ['#b3b39d', '#d7d7d5'],
-        transition: { duration: 2.5 }
+        backgroundColor: [
+          LoadingBackgroundColors[0],
+          LoadingBackgroundColors[1],
+        ],
+        transition: { duration: 3 },
       }}
     >
       <LoadingImageWrapper>
         <LoadingImage
-          initial={{ height: "0%" }}
+          imageUrl={imageUrl}
+          initial={{ width: "0%" }}
           animate={{
-            height: "100%",
+            width: "100%",
             transition: {
-              duration: 2.5,
+              duration: 3,
               ease: "easeOut",
             },
             transitionEnd: {
@@ -61,23 +65,23 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
 `;
 
-const LoadingImage = styled(motion.span)`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    transition: opacity 500ms linear;
-    background: no-repeat url(${covernatLogo}) 0 100%;
-    // background-position: 0 100%;
-    background-size: 100% auto;
-    // background: no-repeat url('../koJaem/img/covernat/covernat_logo.png') 0 100%;
+const LoadingImage = styled(motion.span)<{ imageUrl: string }>`
+  position: absolute;
+  height: 90%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: opacity 500ms linear;
+  background: no-repeat url(${props => props.imageUrl}) 0 100%;
+  // background: no-repeat url('../koJaem/img/musinsa/musinsa_logo.png') 0 100%;
+  // background-position: 0 100%;
+  background-size: auto 100%;
+  overflow: visible;
 `;
 
 const LoadingImageWrapper = styled(motion.div)`
-  width: 240px;
-  height: 68px;
+  width: 200px;
+  height: 90px;
   position: absolute;
   bottom: 50vh;
   left: 50vw;

@@ -3,57 +3,69 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import LmcDescription from 'assets/img/KoJaem/lmc/top/LmcDescription.jpg'
-
 type Props = {
-  setFirst: React.Dispatch<React.SetStateAction<boolean>>,
-}
-export const Description = ({setFirst}:Props) => {
+  setFirst: React.Dispatch<React.SetStateAction<boolean>>;
+  BrandImageSrc: string;
+  Introduce: string;
+  BrandName: string;
+  BrandNameColors: string[];
+  NextButtonColor: string;
+};
+export const Description = ({ setFirst, BrandImageSrc, Introduce, BrandName, BrandNameColors, NextButtonColor }: Props) => {
   const nextButtonIcon = <FontAwesomeIcon icon={faArrowRight} />;
   const [show, setShow] = useState(true);
+  const introContents = Introduce.split('\n').map((text, index) => {
+    return(
+      <div key={index}>
+      {text}
+      <br />
+      </div>)
+    });
 
+  const imageUrl = require(`assets/img/KoJaem/${BrandImageSrc}`).default;
   const showNext = () => {
     setShow(false);
     setTimeout(() => {
       setFirst(false);
-    },4000)
-  }
+    }, 4000);
+  };
   useEffect(() => {
     return () => setFirst(false);
-  }, [setFirst])
+  }, [setFirst]);
 
   return (
     <Wrapper>
       <BrandImage
-        src={LmcDescription}
+        src={imageUrl}
         alt="brand"
         animate={{
-          width: show ? '40%' : '0%',
-          display: show ? 'flex' : undefined,
-          x: show ? [-20 ,0] : 0,
-          opacity: show ? [0,1] : 0,
-          transition: show ? {duration:1} : {duration:2},
-          transitionEnd: show ? {display:'flex'} : {display:'none'}
+          width: show ? "40%" : "0%",
+          display: show ? "flex" : undefined,
+          x: show ? [-20, 0] : 0,
+          opacity: show ? [0, 1] : 0,
+          transition: show ? { duration: 1 } : { duration: 2 },
+          transitionEnd: show ? { display: "flex" } : { display: "none" },
         }}
-        
       />
       <RightWrapper animate={show ? undefined : { width: "100%" }}>
-        <BrandName
+        <BrandNameWrapper
+          BrandNameColors={BrandNameColors}
           initial={{
             translateX: "-50%",
           }}
           animate={{
             opacity: show ? [0, 1] : 1,
             top: show ? "10%" : "0%",
-            y: show ? [50,0] : 0,
+            y: show ? [50, 0] : 0,
             scale: show ? undefined : [1, 2, 1.5],
             rotate: show ? undefined : [0, 360],
             transition: show ? { delay: 1 } : { delay: 1, duration: 1.5 },
           }}
         >
-          LMC
-        </BrandName>
+          {BrandName}
+        </BrandNameWrapper>
         <Intro
+          textShadow={BrandNameColors[1]}
           animate={{
             opacity: show ? [0, 1] : [1, 0],
             y: show ? [50, 0] : [0, 50],
@@ -61,11 +73,10 @@ export const Description = ({setFirst}:Props) => {
             transition: show ? { delay: 2 } : { duration: 0.5 },
           }}
         >
-          LMC는 Lost Management Cities라는 뜻입니다.<br />
-          그 의미처럼 LMC는 통제를 잃은 도시를 표현하려고 항상 노력해왔고,<br />
-          도시 안에서 발생하는 불안함과 자유로움의 괴리에서 나오는 사회적인 문화를 옷에 표현하고자 합니다.
+          {introContents}
         </Intro>
         <NextButton
+          NextButtonColor={NextButtonColor}
           initial={{ opacity: 0 }}
           animate={{
             opacity: show ? 1 : [1, 0],
@@ -103,12 +114,12 @@ const RightWrapper = styled(motion.div)`
   text-align: center;
 `;
 
-const BrandName = styled(motion.h1)`
+const BrandNameWrapper = styled(motion.h1)<{ BrandNameColors: string[] }>`
   position: absolute;
   left: 50%;
   font-size: 30px;
-  color: #c08bc7;
-  text-shadow: 1px 1px 5px #0c0c4f;
+  color: ${props => props.BrandNameColors[0]};
+  text-shadow: 1px 1px 5px ${props => props.BrandNameColors[1]};
   display: flex;
   justify-content: center;
 
@@ -130,20 +141,21 @@ const BrandName = styled(motion.h1)`
   }
 `;
 
-const Intro = styled(motion.h1)`
+const Intro = styled(motion.h1)<{ textShadow: string }>`
   margin: 0;
+  flex-direction: column;
   font-size: 2vw;
   text-align: left;
   padding: 20px 35px 20px 35px;
   margin-top: 320px;
-  text-shadow: 1px 1px 2px #0c0c4f;
+  text-shadow: 1px 1px 3px ${props => props.textShadow};
 `;
 
-const NextButton = styled(motion.div)`
+const NextButton = styled(motion.div)<{NextButtonColor:string}>`
   display: flex;
   margin-left: auto;
   margin-right: 5vw;
-  color: #84618f;
+  color: ${(props) => props.NextButtonColor};
   font-size: 70px;
   cursor: pointer;
 `;

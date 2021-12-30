@@ -6,8 +6,9 @@ type Props = {
   show: boolean;
   index: number;
   season: string;
+  smallBrandName: string;
 };
-export const MidImage = ({ show, index, season }: Props) => {
+export const MidImage = ({ show, index, season, smallBrandName }: Props) => {
   const [hover, setHover] = useState(false);
   const [click, setClick] = useState(false);
   const imageRef: Ref<HTMLImageElement> = useRef(null);
@@ -15,12 +16,12 @@ export const MidImage = ({ show, index, season }: Props) => {
   const onClickEvent = () => {
     if (!click) {
       const imageClickSrc =
-        require(`assets/img/KoJaem/covernat/mid/${season}Image${index}Click.jpg`).default;
+        require(`assets/img/KoJaem/${smallBrandName}/mid/${season}Image${index}Click.jpg`).default;
       imageRef.current!.src = imageClickSrc;
       setClick(!click);
     } else {
       const imageSrc =
-        require(`assets/img/KoJaem/covernat/mid/${season}Image${index}.jpg`).default;
+        require(`assets/img/KoJaem/${smallBrandName}/mid/${season}Image${index}.jpg`).default;
       imageRef.current!.src = imageSrc;
       setClick(!click);
     }
@@ -47,7 +48,7 @@ export const MidImage = ({ show, index, season }: Props) => {
     >
       <Image
         src={
-          require(`assets/img/KoJaem/covernat/mid/${season}Image${index}.jpg`)
+          require(`assets/img/KoJaem/${smallBrandName}/mid/${season}Image${index}.jpg`)
             .default
         }
         ref={imageRef}

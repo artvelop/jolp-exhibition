@@ -72,7 +72,6 @@ const LoadingImage = styled(motion.span)`
     // background: no-repeat url('../koJaem/img/musinsa/musinsa_logo.png') 0 100%;
     // background-position: 0 100%;
     background-size: 100% auto;
-}
 `;
 
 const LoadingImageWrapper = styled(motion.div)`

@@ -1,12 +1,34 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { Top, Mid, Bottom } from './index';
+import { Top } from "pages/kojaem/components/Top";
+import { Mid } from "pages/kojaem/components/Mid";
+import { Bottom } from "pages/kojaem/components/Bottom";
+import { lmc } from 'pages/kojaem/dummy/brands';
+
 export const LmcMain = () => {
   return (
     <Wrapper>
-      <Top />
-      <Mid />
-      <Bottom />
+      <Top
+        TopWrapperColor={lmc.TopWrapperColor}
+        BrandImageSrc={lmc.BrandImageSrc}
+        Introduce={lmc.Introduce}
+        BrandName={lmc.BrandName}
+        BrandNameColors={lmc.BrandNameColors}
+        NextButtonColor={lmc.NextButtonColor}
+        SlideImageDescription={lmc.SlideImageDescription}
+      />
+      <Mid
+        SeasonDescription={lmc.SeasonDescription}
+        TitleShadow={lmc.TitleShadow}
+        MidBackgroundColors={lmc.MidBackgroundColors}
+        BrandName={lmc.BrandName}
+      />
+      <Bottom
+        BottomTitle={lmc.BottomTitle}
+        ChartData={lmc.ChartData}
+        ChartIntroduce={lmc.ChartIntroduce}
+        LineBreak={lmc.LineBreak}
+      />
     </Wrapper>
   );
 };
