@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { MidImage } from './MidImage';
+import { MidImage } from './index';
 
 const options = {threshold: [0.2,0.3,0.4]};
 const season = "ChangingSeason";

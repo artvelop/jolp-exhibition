@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { GenderChart } from './GenderChart';
+import { GenderChart } from './index';
 
 const options = { threshold: 0.2 };
 

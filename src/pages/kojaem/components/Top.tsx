@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ImageBanner } from "./ImageBanner";
-import { Description } from "./Description";
+import { ImageBanner, Description } from "./index";
 type Props = {
   TopWrapperColor: string;
   BrandImageSrc: string;

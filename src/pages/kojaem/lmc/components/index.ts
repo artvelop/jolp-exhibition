@@ -1,14 +1,2 @@
 export { Loading } from "./Loading";
 export { LmcMain } from "./LmcMain";
-export { Top } from "./Top";
-export { Mid } from "./Mid";
-export { Bottom } from "./Bottom";
-export { Description } from "./Description";
-export { ImageBanner } from "./ImageBanner";
-export { SlideImage } from "./SlideImage";
-export { MidImage } from "./MidImage";
-export { ChangingSeasonOutfit } from "./ChangingSeasonOutfit";
-export { SummerOutfit } from "./SummerOutfit";
-export { WinterOutfit } from "./WinterOutfit";
-export { GenderChart } from "./GenderChart";
-export { ChartDescription } from "./ChartDescription";

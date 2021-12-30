@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import KeenSlider from "keen-slider";
 import { useKeenSlider } from "keen-slider/react";
 import { RefObject, useEffect, useRef, useState } from "react";
-import { SlideImage } from "./SlideImage";
+import { SlideImage } from "./index";
 
 type sliderType = [sliderRef: RefObject<HTMLDivElement>, slider: KeenSlider];
 type Props = {

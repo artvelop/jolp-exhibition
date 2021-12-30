@@ -75,7 +75,6 @@ const Colored = styled(motion.span)`
     // background: no-repeat url('../koJaem/img/kirsh/logo_filled.png') 0 100%;
     // background-position: 0 100%;
     background-size: 100% auto;
-}
 `;
 
 const LoadingImage = styled(motion.div)`

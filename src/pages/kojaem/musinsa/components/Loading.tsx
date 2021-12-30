@@ -69,8 +69,6 @@ const LoadingImage = styled(motion.span)`
     right: 0;
     transition: opacity 500ms linear;
     background: no-repeat url(${musinsaLogo}) 0 100%;
-    // background: no-repeat url('../koJaem/img/musinsa/musinsa_logo.png') 0 100%;
-    // background-position: 0 100%;
     background-size: 100% auto;
 `;
 

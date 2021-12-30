@@ -72,7 +72,6 @@ const LoadingImage = styled(motion.span)`
     background: no-repeat url(${covernatLogo}) 0 100%;
     // background-position: 0 100%;
     background-size: 100% auto;
-    // background: no-repeat url('../koJaem/img/covernat/covernat_logo.png') 0 100%;
 `;
 
 const LoadingImageWrapper = styled(motion.div)`

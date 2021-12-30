@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { Top } from "pages/kojaem/components/Top";
-import { Mid } from "pages/kojaem/components/Mid";
-import { Bottom } from "pages/kojaem/components/Bottom";
+import { Top, Mid, Bottom } from "pages/kojaem/components";
 import { lmc } from 'pages/kojaem/dummy/brands';
 
 export const LmcMain = () => {
