@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { LayoutContainer } from "../components/LayoutContainer";
-import { Loading } from "./components/Loading";
-import { CovernatMain } from "./components/CovernatMain";
+import { LayoutContainer } from "../components";
+import { Loading, CovernatMain } from "./components";
 
 type Props = {
   selected: string;
@@ -11,7 +10,7 @@ const Covernat = ({ selected, setSelected }: Props) => {
   const [onLoading, setOnLoading] = useState(true);
   return (
     <LayoutContainer selected={selected} setSelected={setSelected}>
-      {onLoading ? <Loading setOnLoading={setOnLoading} /> : <CovernatMain /> }
+      {onLoading ? <Loading setOnLoading={setOnLoading} /> : <CovernatMain />}
     </LayoutContainer>
   );
 };

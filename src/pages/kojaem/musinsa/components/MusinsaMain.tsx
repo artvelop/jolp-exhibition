@@ -1,17 +1,32 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { Top } from './Top';
-import { Mid } from "./Mid";
-import { Bottom } from "./Bottom";
-// import { View3D } from './View3D';
-
+import { Top, Mid, Bottom } from "pages/kojaem/components";
+import { musinsa } from 'pages/kojaem/dummy/brands';
+ 
 export const MusinsaMain = () => {
   return (
     <Wrapper>
-      <Top />
-      <Mid />
-      <Bottom />
-      {/* <View3D /> */}
+      <Top
+        TopWrapperColor={musinsa.TopWrapperColor}
+        BrandImageSrc={musinsa.BrandImageSrc}
+        Introduce={musinsa.Introduce}
+        BrandName={musinsa.BrandName}
+        BrandNameColors={musinsa.BrandNameColors}
+        NextButtonColor={musinsa.NextButtonColor}
+        SlideImageDescription={musinsa.SlideImageDescription}
+      />
+      <Mid
+        SeasonDescription={musinsa.SeasonDescription}
+        TitleShadow={musinsa.TitleShadow}
+        MidBackgroundColors={musinsa.MidBackgroundColors}
+        BrandName={musinsa.BrandName}
+      />
+      <Bottom
+        BottomTitle={musinsa.BottomTitle}
+        ChartData={musinsa.ChartData}
+        ChartIntroduce={musinsa.ChartIntroduce}
+        LineBreak={musinsa.LineBreak}
+      />
     </Wrapper>
   );
 };

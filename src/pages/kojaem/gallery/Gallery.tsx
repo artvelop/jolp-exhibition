@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { LayoutContainer } from "../components/LayoutContainer";
-import { Thumbnail } from "./components/Thumbnail";
+import { LayoutContainer } from "../components";
+import { Thumbnail } from "./components";
 
 const images: string[] = [
   "Musinsa.jpg",
@@ -53,7 +53,7 @@ export default Gallery;
 const GalleryWrapper = styled.div`
   background: linear-gradient(250deg, #6c7981, #aa94e6);
   padding: 40px;
-  min-height: 900px;
+  min-height: 100vh;
   position: relative;
   margin: 0;
 `;

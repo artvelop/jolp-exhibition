@@ -1,17 +1,32 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { Top } from './Top';
-import { Mid } from "./Mid";
-import { Bottom } from "./Bottom";
-// import { View3D } from './View3D';
+import { Top, Mid, Bottom } from "pages/kojaem/components";
+import { kirsh } from 'pages/kojaem/dummy/brands';
 
 export const KirshMain = () => {
   return (
     <Wrapper>
-      <Top />
-      <Mid />
-      <Bottom />
-      {/* <View3D /> */}
+      <Top
+        TopWrapperColor={kirsh.TopWrapperColor}
+        BrandImageSrc={kirsh.BrandImageSrc}
+        Introduce={kirsh.Introduce}
+        BrandName={kirsh.BrandName}
+        BrandNameColors={kirsh.BrandNameColors}
+        NextButtonColor={kirsh.NextButtonColor}
+        SlideImageDescription={kirsh.SlideImageDescription}
+      />
+      <Mid
+        SeasonDescription={kirsh.SeasonDescription}
+        TitleShadow={kirsh.TitleShadow}
+        MidBackgroundColors={kirsh.MidBackgroundColors}
+        BrandName={kirsh.BrandName}
+      />
+      <Bottom
+        BottomTitle={kirsh.BottomTitle}
+        ChartData={kirsh.ChartData}
+        ChartIntroduce={kirsh.ChartIntroduce}
+        LineBreak={kirsh.LineBreak}
+      />
     </Wrapper>
   );
 };

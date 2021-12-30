@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { LayoutContainer } from "../components/LayoutContainer";
-import { Loading } from "./components/Loading";
-import { MusinsaMain } from "./components/MusinsaMain";
+import { LayoutContainer } from "../components";
+import { Loading, MusinsaMain } from "./components";
 
 type Props = {
   selected: string;
